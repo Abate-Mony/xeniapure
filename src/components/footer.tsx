@@ -188,7 +188,7 @@ const Footer = ({ className }: { className?: string }) => {
                                                     }
                                                 </li>
                                             })}
-                                            {section.details && section?.details.map(({ text, type }) => {
+                                            {section.details && section?.details.map(({ text}) => {
                                                 return <li key={text}>
                                                     <a href={'#'} target='_blank' className='link'>{text}</a>
                                                 </li>

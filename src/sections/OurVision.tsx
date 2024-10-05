@@ -198,7 +198,7 @@ const OurVision = () => {
                                     </VariantHeading>
                                     <p>{selectedId.description}</p>
                                     <ol className='list-disc pl-6'>
-                                        {Array.from({ length: 20 }, (arr, idx) => <li
+                                        {Array.from({ length: 20 }, (_arr, idx) => <li
                                             className='text-sm'
                                             key={idx}>
                                             Lorem ipsum dolor sit amet consectetur.
