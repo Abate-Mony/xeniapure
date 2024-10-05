@@ -48,7 +48,7 @@ const UpComingEvent = () => {
                     className=' grid grid-cols-[repeat(auto-fit,minmax(min(20rem,calc(100%-60px)),_1fr))] gap-4 lg:gap-10 mx-auto container lg:px-22'
                 >
                     {
-                        Array.from({ length: 6 }, (_arr, index) => <EventCard />)
+                        Array.from({ length: 6 }, (_arr, index) => <EventCard key={index} />)
 
                     }
                 </div>

@@ -5,8 +5,8 @@ import { Button } from '../components/ui/button'
 
 import { useMediaQuery } from 'react-responsive'
 // import { BlackKeyBoard, CartoonKeyBoard, ManTyping, WomanTyping } from '../assets/images'
-import { AnimatedSlideText } from '../components/Animated/animated'
 import { VariantHeading } from '@/components/ui/heading'
+import { AnimatedSlideText } from '../components/Animated/animated'
 export const contents = [
     {
         title: "Njang Dance Festival",

@@ -5,11 +5,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import RootLayout from './Layouts/RootLayout';
 import AboutUsPage from './pages/AboutUsPage';
+import BecomeAMember from './pages/BecomeAMember';
 import ContactUsPage from './pages/ContactUsPage';
+import Convention from './pages/Convention';
 import Events from './pages/Events';
 import Home from './pages/Home';
-import BecomeAMember from './pages/BecomeAMember';
-import Convention from './pages/Convention';
 function App() {
   const router = createBrowserRouter([
 

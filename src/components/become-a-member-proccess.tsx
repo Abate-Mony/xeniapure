@@ -1,5 +1,5 @@
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { ArrowRight, Forward } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { AnimatedSlideText } from '../components/Animated/animated.js';

@@ -1,10 +1,9 @@
 import { useAnimate } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import Heading from "./ui/heading";
+import Marquee from "react-fast-marquee";
 import { AnimatedSlideText } from "./Animated/animated";
 import { Button } from "./ui/button";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import Marquee from "react-fast-marquee";
 
 // NOTE: Change this date to whatever date you want to countdown to :)
 const COUNTDOWN_FROM = "2025-10-01";

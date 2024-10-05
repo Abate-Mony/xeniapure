@@ -6,7 +6,6 @@ import EventSection from "@/sections/Events";
 import OurVision from "@/sections/OurVision";
 import RequestService from "@/sections/RequestToJoin";
 import Stats from "@/sections/stats";
-import Marquee from "react-fast-marquee";
 
 const Home = () => {
     return (
