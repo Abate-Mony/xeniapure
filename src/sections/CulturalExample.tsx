@@ -16,7 +16,7 @@ const OurCulturalExample = () => {
     const cultural_images_object = [
 
         {
-            url: "https://loispiration.com/wp-content/uploads/2023/09/toghu-4.jpg?w=829",
+            url: "/doris-pearl-and-freind.jpg",
             description: "some descriptio"
         },
         {
@@ -32,11 +32,19 @@ const OurCulturalExample = () => {
             description: "some descriptio"
         },
         {
+            url: "/doris-pearl-01.jpg",
+            description: "some descriptio"
+        },
+        {
             url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5H4rdHCBKMl3YV6gQ2g7KX1WkUT063DQ8iA&s",
             description: "some descriptio"
         },
         {
             url: "https://i0.wp.com/www.fepcig.org/wp-content/uploads/2017/07/Tourism-Kom-culture-and-tradition-36.jpeg?fit=1080%2C607&ssl=1",
+            description: "some descriptio"
+        },
+        {
+            url: "/group-image.jpg",
             description: "some descriptio"
         },
     ]
@@ -121,7 +129,7 @@ const OurCulturalExample = () => {
 
                     {
                         cultural_images_object.map((obj, idx) => (<SwiperSlide
-                            className='lg:h-[min(calc(100vh-4rem),30rem)] h-[min(calc(100vh-4rem),15rem)] justify-center items-center  flex-col w-full justify-center- rounded-none flex md:items-center md:justify-center  antialiased bg-grid-white/[0.02] relative overflow-hidden !px-0'
+                            className='lg:h-[min(calc(100vh-4rem),30rem)] h-[min(calc(100vh-4rem),25rem)] justify-center items-center  flex-col w-full justify-center- rounded-none flex md:items-center md:justify-center  antialiased bg-grid-white/[0.02] relative overflow-hidden !px-0'
                             key={idx}>
                             <img src={obj.url}
                                 className='size-full'

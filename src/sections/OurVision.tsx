@@ -11,7 +11,7 @@ export const contents = [
     {
         title: "Njang Dance Festival",
         description: "The Njang Dance is one of Kom's oldest traditional dances, performed during celebrations and important communal events. This festival features vibrant costumes, energetic drumming, and graceful dance movements, showcasing the rich cultural heritage of the Kom people.",
-        Icon: "https://i.etsystatic.com/35094667/r/il/e632d0/4242903236/il_300x300.4242903236_50zr.jpg",
+        Icon: "/doris-pearl.jpg",
     },
     {
         title: "Fon’s Ancestral Feast",

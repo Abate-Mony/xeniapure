@@ -21,7 +21,7 @@ export const heroBanner: iHeroBanner[] = [
             { text: "palace.", className: "" }
         ],
         description: "The Kom people have a rich cultural heritage, including traditional dances, festivals, and the sacred Laikom palace.",
-        image: "https://africancultureconnection.org/wp-content/uploads/2024/09/slide-3-narrow.webp",
+        image: "/group-image.jpg",
     },
 
     {

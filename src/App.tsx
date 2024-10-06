@@ -10,6 +10,9 @@ import ContactUsPage from './pages/ContactUsPage';
 import Convention from './pages/Convention';
 import Events from './pages/Events';
 import Home from './pages/Home';
+import JoinUsLayout from './Layouts/JoinUsLayout';
+import RegistrationJoinUs from './pages/RegistrationJoinUs';
+import PreviewJoinUsUser from './pages/PreviewJoinUsUser';
 function App() {
   const router = createBrowserRouter([
 
@@ -35,11 +38,24 @@ function App() {
         },
         {
           path: "become-a-member",
-          element: <BecomeAMember/>
+          element: <BecomeAMember />
         },
         {
           path: "convention",
-          element: <Convention/>
+          element: <Convention />
+        },
+        {
+          path: "join-us",
+          element: <JoinUsLayout />,
+          children: [
+            {
+              index: true,
+              element: <RegistrationJoinUs />
+            }, {
+              path: "preview",
+              element: <PreviewJoinUsUser />
+            }
+          ]
         },
 
       ]

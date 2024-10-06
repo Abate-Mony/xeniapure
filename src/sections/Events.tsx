@@ -27,7 +27,7 @@ export const contents = [
     {
         title: "Kom Cultural Crafts Fair",
         description: "An exhibition and sale of traditional Kom crafts such as pottery, wood carvings, and beadwork. This fair is a platform for artisans to showcase their skills and for visitors to learn about Kom's artistic traditions. It also includes live demonstrations and cultural storytelling.",
-        Icon: "https://loispiration.com/wp-content/uploads/2023/09/toghu-1776742398-e1693934791460.jpg",
+        Icon: "/abate.jpg",
     }
 ];
 

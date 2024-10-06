@@ -149,7 +149,7 @@ const ProcessBecomeAMember = () => {
                     </div>
                 </div>
             </motion.div>
-            <Link to="upload">
+            <Link to="/join-us">
             <Button
                 className="block sticky btn- bg-colorPrimary
             w-[min(420px,calc(100%-1rem))] px-0 bg-primary-color
