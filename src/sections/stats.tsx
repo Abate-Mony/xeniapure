@@ -123,7 +123,7 @@ const Stats = () => {
                     <div>
                         <p className='mb-6'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi voluptatibus eos quidem eligendi odio molestias. Aliquid, maiores! Recusandae tempore deleniti aspernatur nisi enim esse corporis?</p>
 
-                        <Button className='px-8 bg-[#fb5711] m shadow-sm top-auto right-2'>Learn More <Link size={15} className='ml-2' /></Button>
+                        <Button className='px-8 bg-primary-color m shadow-sm top-auto right-2'>Learn More <Link size={15} className='ml-2' /></Button>
 
                     </div>
                 </div>

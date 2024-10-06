@@ -8,7 +8,6 @@ const NavBar = ({ isOpen, setIsOpen }: {
     isOpen: boolean,
     setIsOpen: any
 }) => {
-    // alert(isOpen)
     return (
         <div className="bg-white/50 shadow-sm shadow-slate-50 z-50 justify-center  sticky left-0 top-0 w-full 
     flex items-center backdrop-blur px-2 sm:px-6  rounded-none 
@@ -25,10 +24,13 @@ const NavBar = ({ isOpen, setIsOpen }: {
                 "
             >
                 <div className="flex items-center justify-center space-x-2-">
+                    <Link to={"/"}>
+                        <img
+                            className="size-12 hidden md:block "
+                            src="https://i0.wp.com/umuigbounite.com/wp-content/uploads/2024/02/cropped-uiu-dark-1.png?fit=200%2C174&ssl=1" alt="" />
 
-                    <img
-                        className="size-12 hidden md:block "
-                        src="https://i0.wp.com/umuigbounite.com/wp-content/uploads/2024/02/cropped-uiu-dark-1.png?fit=200%2C174&ssl=1" alt="" />
+                    </Link>
+
                     <Button
                         className="text-sm rounded-full mx-0  md:hidden
                     hover:text-primary-color
