@@ -19,7 +19,7 @@ export const contents = [
         Icon: "https://loispiration.com/wp-content/uploads/2023/09/toghu-4.jpg?w=829",
     },
     {
-        title: "Laikom Palace Tour",
+        title: "Laikom  Palace Tour",
         description: "A special event where visitors can explore the sacred Laikom Palace, home of the Fon and the spiritual heart of the Kom people. This tour provides an in-depth look at the historical and cultural significance of the palace and the leadership of the Fon.",
         Icon: "/food-01.jpg",
     },
