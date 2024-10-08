@@ -20,24 +20,24 @@ import { BsGenderFemale } from 'react-icons/bs'
 import { Button } from '../components/ui/button'
 import { Input } from '../components/ui/input'
 import { Label } from '../components/ui/label'
-const genderOption = [
-    {
-        value: 'Male',
-        key: "M"
-    },
-    {
-        value: 'Male',
-        key: "F"
-    },
-    {
-        value: 'Other',
-        key: "O"
-    },
-    {
-        value: 'Prefered not to say',
-        key: "U"
-    },
-]
+// const genderOption = [
+//     {
+//         value: 'Male',
+//         key: "M"
+//     },
+//     {
+//         value: 'Male',
+//         key: "F"
+//     },
+//     {
+//         value: 'Other',
+//         key: "O"
+//     },
+//     {
+//         value: 'Prefered not to say',
+//         key: "U"
+//     },
+// ]
 interface iUser extends Pick<userRegister, "name" | "email" | "phoneNumber"> {
     gender?: "Male" | "Female" | "Other" | "Prefered not to say"
 }
