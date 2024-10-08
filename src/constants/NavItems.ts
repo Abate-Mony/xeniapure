@@ -40,4 +40,9 @@ export const NavItemsLinks: INavItemsLinks[] = [
         link: "/become-a-member",
         icon: LogInIcon,
     },
+    {
+        name: "FAQs",
+        link: "/faqs",
+        icon: LogInIcon,
+    },
 ];

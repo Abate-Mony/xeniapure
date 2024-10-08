@@ -25,10 +25,10 @@ const JoinUsLayout = () => {
                 page: "preview",
                 name: "Preview information"
             },
-            {
-                page: "payment",
-                name: "Payment"
-            },
+            // {
+            //     page: "payment",
+            //     name: "Payment"
+            // },
             {
                 page: "invoice-download",
                 name: "Download Invoice"
@@ -39,8 +39,8 @@ const JoinUsLayout = () => {
     return (
         <div>
             <div className="lg:h-[min(calc(100vh-4rem),20rem)] h-[min(calc(100vh-4rem),15rem)] justify-center items-center  flex-col w-full justify-center- rounded-none flex md:items-center md:justify-center  antialiased bg-grid-white/[0.02] relative overflow-hidden !px-0">
-                <img src="https://loispiration.com/wp-content/uploads/2023/09/toghu-1776742398-e1693934791460.jpg" alt=""
-                    className=" size-full object-cover absolute inset-0"
+                <img src="https://img.freepik.com/free-vector/organic-flat-join-us-concept_23-2148948675.jpg?t=st=1728380668~exp=1728384268~hmac=134a0e2e2beb7178fe34c63254980b51bf1f5013493a023a03dc7ed14eeeff7f&w=900" alt=""
+                    className=" size-full object-fit absolute inset-0"
                 />
                 <div className="relative z-10">
                     <VariantHeading className='text-center py-6 gap-x-3 uppercase mb-6 flex items-center text-primary-color [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto text-white'>
@@ -54,7 +54,7 @@ const JoinUsLayout = () => {
 
                     </VariantHeading>
                 </div>
-                <div className="absolute inset-0 bg-black/85 size-full"
+                <div className="absolute inset-0 bg-black/60 size-full"
                 ></div>
             </div>
             <div className="max-w-5xl mx-auto  py-10 px-4">
@@ -103,8 +103,8 @@ const JoinUsLayout = () => {
                             show
                             replace
                             selectedClassName='text-green-800  !pointer-events-none text-white bg-primary-color'
-                            animateClassName="inset-0 animate-pulse size-full shadow-md  right-0  bg-purple-600/60 !pointer-events-none rounded-full "
-                            className='bg-transparent text-xs relative z-20 bg-white lg:text-sm capitalize w-fit px-4 shadow text-medium rounded-full  shadow-primary-color mb-0.5 h-9 flex items-center !pointer-events-none  hover:bg-purple-600/20'
+                            animateClassName="inset-0 animate-pulse size-full shadow-md  right-0  bg-purple-600/60 !pointer-events-none rounded-sm "
+                            className='bg-transparent text-xs relative z-20 bg-white lg:text-sm capitalize w-fit px-4 shadow text-medium rounded-sm   mb-0.5 h-9 flex items-center !pointer-events-none  hover:bg-purple-600/20'
                         >
 
                             <span className='!text-[10px] mr-1 font-black'>({idx + 1})</span> {page.name}</CustomNavLink>)

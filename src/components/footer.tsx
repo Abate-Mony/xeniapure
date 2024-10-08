@@ -72,7 +72,7 @@ const footerSections: FooterSection[] = [
         links: [
             {
                 text: "Become a Member",
-                url: "/membership/signup"
+                url: "/become-a-member"
             },
             {
                 text: "Donate to Kom",

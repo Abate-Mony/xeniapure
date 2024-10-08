@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { AnimatedSlideText } from "./Animated/animated";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 // NOTE: Change this date to whatever date you want to countdown to :)
 const COUNTDOWN_FROM = "2025-10-01";
@@ -17,16 +18,20 @@ type Units = "Day" | "Hour" | "Minute" | "Second";
 
 const ShiftingCountdown = () => {
     return (
-        <div className="bg-gradient-to-br bg-white p-4 py-12">
-            <div className="border-2 w-[calc(100%-1rem)] max-w-6xl border-colorPrimary rounded-full px-6 mx-auto">
+        <div className="bg-gradient-to-br bg-white- p-4 py-12">
+            <div className="border-2 shadow-sm bg-white text-gray-800 w-[calc(100%-1rem)] max-w-6xl border-colorPrimary rounded-full  mx-auto">
 
-                <Marquee className="px-0" pauseOnHover speed={100}>
-                    <pre className="px-0 py-2"> I can be a React component, multiple React components, or just some text. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, laborum.</pre>
+                <Marquee className="px-0 py-2 " pauseOnHover speed={70}>
+                    <pre className="px-4 py-2 text-xl lg:text-2xl font-semibold tracking-wide">
+                        Welcome to the heart of Kom tradition! Discover the rich heritage, vibrant festivals, and deep ancestral customs that shape the Kom people. Join us in celebrating history, culture, and community.
+                    </pre>
                 </Marquee>
+
+
                 {/* <HeroSection /> */}
             </div>
             <AnimatedSlideText inView
-                text="Counting Down Every Second Until UIU's 21st Anniversary
+                text="Counting Down To The Next KOM Convention
 "
                 className='text-center  text-blue-950- text-primary-color font-black mb-6 text-3xl sm:text-4xl lg:text-5xl max-w-3xl mx-auto '>
 
@@ -38,12 +43,14 @@ const ShiftingCountdown = () => {
                 <CountdownItem unit="Minute" text="minutes" />
                 <CountdownItem unit="Second" text="seconds" />
             </div>
-            <Button className="block- gap-x-4 sticky- bg-primary-color btn-  mt-4
+            <Link to={"/convention"}>
+                <Button className="block- gap-x-4 sticky- bg-primary-color btn-  mt-4
             w-[min(420px,calc(100%-1rem))] px-0
             mx-auto font-bold text-sm z-50 h-14 flex items-center 
             bottom-0 rounded-none   left-0 uppercase  text-center ">
-                Lean more <ArrowRight size={25} />
-            </Button>
+                    Lean more <ArrowRight size={25} />
+                </Button>
+            </Link>
         </div>
     );
 };

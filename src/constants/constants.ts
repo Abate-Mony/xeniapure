@@ -50,7 +50,7 @@ export const heroBanner: iHeroBanner[] = [
             { text: "identity.", className: "" }
         ],
         description: "The Kom tradition emphasizes the significance of the Fon and the royal palace, which serves as the cultural heart of the community, showcasing their unique dances and ceremonies.",
-        image: "https://africancultureconnection.org/wp-content/uploads/2024/09/slide-2-narrow.webp",
+        image: "/group-image-01.jpg",
     },
 
     {

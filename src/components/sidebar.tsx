@@ -100,7 +100,7 @@ border-b px-4 text-gray-700 hover:font-medium text-sm'
                                 </motion.li>))
 
                             }
-                            <li>
+                            {/* <li>
 
                                 <Button
                                     className="text-sm block w-[min(calc(100%-2rem),400px)] mx-auto py-4 rounded-full 
@@ -110,7 +110,7 @@ border-b px-4 text-gray-700 hover:font-medium text-sm'
                                     Donate
 
                                 </Button>
-                            </li>
+                            </li> */}
 
                             <li
                                 className='flex py-4 space-x-1 flex-wrap  my-5 place-items-center justify-center'

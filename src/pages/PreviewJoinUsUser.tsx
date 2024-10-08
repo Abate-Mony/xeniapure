@@ -6,6 +6,7 @@ import {
     TableRow
 } from "../components/ui/table"
 import { Button } from "@/components/ui/button";
+import Heading from "@/components/ui/heading";
 const PreviewJoinUsUser = () => {
     const [query] = useSearchParams();
 
@@ -17,21 +18,27 @@ const PreviewJoinUsUser = () => {
 
     return (
         <div>
-            <div className='max-w-sm mx-auto border-[1px] border-colorPrimary  rounded-md py-5 mb-6 shadow-sm'>
+            <Heading className='text-3xl lg:text-4xl text-center font-medium mb-4 flex items-center justify-center text-colorPrimary font-pacifico my-3'>Please Check Your Information </Heading>
+            
+            <div className='max-w-sm mx-auto border-[1px] border-colorPrimary  rounded-md py-5 mb-6- shadow-sm mb-0'>
                 <Table>
 
                     <TableBody>
                         <TableRow >
                             <TableCell className="font-bold ">Full Name</TableCell>
-                            <TableCell className="text-right">{user?.name}</TableCell>
+                            <TableCell className="text-right text-gray-500">{user?.name}</TableCell>
                         </TableRow>
                         <TableRow >
                             <TableCell className="font-bold ">Email Address</TableCell>
-                            <TableCell className="text-right">{user?.email}</TableCell>
+                            <TableCell className="text-right text-gray-500">{user?.email}</TableCell>
                         </TableRow>
                         <TableRow >
                             <TableCell className="font-bold ">Phone Number</TableCell>
-                            <TableCell className="text-right">{user?.phoneNumber}</TableCell>
+                            <TableCell className="text-right text-gray-500">{user?.phoneNumber}</TableCell>
+                        </TableRow>
+                        <TableRow >
+                            <TableCell className="font-bold ">Sex</TableCell>
+                            <TableCell className="text-right text-gray-500">Male</TableCell>
                         </TableRow>
                     </TableBody>
 

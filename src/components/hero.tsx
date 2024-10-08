@@ -35,7 +35,7 @@ const Hero = () => {
                 {heroBanner.map((banner, idx) => {
                     return (
                         <SwiperSlide key={idx} className="!size-full relative">
-                            <div className="absolute inset-0 bg-black/80 z-10"></div>
+                            <div className="absolute inset-0 bg-black/65 z-10"></div>
 
                             <motion.img
                                 key={idx * Math.random()} // Ensure unique key for motion component

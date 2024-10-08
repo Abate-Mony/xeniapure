@@ -13,6 +13,8 @@ import Home from './pages/Home';
 import JoinUsLayout from './Layouts/JoinUsLayout';
 import RegistrationJoinUs from './pages/RegistrationJoinUs';
 import PreviewJoinUsUser from './pages/PreviewJoinUsUser';
+import NotFoundPage from './pages/NotFoundPage';
+import FAQsPage from './pages/FAQsPage';
 function App() {
   const router = createBrowserRouter([
 
@@ -45,6 +47,10 @@ function App() {
           element: <Convention />
         },
         {
+          path: "faqs",
+          element: <FAQsPage />
+        },
+        {
           path: "join-us",
           element: <JoinUsLayout />,
           children: [
@@ -57,6 +63,11 @@ function App() {
             }
           ]
         },
+        {
+          path: "*",
+          element: <NotFoundPage />
+    
+        }
 
       ]
 

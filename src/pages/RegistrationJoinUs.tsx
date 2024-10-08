@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Mail, Phone, User } from 'lucide-react'
 import { useForm } from "react-hook-form"
 import { useNavigate } from 'react-router-dom'
-import { ZodType, z } from 'zod'
+import { ZodType, string, z } from 'zod'
 
 import { VariantHeading } from '@/components/ui/heading'
 import {
@@ -20,8 +20,26 @@ import { BsGenderFemale } from 'react-icons/bs'
 import { Button } from '../components/ui/button'
 import { Input } from '../components/ui/input'
 import { Label } from '../components/ui/label'
+const genderOption = [
+    {
+        value: 'Male',
+        key: "M"
+    },
+    {
+        value: 'Male',
+        key: "F"
+    },
+    {
+        value: 'Other',
+        key: "O"
+    },
+    {
+        value: 'Prefered not to say',
+        key: "U"
+    },
+]
 interface iUser extends Pick<userRegister, "name" | "email" | "phoneNumber"> {
-
+    gender?: "Male" | "Female" | "Other" | "Prefered not to say"
 }
 
 const UserSchema: ZodType<iUser> = z
@@ -33,7 +51,8 @@ const UserSchema: ZodType<iUser> = z
             required_error: "email address is required"
         }).email(),
         phoneNumber: z.string({ invalid_type_error: 'number is required here' })
-            .min(9, 'please 9 numbers are required to register ').max(12)
+            .min(9, 'please 9 numbers are required to register ').max(12),
+        // gender: z.string()
     })
 const RegistrationJoinUs = () => {
     const [user, setUser] = useState<iUser | any>({})
@@ -49,7 +68,7 @@ const RegistrationJoinUs = () => {
         });
     const onSubmit = async (data: iUser) => {
         // console.log("data", data)
-        const {email,name,phoneNumber}=data
+        const { email, name, phoneNumber } = data
         setUser(data)
         navigate(`preview?fullname=${name}&email=${email}&phone=${phoneNumber}`)
 
@@ -136,27 +155,27 @@ const RegistrationJoinUs = () => {
                             <BsGenderFemale size={20} />
                         </span>
                         <Select >
-                        <SelectTrigger className="w-full border-none outline-none ring-0 hover:border-none hover:outline-none hover:right-0">
-                            <SelectValue placeholder="Select your sex" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectGroup>
-                                <SelectLabel>Fruits</SelectLabel>
-                                <SelectItem value="apple">Male</SelectItem>
-                                <SelectItem value="banana">Female</SelectItem>
-                                <SelectItem value="blueberry">Other</SelectItem>
-                                <SelectItem value="grapes">prefer not to say</SelectItem>
+                            <SelectTrigger className="w-full border-none outline-none ring-0 hover:border-none hover:outline-none hover:right-0">
+                                <SelectValue placeholder="Select your sex" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectGroup>
+                                    <SelectLabel>Fruits</SelectLabel>
+                                    <SelectItem value="apple">Male</SelectItem>
+                                    <SelectItem value="banana">Female</SelectItem>
+                                    <SelectItem value="blueberry">Other</SelectItem>
+                                    <SelectItem value="grapes">prefer not to say</SelectItem>
 
-                            </SelectGroup>
-                        </SelectContent>
-                    </Select>
+                                </SelectGroup>
+                            </SelectContent>
+                        </Select>
                     </div>
                     {errors.phoneNumber && <span className="error">{errors.phoneNumber?.message?.toString()}</span>}
 
                 </div>
                 <div>
-                  
-                
+
+
                 </div>
                 <Button
                     className="bg-gradient-to-br rounded-none  group/btn w-[min(30rem,calc(100%-0.5rem))] bg-primary-color   shadow-primary-color mx-auto rounded-s, flex gap-x-2  top-auto h-12

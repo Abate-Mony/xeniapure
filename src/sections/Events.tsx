@@ -82,7 +82,7 @@ const ServiceCard = ({
                     delay: idx * 0.3
 
                 }}
-                className='  peer mx-auto w-full max-w-64 h-64'
+                className='  peer mx-auto w-full max-w-64 h-80'
                 src={Icon}
             />
             <span

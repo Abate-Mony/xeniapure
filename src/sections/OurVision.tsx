@@ -11,7 +11,7 @@ export const contents = [
     {
         title: "Njang Dance Festival",
         description: "The Njang Dance is one of Kom's oldest traditional dances, performed during celebrations and important communal events. This festival features vibrant costumes, energetic drumming, and graceful dance movements, showcasing the rich cultural heritage of the Kom people.",
-        Icon: "/doris-pearl.jpg",
+        Icon: "/fon-01.jpg",
     },
     {
         title: "Fon’s Ancestral Feast",
@@ -21,7 +21,7 @@ export const contents = [
     {
         title: "Laikom Palace Tour",
         description: "A special event where visitors can explore the sacred Laikom Palace, home of the Fon and the spiritual heart of the Kom people. This tour provides an in-depth look at the historical and cultural significance of the palace and the leadership of the Fon.",
-        Icon: "https://www.africacentre.org.uk/images/757cef11-eeb1-4a5c-98c5-bdac96e639d8/cropped?width=600&height=338",
+        Icon: "/food-01.jpg",
     },
 
 ];
@@ -90,11 +90,11 @@ const ServiceCard = ({
                 />
             )}
         </AnimatePresence>
-        <div className=' relative   overflow-hidden h-[20rem] sm:h-72 '>
+        <div className=' relative   overflow-hidden h-[20rem] sm:h-80 '>
 
             <motion.img
 
-                className='group-hover:scale-125- hidden lg:block transition-all duration-500 peer size-full object-fit '
+                className='group-hover:scale-125- hidden lg:block transition-all duration-500 peer size-full object-fill '
                 src={Icon}
             />
             <img
@@ -144,7 +144,7 @@ const OurVision = () => {
         }
     }, [selectedId])
     return (
-        <section className='bg-white- py-32 overflow-hidden'
+        <section className='bg-primary-color/10 py-32 overflow-hidden'
             id='ourservices'
         >
             <div className="max-w-7xl mx-auto px-4">
