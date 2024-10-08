@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Mail, Phone, User } from 'lucide-react'
 import { useForm } from "react-hook-form"
 import { useNavigate } from 'react-router-dom'
-import { ZodType, string, z } from 'zod'
+import { ZodType,z } from 'zod'
 
 import { VariantHeading } from '@/components/ui/heading'
 import {
