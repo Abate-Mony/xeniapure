@@ -13,7 +13,7 @@ import { Link } from "react-router-dom"
 const BecomeAMember = () => {
     return (
         <div>
-            <div className="lg:h-[min(calc(100vh-4rem),35rem)] h-[min(calc(100vh-4rem),15rem)] justify-center items-center  flex-col w-full justify-center- rounded-none flex md:items-center md:justify-center  antialiased bg-grid-white/[0.02] relative overflow-hidden !px-0">
+            <div className="lg:h-[min(calc(100vh-4rem),25rem)] h-[min(calc(100vh-4rem),15rem)] justify-center items-center  flex-col w-full justify-center- rounded-none flex md:items-center md:justify-center  antialiased bg-grid-white/[0.02] relative overflow-hidden !px-0">
                 <img src="https://loispiration.com/wp-content/uploads/2023/09/toghu-1776742398-e1693934791460.jpg" alt=""
                     className=" size-full object-cover absolute inset-0"
                 />

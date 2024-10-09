@@ -79,7 +79,7 @@ const ServiceCard = ({
                 variants={animateHeadingVariants}
                 transition={{
                     ...pageAnimationVariantsTransiton,
-                    delay: idx * 0.3
+                    delay: idx * 0.1
 
                 }}
                 className='  peer mx-auto w-full max-w-64 h-80'
@@ -129,7 +129,7 @@ const EventSection = () => {
 
             </VariantHeading>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center'>
-                    {contents.map((arr, idx) => <ServiceCard
+                    {[...contents,...contents].map((arr, idx) => <ServiceCard
                         hoveredIndex={hoveredIndex}
                         setHoveredIndex={setHoveredIndex}
                         key={idx}
@@ -138,6 +138,7 @@ const EventSection = () => {
 
                     />)}
                 </div>
+                <Button className='block mx-auto my-4 hover:bg-primary-color hover:text-white transition-colors duration-300 shadow rounded-none bg-transparent text-colorPrimary border w-[min(20rem,calc(100%-1rem))] border-colorPrimary'>Load More</Button>
 
             </div>
         </section>

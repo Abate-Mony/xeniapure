@@ -10,13 +10,15 @@ import 'swiper/css/pagination';
 import Heading, { VariantHeading } from '@/components/ui/heading';
 import { Separator } from '@/components/ui/separator';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import { FocusCard } from '@/components/ui/focus-card';
 
 const OurCulturalExample = () => {
 
     const cultural_images_object = [
 
         {
-            url: "/doris-pearl-and-freind.jpg",
+            url: "/group-image-01.jpg",
             description: "some descriptio"
         },
         {
@@ -55,7 +57,8 @@ const OurCulturalExample = () => {
             return '<span class="' + className + '">' + '</span>';
         }
     };
-    const SPEED = 500
+    const SPEED = 2500
+    const [hovered, setHovered] = useState<number | null>(null);
     return (
         <div className='py-6'>
             <Heading
@@ -70,8 +73,8 @@ const OurCulturalExample = () => {
             <VariantHeading className='text-center text-blue-950 py-6 gap-x-3 uppercase mb-6 flex items-center text-colorPrimary [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto '>
 
                 <span
-                    className='w-10  h-[1px] bg-primary-color/70 '
-                />  <span>             CULTURAL HERITAGE AND DIVERSITY
+                    className='w-10  h-[1px] bg-primary-color/70  uppercase'
+                />  <span>             Gallery / Media Section
                 </span>
                 <span
                     className='w-10  h-[1px] bg-primary-color '
@@ -102,9 +105,8 @@ const OurCulturalExample = () => {
                     }}
                     autoplay={{
                         delay: 1500,
-                        // pauseOnMouseEnter: true
-                        disableOnInteraction: false,
-                        reverseDirection: true
+                        pauseOnMouseEnter: true,
+                        disableOnInteraction: true,
                     }}
                     pagination={pagination}
                     navigation={{
@@ -131,10 +133,15 @@ const OurCulturalExample = () => {
                         cultural_images_object.map((obj, idx) => (<SwiperSlide
                             className='lg:h-[min(calc(100vh-4rem),30rem)] h-[min(calc(100vh-4rem),25rem)] justify-center items-center  flex-col w-full justify-center- rounded-none flex md:items-center md:justify-center  antialiased bg-grid-white/[0.02] relative overflow-hidden !px-0'
                             key={idx}>
-                            <img src={obj.url}
+                            {/* <img src={obj.url}
                                 className='size-full'
                                 alt={obj.description}
-                            />
+                            /> */}
+                            <FocusCard card={{
+                                src: obj.url,
+                                title: "this the description about this section !",
+                                text:"dsdfpreserving our rich Kom heritage and passing it down to future generations. Through various community-driven events such as traditional ceremonies, cultural festivals, and educational programs, we aim to keep our traditions alive and relevant in a modern context. Our network also places a strong emphasis on mentorship, fostering growth and development among younger members by connecting them with "
+                            }} key={idx} hovered={hovered} index={idx} setHovered={setHovered} />
                         </SwiperSlide>))
                     }
                 </Swiper>

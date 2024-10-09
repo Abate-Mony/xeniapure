@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 
 // NOTE: Change this date to whatever date you want to countdown to :)
-const COUNTDOWN_FROM = "2025-10-01";
+const COUNTDOWN_FROM = "2025-05-01";
 
 const SECOND = 1000;
 const MINUTE = SECOND * 60;

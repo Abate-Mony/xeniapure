@@ -20,7 +20,7 @@ export const heroBanner: iHeroBanner[] = [
             { text: "Laikom", className: "text-primary-color rotate-12 sm:text-4xl lg:text-5xl" }, // 4xl on small screens, 5xl on large
             { text: "palace.", className: "" }
         ],
-        description: "The Kom people have a rich cultural heritage, including traditional dances, festivals, and the sacred Laikom palace.",
+        description: "Woinkom UK is a community of individuals from Kom and those connected to Kom, coming together to celebrate and share our heritage, values, and culture.",
         image: "/group-image.jpg",
     },
 

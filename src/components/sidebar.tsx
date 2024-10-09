@@ -1,7 +1,7 @@
 import { AiFillTwitterCircle, AiOutlineClose } from 'react-icons/ai'
 import { BsFacebook, BsInstagram } from 'react-icons/bs'
 import { GrMailOption } from 'react-icons/gr'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { Button } from './ui/button'
 import { NavItemsLinks } from '@/constants/NavItems'
 import { motion } from "framer-motion"
@@ -100,17 +100,20 @@ border-b px-4 text-gray-700 hover:font-medium text-sm'
                                 </motion.li>))
 
                             }
-                            {/* <li>
+                            <li>
 
-                                <Button
+                               <Link to={"/become-a-member"}>
+                               <Button
+                               onClick={() => setIsOpen(false)}
                                     className="text-sm block w-[min(calc(100%-2rem),400px)] mx-auto py-4 rounded-full 
                     hover:text-primary-color
                     font-poppins font-normal  mt-6 md:py-3 hover:bg-white hover:border-primary-color border-[1px] h-auto bg-primary-color"
                                 >
-                                    Donate
+                                Are you  a Member ?
 
                                 </Button>
-                            </li> */}
+                               </Link>
+                            </li>
 
                             <li
                                 className='flex py-4 space-x-1 flex-wrap  my-5 place-items-center justify-center'

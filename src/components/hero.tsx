@@ -19,7 +19,7 @@ const Hero = () => {
         }
     };
     return (
-        <div className="h-[min(calc(100vh-4rem),40rem)] flex-col w-full justify-center- rounded-none flex md:items-center md:justify-center  antialiased bg-grid-white/[0.02] relative overflow-hidden !px-0">
+        <div className="h-[min(calc(100vh-4rem),40rem)] flex justify-center items-center flex-col w-full justify-center- rounded-none  md:items-center md:justify-center  antialiased bg-grid-white/[0.02] relative overflow-hidden !px-0">
             <Swiper
                 onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)} // Update current slide index
                 spaceBetween={30}
@@ -35,7 +35,7 @@ const Hero = () => {
                 {heroBanner.map((banner, idx) => {
                     return (
                         <SwiperSlide key={idx} className="!size-full relative">
-                            <div className="absolute inset-0 bg-black/65 z-10"></div>
+                            <div className="absolute inset-0 flex items-center justify-center bg-black/65 z-10"></div>
 
                             <motion.img
                                 key={idx * Math.random()} // Ensure unique key for motion component
@@ -47,7 +47,7 @@ const Hero = () => {
                                 src={banner.image}
                                 viewport={{ once: false }}
                             />
-                            <div className='max-w-6xl mx-auto py-3 pt-6 lg:pt-6 px-4 relative z-20'>
+                            <div className='max-w-6xl mx-auto size-full flex items-center- justify-center flex-col py-3 pt-6 lg:pt-6 px-4 relative z-20'>
                                 <VariantHeading key={currentSlide} className='relative break-words  !justify-start z-30 max-w-2xl text-white font-semibold text-3xl md:text-3xl lg:text-4xl font-poppins  capitalize leading-tight tracking-wide mb-6'>
                                     {
                                         banner.heading.map((itm, idx) => (
@@ -72,7 +72,17 @@ const Hero = () => {
 
                                     }              </p>
                                 <span className='mb-6 block' />
-                                <Link
+                               <div className='flex flex-wrap gap-x-2 gap-y-3'>
+                               <Link
+                                    to={"/become-a-member?rd_from=home"}
+                                >
+                                    <Button
+                                        className="text-sm bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full hover:text-primary-color font-semibold font-poppins px-10 py-3.5 md:py-3 hover:bg-white hover:border-primary-color border-[1px] h-auto bg-[#56d8d4]/65"
+                                    >
+                                        Join Us
+                                    </Button>
+                                </Link>
+                               <Link
                                     to={"/about-us?rd_from=home"}
                                 >
                                     <Button
@@ -81,6 +91,8 @@ const Hero = () => {
                                         Learn More
                                     </Button>
                                 </Link>
+
+                               </div>
                             </div>
                         </SwiperSlide>
                     );

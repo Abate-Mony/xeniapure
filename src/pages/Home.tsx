@@ -6,7 +6,8 @@ import EventSection from "@/sections/Events";
 import { FrequentAskQuestion } from "@/sections/FAQs";
 import OurVision from "@/sections/OurVision";
 import RequestService from "@/sections/RequestToJoin";
-import Stats from "@/sections/stats";
+import Testimonial from "@/sections/Testimonials";
+// import Stats from "@/sections/stats";
 
 const Home = () => {
     return (
@@ -16,16 +17,19 @@ const Home = () => {
             <Hero />
 
             {/* <div className="mb-4" /> */}
-          
-            <ShiftingCountdown/>
+
+            <ShiftingCountdown />
+            <EventSection />
+            <Testimonial />
+
             <OurVision />
-            <Stats />
-            <AboutUsComponent />
-            <RequestService/>
-            {/* <DisplayCulturalImage /> */}
+            <RequestService />
             <OurCulturalExample />
-            <FrequentAskQuestion/>
-            <EventSection/>
+
+            {/* <Stats /> */}
+            <AboutUsComponent />
+            {/* <DisplayCulturalImage /> */}
+            <FrequentAskQuestion />
         </div>
     )
 }

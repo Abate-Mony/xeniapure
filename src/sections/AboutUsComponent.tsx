@@ -1,4 +1,4 @@
-import { AnimatedSlideText } from "@/components/Animated/animated"
+// import { AnimatedSlideText } from "@/components/Animated/animated"
 import { Button } from "@/components/ui/button"
 import Heading, { VariantHeading } from "@/components/ui/heading"
 import { motion } from "framer-motion"
@@ -10,7 +10,7 @@ const AboutUsComponent = () => {
         >
             <Heading
                 className='text-center text-blue-800 font-black text-3xl max-w-fit mx-auto'>
-                history
+                about us
 
             </Heading>
             <VariantHeading className='text-center text-blue-950 py-6 gap-x-3 uppercase mb-6 flex items-center text-colorPrimary [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto '>
@@ -45,55 +45,25 @@ const AboutUsComponent = () => {
                 <div className='flex flex-col lg:col-span-7  space-y-4 px-2 pb-9 relative z-20 bg-white'>
 
 
-                    <AnimatedSlideText text='The Fon ' inView className='text-2xl sm:text-3xl lg:text-4xl font-black uppercase text-start text-blue-800'>
+                    {/* <AnimatedSlideText text='The Fon ' inView className='text-2xl sm:text-3xl lg:text-4xl font-black uppercase text-start text-blue-800'>
 
-                    </AnimatedSlideText>
-                    <p className="tracking-wide leading-8 pl-1
+                    </AnimatedSlideText> */}
+                    <p className="tracking-wide leading-relaxed pl-1
                     ">
-                        The Kom tradition is deeply rooted in the reverence of the Fon, the ruler and spiritual leader of the Kom people, and the veneration of ancestral customs. The Fon holds a dual role in the community, not only as the political head but also as a spiritual intermediary between the people and their ancestors. This connection to the ancestors plays a crucial role in Kom society, where rituals, ceremonies, and communal gatherings are often organized to honor the spirits of those who came before.                    </p>
-                    <Button className='btn max-w-fit'>
+                        Woinkom UK is a vibrant and active network of Kom people residing in the UK, deeply rooted in shared cultural values and traditions. We are united by a collective commitment to preserving our rich Kom heritage and passing it down to future generations. Through various community-driven events such as traditional ceremonies, cultural festivals, and educational programs, we aim to keep our traditions alive and relevant in a modern context.
+Our network also places a strong emphasis on mentorship, fostering growth and development among younger members by connecting them with experienced Kom professionals across different sectors. We believe in creating a supportive environment where each member can thrive while staying connected to their roots. Beyond cultural preservation, Woinkom UK serves as a vital support system for its members, offering assistance in times of need, celebrating achievements, and building a sense of belonging among the diaspora.
+Through our activities, we hope to maintain a strong connection between the Kom people in the UK and our homeland, ensuring that our customs, language, and stories are cherished and passed on.
+                                                      </p>
+                 <Link to={"/about-us"}>
+                 <Button className='btn max-w-fit'>
                         Read More
                     </Button>
-                 
+                 </Link>
+
                 </div>
 
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-2 px-4 items-start  max-w-7xl mx-auto' >
-                <div className='sticky top-[4rem]  lg:order-last'>
-                    <motion.img
-                        initial={
-                            {
-                                opacity: 0,
-                                y: 50
-                            }
-                        }
-                        whileInView={{
-                            opacity: 1,
-                            y: 0,
-                            transition: { duration: 1 }
-                        }}
-                        src={"https://loispiration.com/wp-content/uploads/2023/09/toghu-1776742398-e1693934791460.jpg"}
-                        className='w-full h-[20rem]  lg:h-[29rem]  rounded-sm'
-                        alt="" />
-                </div>
-                <div className='flex flex-col  space-y-4 px-2 pb-9 relative z-20 bg-white'>
 
-
-                    <AnimatedSlideText text='The Kom tradition honors the Fon and ancestral customs.' inView className='text-2xl sm:text-3xl lg:text-4xl font-black uppercase text-start'>
-
-                    </AnimatedSlideText>
-                    <p className="tracking-wide leading-8 pl-1
-                    ">
-                        The Kom tradition is deeply rooted in the reverence of the Fon, the ruler and spiritual leader of the Kom people, and the veneration of ancestral customs. The Fon holds a dual role in the community, not only as the political head but also as a spiritual intermediary between the people and their ancestors. This connection to the ancestors plays a crucial role in Kom society, where rituals, ceremonies, and communal gatherings are often organized to honor the spirits of those who came before.                    </p>
-                   <Link to={"/about-us"}>
-                   <Button className='btn max-w-fit'>
-                        Read More
-                    </Button>
-                   </Link>
-                  
-                </div>
-
-            </div>
 
         </div>
     )

@@ -2,6 +2,7 @@ import { NavItemsLinks } from "@/constants/NavItems"
 import { Menu, X } from "lucide-react"
 import { Link } from "react-router-dom"
 import { AnimatedLinks } from "./ui/links"
+import { Button } from "./ui/button"
 
 const NavBar = ({ isOpen, setIsOpen }: {
     isOpen: boolean,
@@ -69,14 +70,17 @@ const NavBar = ({ isOpen, setIsOpen }: {
                     }
                 </div>
                 <div className="flex items-center justify-center space-x-2">
-                    {/* <Button
-                        className="text-sm rounded-full hidden md:hidden
+                   <Link to={"/become-a-member"}>
+                   <Button
+                        className="text-sm rounded-full hidden lg:block
                     hover:text-primary-color
-                    font-poppins font-normal py-2.5 md:py-3 hover:bg-white hover:border-primary-color border-[1px] h-auto bg-primary-color"
+                    bg-gradient-to-r from-cyan-500 to-blue-500
+                    font-poppins font-normal py-2.5 md:py-2.5 hover:bg-white hover:border-primary-color border-[1px] h-auto bg-primary-color"
                     >
-                        Donate
+                        Join Us
 
-                    </Button> */}
+                    </Button>
+                   </Link>
                     {
                         !isOpen ? <Menu size={30}
                             onClick={() => {

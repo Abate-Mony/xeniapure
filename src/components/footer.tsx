@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 // import { Logo } from '../assets/images'
-import { cn } from '../lib/utils'
+import { cn } from '../lib/utils';
 // import Heading from './Heading'
-import { motion } from 'framer-motion'
-import Heading from './ui/heading'
+import { motion } from 'framer-motion';
+import Heading from './ui/heading';
 
 // Define types for footer items
 type FooterLink = {
@@ -152,9 +152,10 @@ const Footer = ({ className }: { className?: string }) => {
             ">
 
                 <div className='lg:grid grid-cols-12 lg:flex-row '>
-                    <Heading className='flex-none relative  text-3xl font-black mb-6  col-span-3'>
+                    <div className='flex-none relative  text-3xl font-black mb-6  col-span-3'>
+                        {/* <RegistrationJoinUs/> */}
                         <img src={"https://i0.wp.com/umuigbounite.com/wp-content/uploads/2024/02/cropped-uiu-dark-1.png?fit=200%2C174&ssl=1"} className='h-16 relative z-10' />
-                    </Heading>
+                    </div>
                     <div className='flex-1 grid col-span-9 gap-y-6
                     grid-cols-[repeat(auto-fit,minmax(min(10rem,calc(100%-60px)),_1fr))]'>
                         {
