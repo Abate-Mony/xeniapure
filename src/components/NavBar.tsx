@@ -9,7 +9,7 @@ const NavBar = ({ isOpen, setIsOpen }: {
     setIsOpen: any
 }) => {
     return (
-        <div className="bg-white/50 shadow-sm shadow-slate-50 z-50 justify-center  sticky left-0 top-0 w-full 
+        <div className="bg-white/90 shadow-sm shadow-slate-50 z-50 justify-center  sticky left-0 top-0 w-full 
     flex items-center backdrop-blur px-2 sm:px-6  rounded-none 
     ">
 
@@ -77,7 +77,7 @@ const NavBar = ({ isOpen, setIsOpen }: {
                     bg-gradient-to-r from-cyan-500 to-blue-500
                     font-poppins font-normal py-2.5 md:py-2.5 hover:bg-white hover:border-primary-color border-[1px] h-auto bg-primary-color"
                     >
-                        Join Us
+                Become a Member
 
                     </Button>
                    </Link>

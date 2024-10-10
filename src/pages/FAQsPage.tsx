@@ -1,14 +1,5 @@
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
 import { VariantHeading } from "@/components/ui/heading"
 import { FrequentAskQuestion } from "@/sections/FAQs"
-import { Link } from "react-router-dom"
 const FAQsPage = () => {
     return (
         <div>
@@ -33,7 +24,7 @@ const FAQsPage = () => {
             </div>
             <div className="max-w-5xl mx-auto  py-10 px-4">
 
-                <Breadcrumb>
+                {/* <Breadcrumb>
                     <BreadcrumbList>
                         <BreadcrumbItem>
                             <BreadcrumbLink>
@@ -51,9 +42,9 @@ const FAQsPage = () => {
                             <BreadcrumbPage>FAQs</BreadcrumbPage>
                         </BreadcrumbItem>
                     </BreadcrumbList>
-                </Breadcrumb>
+                </Breadcrumb> */}
                 {/* end here */}
-                <VariantHeading className='text-center py-6 gap-x-3 uppercase mb-6 flex items-center text-colorPrimary [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto'>
+                {/* <VariantHeading className='text-center py-6 gap-x-3 uppercase mb-6 flex items-center text-colorPrimary [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto'>
 
                     <span
                         className='w-10  h-[1px] bg-primary-color/70 '
@@ -62,7 +53,7 @@ const FAQsPage = () => {
                         className='w-10  h-[1px] bg-primary-color '
                     />
 
-                </VariantHeading>
+                </VariantHeading> */}
                 <FrequentAskQuestion />
 
             </div>

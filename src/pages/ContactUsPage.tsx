@@ -1,18 +1,9 @@
 import { VariantHeading } from "@/components/ui/heading"
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
-import { Label } from "@/components/ui/label"
-import { Mail, User } from "lucide-react"
 import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { motion } from "framer-motion"
+import { Mail, User } from "lucide-react"
 
 const ContactUsPage = () => {
     return (
@@ -34,7 +25,7 @@ const ContactUsPage = () => {
             {/* Breadcrumb */}
             <div className="bg-gray-50 py-4">
                 <div className="max-w-5xl mx-auto px-4">
-                    <Breadcrumb>
+                    {/* <Breadcrumb>
                         <BreadcrumbList className="flex gap-2">
                             <BreadcrumbItem>
                                 <BreadcrumbLink  >
@@ -52,7 +43,7 @@ const ContactUsPage = () => {
                                 <BreadcrumbPage>Contact Us</BreadcrumbPage>
                             </BreadcrumbItem>
                         </BreadcrumbList>
-                    </Breadcrumb>
+                    </Breadcrumb> */}
                 </div>
             </div>
 
@@ -163,7 +154,7 @@ const ContactUsPage = () => {
                 tabIndex={0}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.6 }}
+                transition={{ duration: 0.1, delay: 0.6 }}
             ></motion.iframe>
         </div>
     )

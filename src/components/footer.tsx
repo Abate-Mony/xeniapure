@@ -25,48 +25,48 @@ type FooterSection = {
 
 // Type-safe constant array of footer sections
 const footerSections: FooterSection[] = [
-    {
-        section: "About Kom",
-        links: [
-            {
-                text: "Our History",
-                url: "/about/history"
-            },
-            {
-                text: "Cultural Heritage",
-                url: "/about/heritage"
-            },
-            {
-                text: "The Fon's Palace",
-                url: "/about/fons-palace"
-            },
-            {
-                text: "Traditional Leadership",
-                url: "/about/leadership"
-            }
-        ]
-    },
-    {
-        section: "Events & Services",
-        links: [
-            {
-                text: "Cultural Festivals",
-                url: "/events/festivals"
-            },
-            {
-                text: "Kom Meetings",
-                url: "/events/meetings"
-            },
-            {
-                text: "Traditional Ceremonies",
-                url: "/events/ceremonies"
-            },
-            {
-                text: "Community Projects",
-                url: "/events/community-projects"
-            }
-        ]
-    },
+    // {
+    //     section: "About Kom",
+    //     links: [
+    //         {
+    //             text: "Our History",
+    //             url: "/about/history"
+    //         },
+    //         {
+    //             text: "Cultural Heritage",
+    //             url: "/about/heritage"
+    //         },
+    //         {
+    //             text: "The Fon's Palace",
+    //             url: "/about/fons-palace"
+    //         },
+    //         {
+    //             text: "Traditional Leadership",
+    //             url: "/about/leadership"
+    //         }
+    //     ]
+    // },
+    // {
+    //     section: "Events & Services",
+    //     links: [
+    //         {
+    //             text: "Cultural Festivals",
+    //             url: "/events/festivals"
+    //         },
+    //         {
+    //             text: "Kom Meetings",
+    //             url: "/events/meetings"
+    //         },
+    //         {
+    //             text: "Traditional Ceremonies",
+    //             url: "/events/ceremonies"
+    //         },
+    //         {
+    //             text: "Community Projects",
+    //             url: "/events/community-projects"
+    //         }
+    //     ]
+    // },
     {
         section: "Quick Links",
         links: [
@@ -74,14 +74,14 @@ const footerSections: FooterSection[] = [
                 text: "Become a Member",
                 url: "/become-a-member"
             },
-            {
-                text: "Donate to Kom",
-                url: "/donate"
-            },
-            {
-                text: "Support Our Work",
-                url: "/support"
-            },
+            // {
+            //     text: "Donate to Kom",
+            //     url: "/donate"
+            // },
+            // {
+            //     text: "Support Our Work",
+            //     url: "/support"
+            // },
             {
                 text: "FAQs",
                 url: "/faqs"
@@ -91,17 +91,17 @@ const footerSections: FooterSection[] = [
     {
         section: "Contact Us",
         details: [
-            {
-                type: "address",
-                text: "Kom Cultural Center, Main Street, Kom, Cameroon"
-            },
+            // {
+            //     type: "address",
+            //     text: "Kom Cultural Center, Main Street, Kom, Cameroon"
+            // },
             {
                 type: "phone",
-                text: "+237 (123) 456-789"
+                text: "tel: +237 (123) 456-789"
             },
             {
                 type: "email",
-                text: "support@komculture.com"
+                text: "email: support@komculture.com"
             }
         ]
     },
@@ -113,16 +113,16 @@ const footerSections: FooterSection[] = [
                 url: "https://www.facebook.com/komculture",
                 icon: "facebook-icon"
             },
-            {
-                text: "Twitter",
-                url: "https://www.twitter.com/komculture",
-                icon: "twitter-icon"
-            },
-            {
-                text: "LinkedIn",
-                url: "https://www.linkedin.com/company/komculture",
-                icon: "linkedin-icon"
-            },
+            // {
+            //     text: "Twitter",
+            //     url: "https://www.twitter.com/komculture",
+            //     icon: "twitter-icon"
+            // },
+            // {
+            //     text: "LinkedIn",
+            //     url: "https://www.linkedin.com/company/komculture",
+            //     icon: "linkedin-icon"
+            // },
             {
                 text: "Instagram",
                 url: "https://www.instagram.com/komculture",
@@ -154,7 +154,7 @@ const Footer = ({ className }: { className?: string }) => {
                 <div className='lg:grid grid-cols-12 lg:flex-row '>
                     <div className='flex-none relative  text-3xl font-black mb-6  col-span-3'>
                         {/* <RegistrationJoinUs/> */}
-                        <img src={"https://i0.wp.com/umuigbounite.com/wp-content/uploads/2024/02/cropped-uiu-dark-1.png?fit=200%2C174&ssl=1"} className='h-16 relative z-10' />
+                        <img src={"/main-logo.png"} className='h-16 relative z-10' />
                     </div>
                     <div className='flex-1 grid col-span-9 gap-y-6
                     grid-cols-[repeat(auto-fit,minmax(min(10rem,calc(100%-60px)),_1fr))]'>

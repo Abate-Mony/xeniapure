@@ -1,14 +1,5 @@
 import { VariantHeading } from '@/components/ui/heading'
 import UpComingEvent from '@/sections/UpComingEvent'
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Link } from 'react-router-dom'
 const Events = () => {
     return (
         <div>
@@ -33,26 +24,8 @@ const Events = () => {
             </div>
             <div className='max-w-5xl mx-auto'>
                 <span className='block mb-5' />
-                <Breadcrumb>
-                    <BreadcrumbList>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink>
-                                <Link to={"/"}>Home</Link>
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <BreadcrumbLink>
-                                <Link to={""}>Support</Link>
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <BreadcrumbPage>Events</BreadcrumbPage>
-                        </BreadcrumbItem>
-                    </BreadcrumbList>
-                </Breadcrumb>
-                <VariantHeading className='text-center py-6 gap-x-3 uppercase mb-6 flex items-center text-colorPrimary [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto text-blue-950'>
+           
+                {/* <VariantHeading className='text-center py-6 gap-x-3 uppercase mb-6 flex items-center text-colorPrimary [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto text-blue-950'>
 
                     <span
                         className='w-10  h-[1px] bg-primary-color/70 '
@@ -61,7 +34,7 @@ const Events = () => {
                         className='w-10  h-[1px] bg-primary-color '
                     />
 
-                </VariantHeading>
+                </VariantHeading> */}
                 <UpComingEvent />
             </div>
         </div>

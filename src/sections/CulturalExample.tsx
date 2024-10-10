@@ -12,6 +12,7 @@ import { Separator } from '@/components/ui/separator';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { FocusCard } from '@/components/ui/focus-card';
+import { Link } from 'react-router-dom';
 
 const OurCulturalExample = () => {
 
@@ -153,8 +154,10 @@ const OurCulturalExample = () => {
             </div>
             {/* swipers ends here  */}
 
-            <Button className='block mx-auto my-10 hover:bg-colorPrimary hover:text-white transition-colors duration-300 shadow rounded-none bg-transparent text-colorPrimary border w-[min(20rem,calc(100%-1rem))] border-colorPrimary'>Load More</Button>
+<Link to="/gallery">
+<Button className='block mx-auto my-10 hover:bg-colorPrimary hover:text-white transition-colors duration-300 shadow rounded-none bg-transparent text-colorPrimary border w-[min(20rem,calc(100%-1rem))] border-colorPrimary'>Load More</Button>
 
+</Link>
         </div>
     )
 }

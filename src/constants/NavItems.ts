@@ -35,11 +35,11 @@ export const NavItemsLinks: INavItemsLinks[] = [
         link: "/events",
         icon: LogInIcon,
     },
-    {
-        name: "Become a Member",
-        link: "/become-a-member",
-        icon: LogInIcon,
-    },
+    // {
+    //     name: "Become a Member",
+    //     link: "/become-a-member",
+    //     icon: LogInIcon,
+    // },
     {
         name: "FAQs",
         link: "/faqs",

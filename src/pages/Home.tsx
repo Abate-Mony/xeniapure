@@ -3,7 +3,7 @@ import Hero from "@/components/hero";
 import AboutUsComponent from "@/sections/AboutUsComponent";
 import OurCulturalExample from "@/sections/CulturalExample";
 import EventSection from "@/sections/Events";
-import { FrequentAskQuestion } from "@/sections/FAQs";
+// import { FrequentAskQuestion } from "@/sections/FAQs";
 import OurVision from "@/sections/OurVision";
 import RequestService from "@/sections/RequestToJoin";
 import Testimonial from "@/sections/Testimonials";
@@ -19,6 +19,8 @@ const Home = () => {
             {/* <div className="mb-4" /> */}
 
             <ShiftingCountdown />
+            <AboutUsComponent />
+
             <EventSection />
             <Testimonial />
 
@@ -27,9 +29,8 @@ const Home = () => {
             <OurCulturalExample />
 
             {/* <Stats /> */}
-            <AboutUsComponent />
             {/* <DisplayCulturalImage /> */}
-            <FrequentAskQuestion />
+            {/* <FrequentAskQuestion /> */}
         </div>
     )
 }

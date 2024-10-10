@@ -1,5 +1,32 @@
 import { iHeroBanner } from "@/types"
-export const heroBanner: iHeroBanner[] = [
+export const heroBanner: iHeroBanner[] = [ {
+    heading: [
+        { text: "The", className: "" },
+        { text: "Kom", className: "text-primary-color sm:text-4xl lg:text-5xl" }, // 4xl on small screens, 5xl on large
+        { text: "people", className: "" },
+        { text: "celebrate", className: "" },
+        { text: "their", className: "" },
+        { text: "heritage", className: "" },
+        { text: "through", className: "" },
+        { text: "colorful", className: "" },
+        { text: "traditional", className: "" },
+        { text: "dances", className: "text-primary-color sm:text-4xl lg:text-5xl" }, // 4xl on small screens, 5xl on large
+        { text: "and", className: "" },
+        { text: "music.", className: "" },
+        { text: "These", className: "" },
+        { text: "cultural", className: "" },
+        { text: "expressions", className: "" },
+        { text: "are", className: "" },
+        { text: "a", className: "" },
+        { text: "way", className: "" },
+        { text: "to", className: "" },
+        { text: "honor", className: "" },
+        { text: "their", className: "" },
+        { text: "ancestors.", className: "" }
+    ],
+    description: "Through vibrant dances and music, the Kom people express their cultural identity and honor their ancestors, reinforcing community bonds.",
+    image: "/statue.jpg",
+},
 
     {
         heading: [
@@ -53,33 +80,6 @@ export const heroBanner: iHeroBanner[] = [
         image: "/group-image-01.jpg",
     },
 
-    {
-        heading: [
-            { text: "The", className: "" },
-            { text: "Kom", className: "text-primary-color sm:text-4xl lg:text-5xl" }, // 4xl on small screens, 5xl on large
-            { text: "people", className: "" },
-            { text: "celebrate", className: "" },
-            { text: "their", className: "" },
-            { text: "heritage", className: "" },
-            { text: "through", className: "" },
-            { text: "colorful", className: "" },
-            { text: "traditional", className: "" },
-            { text: "dances", className: "text-primary-color sm:text-4xl lg:text-5xl" }, // 4xl on small screens, 5xl on large
-            { text: "and", className: "" },
-            { text: "music.", className: "" },
-            { text: "These", className: "" },
-            { text: "cultural", className: "" },
-            { text: "expressions", className: "" },
-            { text: "are", className: "" },
-            { text: "a", className: "" },
-            { text: "way", className: "" },
-            { text: "to", className: "" },
-            { text: "honor", className: "" },
-            { text: "their", className: "" },
-            { text: "ancestors.", className: "" }
-        ],
-        description: "Through vibrant dances and music, the Kom people express their cultural identity and honor their ancestors, reinforcing community bonds.",
-        image: "https://africancultureconnection.org/wp-content/uploads/2024/10/slide-1a-mobile-1.webp",
-    }
+   
 
 ]

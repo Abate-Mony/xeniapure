@@ -80,9 +80,7 @@ const ProcessBecomeAMember = () => {
             <div>
 
                 <div className='sticky-- top-4rem-- max-w-5xl mx-auto'>
-                    <Heading className='text-2xl mb-4 font-black uppercase text-center lg:text-start text-blue-800 '>
-                    we follow some steps to ensure you send your document correctly
-                    </Heading>
+                
             
              
                 </div>

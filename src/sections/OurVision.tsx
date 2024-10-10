@@ -6,7 +6,7 @@ import { Button } from '../components/ui/button'
 import { useMediaQuery } from 'react-responsive'
 // import { BlackKeyBoard, CartoonKeyBoard, ManTyping, WomanTyping } from '../assets/images'
 import Heading, { VariantHeading } from '@/components/ui/heading'
-import { AnimatedSlideText } from '../components/Animated/animated'
+// import { AnimatedSlideText } from '../components/Animated/animated'
 import { Badge } from '@/components/ui/badge'
 export const contents = [
     {
@@ -127,12 +127,12 @@ const ServiceCard = ({
            
         </div>
 
-        <Button
+        {/* <Button
             onClick={() => {
                 setSelectedId(content)
             }}
             className='block mx-auto relative z-50 my-4 hover:bg-colorPrimary hover:text-white transition-colors duration-300 shadow rounded-none bg-transparent text-colorPrimary border w-[min(20rem,calc(100%-1rem))] border-colorPrimary'>Read More</Button>
-
+ */}
 
     </motion.div>)
 }
@@ -155,7 +155,7 @@ const OurVision = () => {
         >
             <div className="max-w-7xl mx-auto px-4">
             <Heading className='text-center text-blue-800 font-black text-3xl max-w-fit mx-auto'>
-                    Testimonials
+                  who are we
 
                 </Heading>
                 <VariantHeading className='text-center text-blue-950 py-6 gap-x-3 uppercase mb-6 flex items-center text-colorPrimary [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto '>
@@ -169,11 +169,11 @@ const OurVision = () => {
                     />
 
                 </VariantHeading>
-                <AnimatedSlideText inView
+                {/* <AnimatedSlideText inView
                     text="Your one Stop Printing solution - Explore our services"
                     className='text-center text-blue-950 font-black mb-6 text-xl lg:text-2xl max-w-3xl mx-auto '>
 
-                </AnimatedSlideText>
+                </AnimatedSlideText> */}
                 {/* {JSON.stringify(selectedId)} */}
                 <AnimatePresence>
                     {selectedId && (
@@ -227,7 +227,7 @@ const OurVision = () => {
 
                     )}
                 </AnimatePresence>
-                <div className='grid grid-cols-1- items-start grid-cols-[repeat(auto-fit,minmax(min(18rem,calc(100%-60px)),_1fr))] justify-items-center justify-center  gap-x-2 gap-y-4 sm:grid-cols-2- lg:grid-cols-4- '>
+                <div className='grid grid-cols-1- items-start- grid-cols-[repeat(auto-fit,minmax(min(18rem,calc(100%-60px)),_1fr))] justify-items-center justify-center  gap-x-2 gap-y-4 sm:grid-cols-2- lg:grid-cols-4- '>
                     {contents.map((arr, idx) => <ServiceCard
                         hoveredIndex={hoveredIndex}
                         setHoveredIndex={setHoveredIndex}
@@ -239,7 +239,7 @@ const OurVision = () => {
 
                     />)}
                 </div>
-                <Button className='block mx-auto my-4 hover:bg-colorPrimary hover:text-white transition-colors duration-300 shadow rounded-none bg-transparent text-colorPrimary border w-[min(20rem,calc(100%-1rem))] border-colorPrimary'>Load More</Button>
+                <Button className='block- hidden mx-auto my-4 hover:bg-colorPrimary hover:text-white transition-colors duration-300 shadow rounded-none bg-transparent text-colorPrimary border w-[min(20rem,calc(100%-1rem))] border-colorPrimary'>Load More</Button>
             </div>
         </section>
     )

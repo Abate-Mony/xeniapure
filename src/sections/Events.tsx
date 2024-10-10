@@ -50,7 +50,7 @@ const ServiceCard = ({
         viewport={{ amount: 0.8 }}
 
 
-        className='flex flex-col space-y-6 px-4 py-4 relative my-4b group'>
+        className='flex flex-col space-y-6 px-4 py-4 bg-blue-950/95 relative my-4b group border '>
         <AnimatePresence>
             {hoveredIndex === idx && (
                 <motion.span
@@ -71,7 +71,7 @@ const ServiceCard = ({
                 />
             )}
         </AnimatePresence>
-        <div className=' relative pt-10'>
+        <div className=' relative pt-10-'>
 
             <motion.img
                 initial="initial"
@@ -82,27 +82,27 @@ const ServiceCard = ({
                     delay: idx * 0.1
 
                 }}
-                className='  peer mx-auto w-full max-w-64 h-80'
+                className='  peer mx-auto w-full max-w-64 h-80 hidden'
                 src={Icon}
             />
-            <span
+            {/* <span
                 className='bg-yellow-400/15 h-16 w-12 left-0 hover:left-5
         peer-hover:left-5
         transtion-all duration-300 
         top-0 block z-30 absolute'
-            />
+            /> */}
         </div>
-        <Heading className='font-medium text-lg lg:text-xl text-center sm:text-start'>
+        <Heading className='font-medium text-blue-200 text-lg font-Marcellus+SC lg:text-xl text-center sm:text-start'>
             {title}
         </Heading>
         <div >
-            <p className='tracking-tighter leading-relaxed text-sm text-muted-foreground '> {description}</p>
+            <p className='tracking-tighter text-black- leading-relaxed text-lg lg:text-[1.1rem] text-muted-foreground- text-white '> {description}</p>
         </div>
         <Link to="#"
             className='group-hover:translate-x-[2rem] transition-all duration-1000'
         >
             <Button variant="link"
-                className='text-lg hidden- font-poppins  btn rounded-none relative z-30 font-bold hover:text-orange-500'
+                className='text-lg hidden- font-poppins text-muted-foreground btn- rounded-none relative z-30 font-bold hover:text-orange-500'
             >
                 Read More <ArrowRight size={20}/>
             </Button>
@@ -116,7 +116,12 @@ const EventSection = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
     return (
         <section className='bg-green-50 py-32'>
+
             <div className="max-w-6xl mx-auto">
+            <Heading className='text-center text-blue-800 font-black text-3xl max-w-fit mx-auto'>
+            Upcoming Events / Annual Meetings
+
+                </Heading>
             <VariantHeading className='text-center text-blue-950 py-6 gap-x-3 uppercase mb-6 flex items-center text-colorPrimary [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto '>
 
                 <span
@@ -128,8 +133,8 @@ const EventSection = () => {
                 />
 
             </VariantHeading>
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center'>
-                    {[...contents,...contents].map((arr, idx) => <ServiceCard
+                <div className='grid grid-cols-1 sm:grid-cols-2 px-2 gap-x-1 gap-y-2 rounded-sm lg:grid-cols-4 items-center'>
+                    {[...contents].map((arr, idx) => <ServiceCard
                         hoveredIndex={hoveredIndex}
                         setHoveredIndex={setHoveredIndex}
                         key={idx}

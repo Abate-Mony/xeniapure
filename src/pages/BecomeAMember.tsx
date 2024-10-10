@@ -68,9 +68,7 @@ const BecomeAMember = () => {
                 <p className="mb-4">
                     From just £10/ month become a friend of The Africa Centre. Your support will contribute to ensuring that the charity meets its continued mission to educate about, connect to and advocate for Africa and its diaspora.
                 </p>
-                <p>
-                    From just £10/ month become a friend of The Africa Centre. Your support will contribute to ensuring that the charity meets its continued mission to educate about, connect to and advocate for Africa and its diaspora.
-                </p>
+            
             </div>
             <ProcessBecomeAMember />
 

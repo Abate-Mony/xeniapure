@@ -74,8 +74,8 @@ const SingleTestimonial = ({ name, review, starCount }: Review) => {
             >{review}
                 <div className="arrow"></div>
             </blockquote>
-            <div className='size-16 bg-yellow-300 rounded-full relative -z-[1] overflow-hidden !px-0'>
-                <img src="https://www.africacentre.org.uk/images/757cef11-eeb1-4a5c-98c5-bdac96e639d8/cropped?width=600&height=338" alt="" className='size-full object-cover' />
+            <div className='size-16 rounded-full relative -z-[1] overflow-hidden !px-0'>
+                {/* <img src="https://www.africacentre.org.uk/images/757cef11-eeb1-4a5c-98c5-bdac96e639d8/cropped?width=600&height=338" alt="" className='size-full object-cover' /> */}
 
             </div>
             <div className="author">
@@ -190,7 +190,7 @@ const Testimonial = () => {
 
                     </SwiperSlide>)}
                 </Swiper>
-                <div className="custom-pagination-testimonial space-x-2.5 min-h-10- mt-4 flex justify-center"></div>
+                <div className="custom-pagination-testimonial mb-3 space-x-2.5 min-h-10- mt-4 flex justify-center"></div>
 
                 {/* modal starts here */}
                 {

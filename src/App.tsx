@@ -15,6 +15,7 @@ import RegistrationJoinUs from './pages/RegistrationJoinUs';
 import PreviewJoinUsUser from './pages/PreviewJoinUsUser';
 import NotFoundPage from './pages/NotFoundPage';
 import FAQsPage from './pages/FAQsPage';
+import GalleryPage from './pages/GalleryPage';
 function App() {
   const router = createBrowserRouter([
 
@@ -45,6 +46,10 @@ function App() {
         {
           path: "convention",
           element: <Convention />
+        },
+        {
+          path: "gallery",
+          element: <GalleryPage />
         },
         {
           path: "faqs",

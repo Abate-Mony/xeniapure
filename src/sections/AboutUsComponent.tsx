@@ -6,7 +6,12 @@ import { Link } from "react-router-dom"
 const AboutUsComponent = () => {
     return (
         <div
-            className='bg-white py-20 space-y-4'
+            className='bg-white py-20 space-y-4 bg-no-repeat bg-cover'
+            style={{
+                backgroundImage: "url(/statsbg.svg)"
+                ,
+                // clipPath: "polygon(19% 0, 99% 0, 100% 68%, 89% 100%, 1% 99%, 0 20%)"
+            }}
         >
             <Heading
                 className='text-center text-blue-800 font-black text-3xl max-w-fit mx-auto'>
@@ -25,7 +30,7 @@ const AboutUsComponent = () => {
 
             </VariantHeading>
             <div className='grid grid-cols-1 lg:grid-cols-12 px-4 items-start  max-w-7xl mx-auto' >
-                <div className='sticky top-[4rem] lg:col-span-5'>
+                <div className='sticky top-[4rem] lg:block hidden lg:col-span-6'>
                     <motion.img
                         initial={
                             {
@@ -38,11 +43,11 @@ const AboutUsComponent = () => {
                             y: 0,
                             transition: { duration: 1 }
                         }}
-                        src={"/fon-01.jpg"}
+                        src={"/statue.jpg"}
                         className='w-full h-[20rem]  lg:h-[29rem] rounded-sm'
                         alt="" />
                 </div>
-                <div className='flex flex-col lg:col-span-7  space-y-4 px-2 pb-9 relative z-20 bg-white'>
+                <div className='flex flex-col lg:col-span-6  space-y-4 px-2 pb-9 relative z-20 bg-white-'>
 
 
                     {/* <AnimatedSlideText text='The Fon ' inView className='text-2xl sm:text-3xl lg:text-4xl font-black uppercase text-start text-blue-800'>
