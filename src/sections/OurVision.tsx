@@ -47,7 +47,7 @@ const ServiceCard = ({
     setHoveredIndex,
     hoveredIndex,
     idx, content,
-    setSelectedId
+    // setSelectedId
 }: iService) => {
     const isDesktop = useMediaQuery({ query: "(min-width: 768px)" })
 
