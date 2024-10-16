@@ -1,29 +1,13 @@
 /* eslint-disable padded-blocks */
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import {
-    ColumnDef
-  } from "@tanstack/react-table"
-  import React from "react"
+  ColumnDef
+} from "@tanstack/react-table"
   // import { MoreHorizontal } from "lucide-react"
-  import { ArrowUpDown, ChevronDown, MoreHorizontal, Trash2Icon } from "lucide-react"
-  import { Button } from "../components/ui/button.js"
-  import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger
-  } from "../components/ui/dropdown-menu.js"
-  import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-  } from "../components/ui/tooltip.js"
-import { userRegister } from "@/types.js"
-import { Badge } from "@/components/ui/badge.js"
+  import { userRegister } from "@/types.js"
+import { ArrowUpDown } from "lucide-react"
 import { Link } from "react-router-dom"
+import { Button } from "../components/ui/button.js"
   
 export const allUsersColumns: ColumnDef<userRegister>[] = [
 
