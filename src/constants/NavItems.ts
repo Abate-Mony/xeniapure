@@ -1,11 +1,7 @@
-import { LogInIcon, LucideIcon } from "lucide-react";
-import { IconType } from "react-icons";
+import { INavItemsLinks } from "@/types";
+import { LogInIcon } from "lucide-react";
 
-export interface INavItemsLinks {
-    name: string;
-    link: string;
-    icon: LucideIcon | IconType;
-}
+
 
 export const NavItemsLinks: INavItemsLinks[] = [
     {

@@ -1,5 +1,11 @@
+import { LucideIcon } from "lucide-react";
 import { Dispatch, SetStateAction } from "react";
-
+import { IconType } from "react-icons";
+export interface INavItemsLinks {
+    name: string;
+    link: string;
+    icon: LucideIcon | IconType;
+}
 export interface iHeroBanner {
     heading: {
         text: string;
@@ -9,12 +15,15 @@ export interface iHeroBanner {
     image?: string; // Optional property
 }
 export interface userRegister {
-    name: string;
+    role?: any;
+    firstName: string;
+    lastName: string;
     email: string;
     password: string;
     confirmPassword: string;
     // role?: userRole;
     phoneNumber: string;
+    userId?:string
   }
   export interface iJoinUsLayoutContext {
 

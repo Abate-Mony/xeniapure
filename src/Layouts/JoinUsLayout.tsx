@@ -25,12 +25,16 @@ const JoinUsLayout = () => {
                 page: "preview",
                 name: "Preview information"
             },
-            // {
-            //     page: "payment",
-            //     name: "Payment"
-            // },
             {
-                page: "invoice-download",
+                page: "verify-email",
+                name: "Verify Email"
+            },
+            {
+                page: "payment",
+                name: "Payment"
+            },
+            {
+                page: "download-invoice",
                 name: "Download Invoice"
             },
         ])

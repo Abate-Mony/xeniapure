@@ -78,10 +78,10 @@ const footerSections: FooterSection[] = [
             //     text: "Donate to Kom",
             //     url: "/donate"
             // },
-            // {
-            //     text: "Support Our Work",
-            //     url: "/support"
-            // },
+            {
+                text: "Dashboard",
+                url: "/dashboard"
+            },
             {
                 text: "FAQs",
                 url: "/faqs"

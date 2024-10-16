@@ -1,67 +1,114 @@
-import { Link, useSearchParams } from "react-router-dom"
+import { AnimateError } from "@/components/Animated/animated";
+import SubmitBtn from "@/components/buttons/SubmitBtn";
+import { Badge } from "@/components/ui/badge";
+import Heading from "@/components/ui/heading";
+import customFetch from "@/components/utils/customFetch";
+import useError from "@/utils/useError";
+import { QueryClient } from "@tanstack/react-query";
+import { isAxiosError } from "axios";
+import toast from "react-hot-toast";
+import { ActionFunctionArgs, Link, redirect, useActionData, useLoaderData, useLocation, useSearchParams, useSubmit } from "react-router-dom";
 import {
     Table,
     TableBody,
     TableCell,
     TableRow
-} from "../components/ui/table"
-import { Button } from "@/components/ui/button";
-import Heading from "@/components/ui/heading";
+} from "../components/ui/table";
+import { iLoginUser, iUser } from "./RegistrationJoinUs";
+
+// Action function to handle form submission
+export const action = (_queryClient: QueryClient) => async ({ request }: ActionFunctionArgs) => {
+    const formData = await request.formData();
+    const data = Object.fromEntries(formData) as unknown as iUser & { from?: string };
+    const from = data.from || null;
+
+    try {
+        // Attempt to send signup request
+        console.log(data)
+        await customFetch.post('/auth/signup', data);
+        toast.success('OTP send to your email address ');
+        return redirect(from || `/join-us/verify-email?email=${data.email}`);
+    } catch (err: any) {
+        if (isAxiosError(err)) {
+            const errMsg = err?.response?.data?.msg || err?.response?.data || "An error occurred";
+            if (err.status == 409) return redirect("/join-us/payment")
+            if (err.status == 401) return redirect(`/join-us/verify-email?email=${data.email}`)
+            toast.error(errMsg);
+            return errMsg
+        }
+        toast.error(err?.message || "Unexpected error occurred")
+        return err?.message || "Unexpected error occurred";
+    }
+};
+
 const PreviewJoinUsUser = () => {
     const [query] = useSearchParams();
-
-    let user: any = {
-        name: query.get("fullname") || "",
+    const submit = useSubmit();
+    const { state } = useLocation()
+    // Extract user details from query parameters
+    const user: Partial<iLoginUser> = {
+        firstName: query.get("firstName") || "",
+        lastName: query.get("lastName") || "",
         phoneNumber: query.get("phone") || "",
-        email: query.get("email") || ""
-    }
+        email: query.get("email") || "",
+        gender: query.get("gender") as "Male" | "Female" | "Other" | "Prefered not to say" || "Prefered not to say",
+        password: state?.password || "",
+        confirmPassword: state?.confirmPassword
+    };
 
+    // Handle form submission
+    const onSubmit = async () => {
+        const formData = new FormData();
+        Object.entries(user).forEach(([key, value]) => formData.append(key, value || ""));
+        submit(formData, { method: "post" });
+    };
+    const errorMessage = useActionData();
+
+    const errorMessageLoader = useLoaderData();
+
+    const errorMsg = useError([errorMessage,
+        errorMessageLoader],)
     return (
         <div>
-            <Heading className='text-3xl lg:text-4xl text-center font-medium mb-4 flex items-center justify-center text-colorPrimary font-pacifico my-3'>Please Check Your Information </Heading>
-            
-            <div className='max-w-sm mx-auto border-[1px] border-colorPrimary  rounded-md py-5 mb-6- shadow-sm mb-0'>
+            <Heading className="text-3xl lg:text-4xl text-center font-medium mb-4 text-colorPrimary font-pacifico my-3">
+                Please Check Your Information
+            </Heading>
+
+            <div className="max-w-sm mx-auto border-[1px] border-colorPrimary rounded-md py-5 shadow-sm">
                 <Table>
-
                     <TableBody>
-                        <TableRow >
-                            <TableCell className="font-bold ">Full Name</TableCell>
-                            <TableCell className="text-right text-gray-500">{user?.name}</TableCell>
-                        </TableRow>
-                        <TableRow >
-                            <TableCell className="font-bold ">Email Address</TableCell>
-                            <TableCell className="text-right text-gray-500">{user?.email}</TableCell>
-                        </TableRow>
-                        <TableRow >
-                            <TableCell className="font-bold ">Phone Number</TableCell>
-                            <TableCell className="text-right text-gray-500">{user?.phoneNumber}</TableCell>
-                        </TableRow>
-                        <TableRow >
-                            <TableCell className="font-bold ">Sex</TableCell>
-                            <TableCell className="text-right text-gray-500">Male</TableCell>
-                        </TableRow>
+                        {Object.entries(user).map(([key, value]) => {
+                            if (key.toLocaleLowerCase().includes("password")) return
+                            return (
+
+                                <TableRow key={key}>
+                                    <TableCell className="font-bold">{key.replace(/([A-Z])/g, ' $1')}</TableCell>
+                                    <TableCell className="text-right text-gray-500">
+                                        <Badge className="px-2.5 h-auto !bg-opacity-10">{value}</Badge>
+                                    </TableCell>
+                                </TableRow>
+                            )
+                        })}
                     </TableBody>
-
                 </Table>
-                <Link
-                    to=""
+                <AnimateError
+                    duration={0.3}
+                    error={errorMsg}
+                    errorMessage={errorMsg}
+                />
+                <SubmitBtn
+                    className="bg-gradient-to-br w-full h-12 mt-4 text-white font-medium"
+                    onClick={onSubmit}
                 >
-                    <Button
-                        className="bg-gradient-to-br rounded-none  group/btn w-[min(30rem,calc(100%-0.5rem))] bg-primary-color   shadow-primary-color mx-auto rounded-s, flex gap-x-2  top-auto h-12
-          disabled:bg-red-700
-          from-bg-primary-color dark:from-bg-primary-color dark:to-bg-primary-color to-bg-primary-color/60  dark:bg-bg-primary-color  text-white  font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-                        type="submit"
+                    Submit &rarr;
+                </SubmitBtn>
 
-                    >
-
-                        Submit  &rarr;
-
-                    </Button>
+                <Link to={`/join-us/verify-email?${query.toString()}`} className="block text-center mt-4">
+                    Go to Verify Email
                 </Link>
-
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default PreviewJoinUsUser
+export default PreviewJoinUsUser;

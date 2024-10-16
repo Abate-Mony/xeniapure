@@ -80,9 +80,9 @@ const ProcessBecomeAMember = () => {
             <div>
 
                 <div className='sticky-- top-4rem-- max-w-5xl mx-auto'>
-                
-            
-             
+
+
+
                 </div>
             </div>
             <motion.div className='grid grid-cols-1 relative ---h-[min(40rem,calc(100vh-4rem))] overflow-y-auto scrollto lg:grid-cols-12 max-w-5xl mx-auto px-4 items-start
@@ -148,15 +148,22 @@ const ProcessBecomeAMember = () => {
                 </div>
             </motion.div>
             <Link to="/join-us">
-            <Button
-                className="block sticky btn- bg-colorPrimary
+                <Button
+                    className="block sticky btn- bg-colorPrimary
             w-[min(420px,calc(100%-1rem))] px-0 bg-primary-color
-            mx-auto font-bold text-sm z-50 h-14 lg:ml-auto lg:mr-4
+            mx-auto font-bold text-sm z-[51] h-14 lg:ml-auto lg:mr-4 
             bottom-0 rounded-none   left-0 uppercase  text-center ">
-                Join Now <span className="size-6 ml-2 inline-flex justify-center items-center rounded-full ring-  place-items-center"><ArrowRight size={15} className='inline-block' /></span>
-            </Button>
+                    Join Now <span className="size-6 ml-2 inline-flex justify-center items-center rounded-full ring-  place-items-center"><ArrowRight size={15} className='inline-block' /></span>
+                </Button>
             </Link>
-            
+            <Link to="/login">
+                <Button className="block mt-2 sticky btn- bg-blue-950
+        w-[min(420px,calc(100%-1rem))] px-0 mx-auto font-bold text-sm z-50 h-14 
+        lg:ml-auto lg:mr-4 bottom-0 rounded-none left-0 uppercase text-center">
+                    Already have an account? Login
+                </Button>
+            </Link>
+
 
         </div>
     )
