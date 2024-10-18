@@ -94,8 +94,6 @@ const JoinUsLayout = () => {
 
                 </VariantHeading>
                 <Scrollable
-                    // refE={ref}
-
                     className='-mb-2 gap-x-1  scrollto sticky top-12 py-4 flex flex-nowrap overflow-x-auto   md:gap-x-2  z-[10] [--scroll-to-height:0px] max-w-fit px-4 mx-auto'
                     direction='row'
                 >

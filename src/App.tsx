@@ -28,6 +28,10 @@ import Login, { action as loginAction } from './pages/Login';
 import OPTPage, { action as verifyOptAction } from './pages/VerifyOtp';
 import Users, { loader as usersLoader } from './pages/UsersPage';
 import { ErrorElement } from './components/errorComponent';
+import axios from 'axios';
+
+axios.defaults.withCredentials = true;
+
 const queryClient = new QueryClient({
   defaultOptions: {
     // queries: {

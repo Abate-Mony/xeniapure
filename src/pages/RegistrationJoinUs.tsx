@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { CircleUser, Eye, EyeOff, Mail, Phone, User } from 'lucide-react'
 import { useForm } from "react-hook-form"
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { z } from 'zod'
 
 import { VariantHeading } from '@/components/ui/heading'
@@ -74,16 +74,16 @@ export type iLoginUser = z.infer<typeof UserSchema> & {
     from?: string;
 };
 const RegistrationJoinUs = () => {
+    const location = useLocation()
+    const state = location.state as Partial<iLoginUser>
 
     const navigate = useNavigate()
     const { register, watch,
-       handleSubmit, formState: { errors },  setValue } = useForm<iLoginUser>({
+        handleSubmit, formState: { errors,defaultValues }, setValue } = useForm<iLoginUser>({
             resolver: zodResolver(UserSchema),
             defaultValues: {
-                firstName: "",
-                email: "",
-                phoneNumber: "",
-                // gender: "Prefered not to say", // Default value
+                ...(state || {}),  // Spread state if it exists, otherwise an empty object
+                // gender: "Prefer not to say", // Uncomment if needed
             },
         });
     const onSubmit = async (data: iLoginUser) => {
@@ -206,6 +206,9 @@ const RegistrationJoinUs = () => {
                             <BsGenderFemale size={20} />
                         </span>
                         <Select {...register("gender")}
+                        defaultValue={
+                            defaultValues?.gender 
+                        }
                             onValueChange={(value: any) => setValue("gender", value)}
                         >
                             <SelectTrigger className="w-full border-none">
@@ -264,7 +267,7 @@ const RegistrationJoinUs = () => {
 
 
                                 })}
-                                autoComplete="new-password" 
+                                autoComplete="new-password"
                                 name="password"
                                 id="password"
                                 placeholder="Enter Your password  "
@@ -300,7 +303,7 @@ const RegistrationJoinUs = () => {
                             </span>
                             <Input
                                 type={!showPassword.confirmPassword ? 'password' : 'text'}
-                                autoComplete="new-password" 
+                                autoComplete="new-password"
                                 {...register('confirmPassword', {
 
                                     validate: (value) => {

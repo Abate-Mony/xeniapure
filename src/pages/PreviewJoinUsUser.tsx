@@ -15,6 +15,7 @@ import {
     TableRow
 } from "../components/ui/table";
 import { iLoginUser, iUser } from "./RegistrationJoinUs";
+import { ArrowLeft } from "lucide-react";
 
 // Action function to handle form submission
 export const action = (_queryClient: QueryClient) => async ({ request }: ActionFunctionArgs) => {
@@ -24,7 +25,6 @@ export const action = (_queryClient: QueryClient) => async ({ request }: ActionF
 
     try {
         // Attempt to send signup request
-        console.log(data)
         await customFetch.post('/auth/signup', data);
         toast.success('OTP send to your email address ');
         return redirect(from || `/join-us/verify-email?email=${data.email}`);
@@ -70,7 +70,18 @@ const PreviewJoinUsUser = () => {
         errorMessageLoader],)
     return (
         <div>
-            <Heading className="text-3xl lg:text-4xl text-center font-medium mb-4 text-colorPrimary font-pacifico my-3">
+            <div className="px-2 py-1.5">
+
+                <Link to={"../"} state={{
+                    ...user
+                }}>
+                    <span className="size-9 hover:bg-slate-600/30 rounded-full grid place-items-center transition-all duration-200">
+                        <ArrowLeft className="text-gray-600 font-black " />
+
+                    </span>
+                </Link>
+            </div>
+            <Heading className="text-3xl lg:text-4xl text-center  mb-4 text-colorPrimary font-Marcellus+SC font-black my-3">
                 Please Check Your Information
             </Heading>
 
@@ -89,8 +100,21 @@ const PreviewJoinUsUser = () => {
                                 </TableRow>
                             )
                         })}
+
+
                     </TableBody>
+
                 </Table>
+                <Link to={"../"} state={{
+                    ...user
+                }}
+                    className="link w-fit ml-auto text-orange-900 text-lg my-2 px-1.5 block "
+                >
+                    <Heading className="font-Marcellus+SC">
+                        edit your details ?
+                    </Heading>
+
+                </Link>
                 <AnimateError
                     duration={0.3}
                     error={errorMsg}
@@ -103,9 +127,7 @@ const PreviewJoinUsUser = () => {
                     Submit &rarr;
                 </SubmitBtn>
 
-                <Link to={`/join-us/verify-email?${query.toString()}`} className="block text-center mt-4">
-                    Go to Verify Email
-                </Link>
+
             </div>
         </div>
     );

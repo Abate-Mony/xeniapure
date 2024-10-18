@@ -53,7 +53,7 @@ const DashBoardLayout = () => {
 
 
 
-    const [toggleSideBar, setToggleSideBar] = useState<boolean>(true);
+    const [toggleSideBar, setToggleSideBar] = useState<boolean>(false);
     const [showFullContent, setShowFullContent] = useState<boolean>(true);
     const [direction, setDirection] = useState<boolean>(false);
     return (
