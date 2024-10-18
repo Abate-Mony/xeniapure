@@ -31,9 +31,8 @@ import { ErrorElement } from './components/errorComponent';
 import DashboardHome from './pages/DashboardHome';
 import UserProfilePage from './pages/UserProfilePage';
 import UpdateUserProfile from './pages/UpdateUserProfilePage';
-// import axios from 'axios';
-
-// axios.defaults.withCredentials = true;
+import axios from 'axios';
+axios.defaults.withCredentials = true;
 
 const queryClient = new QueryClient({
   defaultOptions: {
