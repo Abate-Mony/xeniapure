@@ -6,8 +6,9 @@ import customFetch from "@/components/utils/customFetch";
 import useError from "@/utils/useError";
 import { QueryClient } from "@tanstack/react-query";
 import { isAxiosError } from "axios";
+import { ArrowLeft } from "lucide-react";
 import toast from "react-hot-toast";
-import { ActionFunctionArgs, Link, redirect, useActionData, useLoaderData, useLocation, useSearchParams, useSubmit } from "react-router-dom";
+import { ActionFunctionArgs, Form, Link, redirect, useActionData, useLoaderData, useLocation, useSearchParams } from "react-router-dom";
 import {
     Table,
     TableBody,
@@ -15,7 +16,6 @@ import {
     TableRow
 } from "../components/ui/table";
 import { iLoginUser, iUser } from "./RegistrationJoinUs";
-import { ArrowLeft } from "lucide-react";
 
 // Action function to handle form submission
 export const action = (_queryClient: QueryClient) => async ({ request }: ActionFunctionArgs) => {
@@ -43,7 +43,6 @@ export const action = (_queryClient: QueryClient) => async ({ request }: ActionF
 
 const PreviewJoinUsUser = () => {
     const [query] = useSearchParams();
-    const submit = useSubmit();
     const { state } = useLocation()
     // Extract user details from query parameters
     const user: Partial<iLoginUser> = {
@@ -57,11 +56,7 @@ const PreviewJoinUsUser = () => {
     };
 
     // Handle form submission
-    const onSubmit = async () => {
-        const formData = new FormData();
-        Object.entries(user).forEach(([key, value]) => formData.append(key, value || ""));
-        submit(formData, { method: "post" });
-    };
+ 
     const errorMessage = useActionData();
 
     const errorMessageLoader = useLoaderData();
@@ -85,7 +80,22 @@ const PreviewJoinUsUser = () => {
                 Please Check Your Information
             </Heading>
 
-            <div className="max-w-sm mx-auto border-[1px] border-colorPrimary rounded-md py-5 shadow-sm">
+            <Form
+                // onSubmit={(e) => onSubmit(e)}
+                method='post'
+                id="sigin-form"
+                replace
+                className="max-w-sm mx-auto border-[1px] border-colorPrimary rounded-md py-5 shadow-sm">
+                <div className="hidden">{
+                    Object.entries(user).map(([key, value]) => <input
+                        name={key || ""}
+                        value={value || ""}
+                        type="hidden"
+                    />)
+                }
+
+                </div>
+
                 <Table>
                     <TableBody>
                         {Object.entries(user).map(([key, value]) => {
@@ -122,13 +132,13 @@ const PreviewJoinUsUser = () => {
                 />
                 <SubmitBtn
                     className="bg-gradient-to-br w-full h-12 mt-4 text-white font-medium"
-                    onClick={onSubmit}
+
                 >
                     Submit &rarr;
                 </SubmitBtn>
 
 
-            </div>
+            </Form>
         </div>
     );
 };
