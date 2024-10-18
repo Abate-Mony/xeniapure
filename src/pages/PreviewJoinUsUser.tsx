@@ -30,6 +30,7 @@ export const action = (_queryClient: QueryClient) => async ({ request }: ActionF
         return redirect(from || `/join-us/verify-email?email=${data.email}`);
     } catch (err: any) {
         if (isAxiosError(err)) {
+            console.log("error:",err)
             const errMsg = err?.response?.data?.msg || err?.response?.data || "An error occurred";
             if (err.status == 409) return redirect("/join-us/payment")
             if (err.status == 401) return redirect(`/join-us/verify-email?email=${data.email}`)
@@ -83,7 +84,7 @@ const PreviewJoinUsUser = () => {
             <Form
                 // onSubmit={(e) => onSubmit(e)}
                 method='post'
-                id="sigin-form"
+                id="register-form"
                 replace
                 className="max-w-sm mx-auto border-[1px] border-colorPrimary rounded-md py-5 shadow-sm">
                 <div className="hidden">{
