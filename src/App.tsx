@@ -28,6 +28,9 @@ import Login, { action as loginAction } from './pages/Login';
 import OPTPage, { action as verifyOptAction } from './pages/VerifyOtp';
 import Users, { loader as usersLoader } from './pages/UsersPage';
 import { ErrorElement } from './components/errorComponent';
+import DashboardHome from './pages/DashboardHome';
+import UserProfilePage from './pages/UserProfilePage';
+import UpdateUserProfile from './pages/UpdateUserProfilePage';
 // import axios from 'axios';
 
 // axios.defaults.withCredentials = true;
@@ -131,14 +134,27 @@ function App() {
       children: [
         {
           index: true,
-          element: <div>
-            root element
-          </div>
-        }, {
+          element:<DashboardHome/>
+        },
+         {
           path: "users",
           element: <Users />,
           loader: usersLoader(queryClient)
-        }
+        },
+         {
+          path: "profile",
+          element: <UserProfilePage />,
+          children: [
+            {
+              index: true,
+              element: <UpdateUserProfile />
+            },
+            {
+              path: "users1",
+              element: <div>user1 details page</div>
+            },
+          ]
+        },
       ]
     }
   ])

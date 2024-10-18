@@ -33,6 +33,13 @@ const DashBoardHeader = () => {
             <DropdownMenuContent sideOffset={10} className="w-56">
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
+                <DropdownMenuLabel>
+                    <Link to={"/dashboard/profile"}>
+                    Profile
+                    </Link>
+
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                    
                     <DropdownMenuItem>

@@ -14,6 +14,12 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "noUnusedLocals": true,  // Error on unused local variables
+    "noUnusedParameters": true,  // Error on unused function parameters
+    "strict": true,  // Enables all strict type-checking options
+    "forceConsistentCasingInFileNames": true,  // Prevents inconsistent casing in imports
+    "skipLibCheck": true,  // Speeds up compilation by skipping type checks in node_modules
+    "esModuleInterop": true  // Ensures compatibility between ES modules and CommonJS
   }
 }

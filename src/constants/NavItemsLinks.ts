@@ -1,10 +1,8 @@
 // import from "lucide-react"
 import {
-    AlertCircle,
     LayoutDashboard,
     LogInIcon,
     LucideIcon,
-    PlusCircle,
     Users
 } from "lucide-react";
 import { IconType } from "react-icons/lib";
@@ -49,21 +47,6 @@ import { IconType } from "react-icons/lib";
       link: "users",
       icon: Users,
     },
-  
-    {
-      name: "Payments",
-      link: "newlogistic",
-      icon: PlusCircle,
-    },
-    {
-      name: "Events",
-      link: "newlogistic",
-      icon: PlusCircle,
-    },
-    {
-      name: "Notifications",
-      link: "newlogistic",
-      icon: AlertCircle,
-    },
+ 
   ];
   

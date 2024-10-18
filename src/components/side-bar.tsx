@@ -7,9 +7,10 @@ import { DashboardNavLinks } from '../constants/NavItemsLinks.js'
 import { useDashBoardContext } from '@/Layouts/DashBoardLayout.js'
 import CustomNavLink from './CustomNavLink.js'
 import Heading from './ui/heading.js'
+import UserProfileCard from './UserProfileCard.js'
 
 
-const Sidebar = ({ className,user }: { className?: string,user?:any }) => {
+const Sidebar = ({ className, user }: { className?: string, user?: any }) => {
     const { toggleSideBar, setToggleSideBar, showFullContent, direction, setShowFullContent } = useDashBoardContext()
     // const user:any = {
 
@@ -29,7 +30,7 @@ const Sidebar = ({ className,user }: { className?: string,user?:any }) => {
             sm:static
             `}
         >
-
+            
             <div className={` delay-200--
             transition-[width] duration-700
 sm:!translate-x-0
@@ -38,6 +39,11 @@ sm:!translate-x-0
    border bg-slate-100 min-h-screen 
     
     `} onClick={(e: any) => e.stopPropagation()}>
+        <div className='flex-none'>
+                {
+                    showFullContent && <UserProfileCard />
+                }
+            </div>
                 <span className=' absolute lg:hidden size-10 flex items-center justify-center  top-0
              z-[7] left-auto
             -right-10 
@@ -83,7 +89,7 @@ sm:!translate-x-0
 
 
                                         <span>
-                                            <Icon size={20}  className='text-blue-800' />
+                                            <Icon size={20} className='text-blue-800' />
                                         </span>
 
 

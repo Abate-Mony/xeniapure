@@ -1,3 +1,4 @@
+import { setUser } from '@/actions/userSlice'
 import DashBoardHeader from '@/components/DashBoardHeader'
 import { GlobalLoader } from '@/components/GlobalLoader'
 import Sidebar from '@/components/side-bar'
@@ -6,6 +7,7 @@ import { cn } from '@/lib/utils'
 import { QueryClient, useQuery } from '@tanstack/react-query'
 import { createContext, useContext, useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
+import { useDispatch } from 'react-redux'
 import { LoaderFunctionArgs, Outlet, redirect, useNavigation } from 'react-router-dom'
 const initialSideBarState: ISideBar = {
     toggleSideBar: false,
@@ -56,6 +58,12 @@ const DashBoardLayout = () => {
     const [toggleSideBar, setToggleSideBar] = useState<boolean>(false);
     const [showFullContent, setShowFullContent] = useState<boolean>(true);
     const [direction, setDirection] = useState<boolean>(false);
+    const dispatch = useDispatch()
+    const setUserData = (payload: any) => {
+        return dispatch(setUser(payload))
+    }
+
+    setUserData(user)
     return (
         <DashBoardContext.Provider value={{
             toggleSideBar,
