@@ -6,8 +6,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
-import { Scrollable } from '@/components/ui/Scrollable';
-import CustomNavLink from '@/components/CustomNavLink';
 // import { BusIcon, PlaneIcon, ShipIcon } from '../assets/images'
 // import { animateHeadingVariants, pageAnimationVariantsTransiton }
 export const contents = [
