@@ -4,8 +4,8 @@ import { Label } from '@radix-ui/react-label'
 import { QueryClient } from '@tanstack/react-query'
 import { isAxiosError } from 'axios'
 import { useForm } from "react-hook-form"
-import { ActionFunctionArgs, Form, Link, LoaderFunctionArgs, redirect, useActionData, useLoaderData, useSearchParams } from 'react-router-dom'
-import { toast } from 'react-toastify'
+import { ActionFunctionArgs, Form, Link, LoaderFunctionArgs, redirect, useActionData, useLoaderData, useNavigate, useSearchParams } from 'react-router-dom'
+
 import { AnimateError } from "../components/Animated/animated.js"
 import SubmitBtn from '../components/buttons/SubmitBtn.js'
 import { Loader } from '../components/Loaders/loader.js'
@@ -13,6 +13,9 @@ import { Input } from '../components/ui/input.js'
 import useError from '../utils/useError.js'
 import customFetch from '@/components/utils/customFetch.js'
 import Heading from '@/components/ui/heading.js'
+import useGetLoginUser from '@/hooks/getCurrentUser.js'
+import React from 'react'
+import toast from 'react-hot-toast'
 
 export const action = (_queryClient: QueryClient) => async ({ request }: ActionFunctionArgs) => {
     const formData = await request.formData();
@@ -47,6 +50,14 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     return (params?.message || null)
 }
 const Login = () => {
+    const navigate = useNavigate()
+    const user = useGetLoginUser();
+    React.useEffect(() => {
+        if(user){
+            toast.success("You're already logged in!");
+            navigate('/dashboard'); // Redirect to dashboard if logged in
+            }
+    }, [])
     interface ILoginUser {
         email: string,
         password: string

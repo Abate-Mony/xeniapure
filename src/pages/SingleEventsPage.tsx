@@ -1,5 +1,7 @@
 import ComingSoon from "@/components/coming-soon"
-const Convention = () => {
+
+const SingleEventsPage = () => {
+
     return (
         <div>
             <ComingSoon />
@@ -7,4 +9,4 @@ const Convention = () => {
     )
 }
 
-export default Convention
+export default SingleEventsPage

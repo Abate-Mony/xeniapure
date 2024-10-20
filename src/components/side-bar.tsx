@@ -30,7 +30,7 @@ const Sidebar = ({ className, user }: { className?: string, user?: any }) => {
             sm:static
             `}
         >
-            
+
             <div className={` delay-200--
             transition-[width] duration-700
 sm:!translate-x-0
@@ -39,11 +39,7 @@ sm:!translate-x-0
    border bg-slate-100 min-h-screen 
     
     `} onClick={(e: any) => e.stopPropagation()}>
-        <div className='flex-none'>
-                {
-                    showFullContent && <UserProfileCard />
-                }
-            </div>
+             
                 <span className=' absolute lg:hidden size-10 flex items-center justify-center  top-0
              z-[7] left-auto
             -right-10 
@@ -66,6 +62,9 @@ sm:!translate-x-0
                     <Scaling />
                 </span>
                 <div className='flex flex-col  h-svh'>
+                    {
+                        showFullContent && <UserProfileCard />
+                    }
                     <div className='flex flex-col space-y-3 mt-4 px-2 flex-1 '>
 
                         {DashboardNavLinks.map((arr, index) => {
@@ -94,7 +93,7 @@ sm:!translate-x-0
 
 
                                         {showFullContent &&
-                                            <Heading className='!my-0 text-[1rem] lg:text-lg'>
+                                            <Heading className='!my-0 text-[1rem] text-gray-600 lg:text-lg'>
                                                 {name}
 
                                             </Heading>

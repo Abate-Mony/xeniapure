@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 // import Heading, { VariantHeading } from '../components/Heading'
-import { AnimatePresence, motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
-import { Button } from '../components/ui/button'
-import { animateHeadingVariants, pageAnimationVariantsTransiton } from '@/utils/framervariants';
 import Heading, { VariantHeading } from '@/components/ui/heading';
+import { animateHeadingVariants, pageAnimationVariantsTransiton } from '@/utils/framervariants';
+import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Button } from '../components/ui/button';
+import { Scrollable } from '@/components/ui/Scrollable';
+import CustomNavLink from '@/components/CustomNavLink';
 // import { BusIcon, PlaneIcon, ShipIcon } from '../assets/images'
 // import { animateHeadingVariants, pageAnimationVariantsTransiton }
 export const contents = [
@@ -113,15 +115,16 @@ const ServiceCard = ({
 }
 
 const EventSection = () => {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+   
     return (
         <section className='bg-green-50 py-32'>
-
             <div className="max-w-6xl mx-auto">
             <Heading className='text-center text-blue-800 font-black text-3xl max-w-fit mx-auto'>
             Upcoming Events / Annual Meetings
 
                 </Heading>
+               
             <VariantHeading className='text-center text-blue-950 py-6 gap-x-3 uppercase mb-6 flex items-center text-colorPrimary [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto '>
 
                 <span
@@ -133,6 +136,7 @@ const EventSection = () => {
                 />
 
             </VariantHeading>
+          
                 <div className='grid grid-cols-1 sm:grid-cols-2 px-2 gap-x-1 gap-y-2 rounded-sm lg:grid-cols-4 items-center'>
                     {[...contents].map((arr, idx) => <ServiceCard
                         hoveredIndex={hoveredIndex}

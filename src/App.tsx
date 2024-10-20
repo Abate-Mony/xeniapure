@@ -32,6 +32,7 @@ import DashboardHome from './pages/DashboardHome';
 import UserProfilePage from './pages/UserProfilePage';
 import UpdateUserProfile from './pages/UpdateUserProfilePage';
 import axios from 'axios';
+import SingleEventsPage from './pages/SingleEventsPage';
 axios.defaults.withCredentials = true;
 
 const queryClient = new QueryClient({
@@ -139,6 +140,11 @@ function App() {
           path: "users",
           element: <Users />,
           loader: usersLoader(queryClient)
+        },
+         {
+          path: "events/:id",
+          element: <SingleEventsPage />,
+         
         },
          {
           path: "profile",

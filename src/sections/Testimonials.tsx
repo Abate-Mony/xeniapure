@@ -84,7 +84,9 @@ const SingleTestimonial = ({ name, review, starCount }: Review) => {
                         count={5}
                         value={starCount}
                         edit={false}
+
                         size={24}
+                        half={true}
                         // color="orange"
                         color2={'#fed900'} />
                 </span></h5>
@@ -131,7 +133,8 @@ const Testimonial = () => {
                         color2={'#fed900'} />
                 </div>
 
-                <Button type="submit">Submit</Button>
+                <Button type="submit"
+                >Submit</Button>
             </form>
         )
     }
@@ -147,7 +150,7 @@ const Testimonial = () => {
 
                     <span
                         className='w-10  h-[1px] bg-primary-color/70 '
-                    />  <span>          COMMINUTIES STORIES 
+                    />  <span>          COMMINUTIES STORIES
                     </span>
                     <span
                         className='w-10  h-[1px] bg-primary-color '

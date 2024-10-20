@@ -49,7 +49,7 @@ function StatsCard({ className,
                                 opacity: 0,
                                 transition: { duration: 0.15, delay: 0.2 },
                             }}
-                            className='absolute size-full bg-primary-color/20 ring-2 inset-0 rounded-sm'
+                            className='absolute size-full bg-primary-color/20 ring-0 inset-0 rounded-sm'
                         />
                     }
 

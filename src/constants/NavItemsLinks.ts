@@ -3,6 +3,7 @@ import {
     LayoutDashboard,
     LogInIcon,
     LucideIcon,
+    PoundSterling,
     Users
 } from "lucide-react";
 import { IconType } from "react-icons/lib";
@@ -46,6 +47,11 @@ import { IconType } from "react-icons/lib";
       name: "Users",
       link: "users",
       icon: Users,
+    },
+    {
+      name: "Payments",
+      link: "payments",
+      icon: PoundSterling,
     },
  
   ];

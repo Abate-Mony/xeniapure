@@ -11,12 +11,12 @@ import { useDispatch } from 'react-redux'
 import { LoaderFunctionArgs, Outlet, redirect, useNavigation } from 'react-router-dom'
 const initialSideBarState: ISideBar = {
     toggleSideBar: false,
-    setToggleSideBar: () => {},
+    setToggleSideBar: () => { },
     showFullContent: true,
-    setShowFullContent: () => {},
+    setShowFullContent: () => { },
     direction: false,
-    setDirection: () => {},
-  };
+    setDirection: () => { },
+};
 const DashBoardContext = createContext<ISideBar>(initialSideBarState)
 export interface ISideBar {
     toggleSideBar: boolean,
@@ -75,20 +75,20 @@ const DashBoardLayout = () => {
 
 
             <div className='min-h-screen max-w-7xl bg-[var(--color-light)]  overflow-y-auto-  rounded-md mx-auto '>
+
+
                 <div className={cn("flex flex-row",
                     direction && "flex-row-reverse"
                 )}>
                     <div className='flex-none h-screen z-[10001] sticky left-0 top-0 bottom-0'>
-                        <Sidebar
-                            user={user}
-                        ></Sidebar>
+                        <Sidebar user={user}></Sidebar>
                     </div>
                     <div
                         className='flex-1 w-[calc(100%-25rem)]    flex flex-col  '
                     >
                         <DashBoardHeader />
                         <div className='flex-1 p-2 
-                    h-[calc(100vh-3.5rem)]- overflow-y-auto-'>
+        h-[calc(100vh-3.5rem)]- overflow-y-auto-'>
                             <Outlet context={{ user }} />
                         </div>
                     </div>
