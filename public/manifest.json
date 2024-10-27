@@ -1,0 +1,26 @@
+{
+    "short_name": "ShipSharpCleaning",
+    "name": "ShipSharp Cleaning Services",
+    "icons": [
+        {
+            "src": "/main-logo.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        },
+        {
+            "src": "/main-logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/main-logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "description": "ShipSharp Cleaning Services - Your trusted cleaning solution."
+}

@@ -1,12 +1,13 @@
-import ShiftingCountdown from "@/components/count-down";
 import Hero from "@/components/hero";
-import AboutUsComponent from "@/sections/AboutUsComponent";
-import OurCulturalExample from "@/sections/CulturalExample";
-import EventSection from "@/sections/Events";
+import MiniService from "@/components/mini-service";
+import { FrequentAskQuestion } from "@/sections/FAQs";
+import OurProjectExample from "@/sections/our-project-section";
+import ServiceSection from "@/sections/our-service-section";
 // import { FrequentAskQuestion } from "@/sections/FAQs";
-import OurVision from "@/sections/OurVision";
 import RequestService from "@/sections/RequestToJoin";
+import Stats from "@/sections/stats";
 import Testimonial from "@/sections/Testimonials";
+import WhyChooseUs from "@/sections/why-choose-us";
 // import Stats from "@/sections/stats";
 
 const Home = () => {
@@ -14,23 +15,30 @@ const Home = () => {
         <div
             className="min-h-screen"
         >
-            <Hero />
+
+                 <Hero />
+            <MiniService />
+            <WhyChooseUs/>  
+            <RequestService/>
+            <Stats/>
+            <ServiceSection/>
+            <OurProjectExample/>
+            <Testimonial />
+            <FrequentAskQuestion />
 
             {/* <div className="mb-4" /> */}
 
-            <ShiftingCountdown />
+            {/* <ShiftingCountdown />
             <AboutUsComponent />
 
             <EventSection />
-            <Testimonial />
 
             <OurVision />
             <RequestService />
-            <OurCulturalExample />
+            <OurCulturalExample /> */}
 
             {/* <Stats /> */}
             {/* <DisplayCulturalImage /> */}
-            {/* <FrequentAskQuestion /> */}
         </div>
     )
 }

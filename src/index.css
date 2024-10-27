@@ -66,11 +66,14 @@
     --scroll-to-height: 0.5rem;
     --primary-color: #2bcbba;
     --color-primary: 155 100% 31%;
+    
+     /* --color-primary: 267 25% 16%; */
     /* --color-light:#F1F0E8; */
     --color-light: #fafafa;
     --top-offset: 60px;
     --color-light: #fafafa;
     background-color: var(--color-light);
+    --color-secondary: 243 75% 59%;
 
   }
 
@@ -105,6 +108,7 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
     --color-primary: 19 100% 8%;
+    --color-secondary: 243 75% 59%;
     --color-light: #000000;
 
 
@@ -202,8 +206,8 @@ data[state=active] {
 .swiper {
   width: var(--w);
   /* height: var(--h); */
-  max-width: calc(100vw - 0.4rem);
-  max-height: calc(100vh - 2rem);
+  /* max-width: calc(100vw - 0.4rem);
+  max-height: calc(100vh - 2rem); */
   position: relative;
 }
 

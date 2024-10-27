@@ -25,120 +25,57 @@ type FooterSection = {
 
 // Type-safe constant array of footer sections
 const footerSections: FooterSection[] = [
-    // {
-    //     section: "About Kom",
-    //     links: [
-    //         {
-    //             text: "Our History",
-    //             url: "/about/history"
-    //         },
-    //         {
-    //             text: "Cultural Heritage",
-    //             url: "/about/heritage"
-    //         },
-    //         {
-    //             text: "The Fon's Palace",
-    //             url: "/about/fons-palace"
-    //         },
-    //         {
-    //             text: "Traditional Leadership",
-    //             url: "/about/leadership"
-    //         }
-    //     ]
-    // },
-    // {
-    //     section: "Events & Services",
-    //     links: [
-    //         {
-    //             text: "Cultural Festivals",
-    //             url: "/events/festivals"
-    //         },
-    //         {
-    //             text: "Kom Meetings",
-    //             url: "/events/meetings"
-    //         },
-    //         {
-    //             text: "Traditional Ceremonies",
-    //             url: "/events/ceremonies"
-    //         },
-    //         {
-    //             text: "Community Projects",
-    //             url: "/events/community-projects"
-    //         }
-    //     ]
-    // },
+    {
+        section: "About Us",
+        links: [
+            { text: "Our Story", url: "/about/story" },
+            { text: "Our Team", url: "/about/team" },
+            { text: "Our Values", url: "/about/values" }
+        ]
+    },
+    {
+        section: "Cleaning Services",
+        links: [
+            { text: "Residential Cleaning", url: "/services/residential" },
+            { text: "Commercial Cleaning", url: "/services/commercial" },
+            { text: "Eco-Friendly Options", url: "/services/eco-friendly" },
+            { text: "Emergency Cleaning", url: "/services/emergency" }
+        ]
+    },
     {
         section: "Quick Links",
         links: [
-            {
-                text: "Become a Member",
-                url: "/become-a-member"
-            },
-            // {
-            //     text: "Donate to Kom",
-            //     url: "/donate"
-            // },
-            {
-                text: "Dashboard",
-                url: "/dashboard"
-            },
-            {
-                text: "FAQs",
-                url: "/faqs"
-            }
+            { text: "Request a Quote", url: "/quote" },
+            { text: "FAQs", url: "/faqs" },
+            { text: "Customer Reviews", url: "/reviews" },
+            { text: "Promotions", url: "/promotions" }
         ]
     },
     {
         section: "Contact Us",
         details: [
-            // {
-            //     type: "address",
-            //     text: "Kom Cultural Center, Main Street, Kom, Cameroon"
-            // },
-            {
-                type: "phone",
-                text: "tel: +237 (123) 456-789"
-            },
-            {
-                type: "email",
-                text: "email: support@komculture.com"
-            }
+            { type: "address", text: "Kom Cleaning Services, Main Street, Chippenham, England" },
+            { type: "phone", text: "tel: +44 (123) 456-7890" },
+            { type: "email", text: "email: contact@komcleaning.com" }
         ]
     },
     {
         section: "Follow Us",
         links: [
-            {
-                text: "Facebook",
-                url: "https://www.facebook.com/komculture",
-                icon: "facebook-icon"
-            },
-            // {
-            //     text: "Twitter",
-            //     url: "https://www.twitter.com/komculture",
-            //     icon: "twitter-icon"
-            // },
-            // {
-            //     text: "LinkedIn",
-            //     url: "https://www.linkedin.com/company/komculture",
-            //     icon: "linkedin-icon"
-            // },
-            {
-                text: "Instagram",
-                url: "https://www.instagram.com/komculture",
-                icon: "instagram-icon"
-            }
+            { text: "Facebook", url: "https://www.facebook.com/komcleaning", icon: "facebook-icon" },
+            { text: "Twitter", url: "https://www.twitter.com/komcleaning", icon: "twitter-icon" },
+            { text: "LinkedIn", url: "https://www.linkedin.com/company/komcleaning", icon: "linkedin-icon" },
+            { text: "Instagram", url: "https://www.instagram.com/komcleaning", icon: "instagram-icon" }
         ]
     }
 ];
-
 
 const Footer = ({ className }: { className?: string }) => {
     return (
 
         <div className={cn(' py-10 bg-black/70  z-[30] relative text-white px-3 bg-no-repeat bg-cover', className)}
         style={{
-            backgroundImage:"url(/background.svg)",
+            backgroundImage:"url(https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/06/home_bg_03.png)",
 
         }}
 
@@ -163,7 +100,7 @@ const Footer = ({ className }: { className?: string }) => {
                             footerSections.map((section, idx) => (
                                 <ul>
                                     <li>
-                                        <Heading className='  text-xl text-primary-color relative z-20'>{section.section}</Heading>
+                                        <Heading className='  text-xl text-primary-color font-black relative z-20'>{section.section}</Heading>
                                         <motion.span
                                             initial={{
                                                 opacity: 0.2,

@@ -6,45 +6,48 @@ interface AnimatedLinksProps extends NavLinkProps {
     children?: React.ReactNode,
     secondTextClassName?: string
 }
-export const AnimatedLinks = ({ text, className, to, children, secondTextClassName, ...props }: AnimatedLinksProps) => {
+export const AnimatedLinks = ({
+    text,
+    className,
+    to,
+    children,
+    secondTextClassName,
+    ...props
+}: AnimatedLinksProps) => {
     return (
         <NavLink
             {...props}
             to={to}
-            className={cn('text-lg link font-Marcellus+SC z--10 cursor-pointer  font-bold relative group overflow-hidden',
-                className)}>
+            className={cn(
+                'text-lg link font-Marcellus+SC cursor-pointer font-bold relative group overflow-hidden',
+                className
+            )}
+        >
             {({ isActive }) => (
                 <>
                     <span
-
-                        className='absolute block left-0 right-0
-group-hover:bottom-0 
-transition-all duration-500
--bottom-[calc(100%)] size-full  text-primary-color '
+                        className={cn(
+                            'absolute left-0 right-0 z-10 transition-all duration-500 group-hover:bottom-0 text-primary-color',
+                            isActive && 'bottom-0',
+                            !isActive && '-bottom-[calc(100%)]'
+                        )}
                     >
                         {children ?? text}
                     </span>
 
                     <span
-
-                        className={(
-
-                            cn(`block group-hover:-translate-y-10 
-        delay-100
-        transition-all duration-500
-     w-full`,
-                                secondTextClassName,
-                                isActive && "text-primary-color",
-                            )
+                        className={cn(
+                            'relative z-0 block transition-all duration-500 w-full',
+                            secondTextClassName,
+                            isActive ? 'text-primary-color' : 'group-hover:-translate-y-10 delay-100'
                         )}
                     >
                         {children ?? text}
-
                     </span>
                 </>
             )}
-
         </NavLink>
-    )
-}
+    );
+};
+
 

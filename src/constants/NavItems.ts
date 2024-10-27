@@ -9,11 +9,11 @@ export const NavItemsLinks: INavItemsLinks[] = [
         link: "",
         icon: LogInIcon,
     },
-    {
-        name: "Convention",
-        link: "/convention",
-        icon: LogInIcon,
-    },
+    // {
+    //     name: "Convention",
+    //     link: "/convention",
+    //     icon: LogInIcon,
+    // },
 
 
     {
@@ -26,11 +26,11 @@ export const NavItemsLinks: INavItemsLinks[] = [
         link: "/contact-us",
         icon: LogInIcon,
     },
-    {
-        name: "Events",
-        link: "/events",
-        icon: LogInIcon,
-    },
+    // {
+    //     name: "Events",
+    //     link: "/events",
+    //     icon: LogInIcon,
+    // },
     {
         name: "Dashboard",
         link: "/dashboard",

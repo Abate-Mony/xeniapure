@@ -1,48 +1,44 @@
-import { LinkedinIcon } from "lucide-react";
-import { BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
-import { Separator } from "./ui/separator";
+import { Mail } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Button } from './ui/button'
+import Heading from './ui/heading'
 
-const socialIcons = [
-    {
-        name: "Facebook",
-        icon: <BsFacebook size={10} className="size-4 text-black" />,
-        link: "https://www.facebook.com"
-    },
-    {
-        name: "Twitter",
-        icon: <BsTwitter size={10} className="size-5 text-black" />,
-        link: "https://www.twitter.com"
-    },
-    {
-        name: "Instagram",
-        icon: <BsInstagram size={10} className="size-5 text-black" />,
-        link: "https://www.instagram.com"
-    },
-    {
-        name: "LinkedIn",
-        icon: <LinkedinIcon size={10} className="size-5 text-black" />,
-        link: "https://www.linkedin.com"
-    },
-    {
-        name: "GitHub",
-        icon: <BsGithub size={10} className="size-5 text-black" />,
-        link: "https://www.github.com"
-    }
-];
-const TopBar = () => {
+const TopHeader = () => {
     return (
-        <>
-            <div className="flex items-center py-2.5 px-2  gap-x-3 max-w-6xl mx-auto  bg-slate-50">
-                {socialIcons.map((social, index) => (
-                    <a key={index} href={social.link} target="_blank" rel="noopener noreferrer">
-                        {social.icon}
-                    </a>
-                ))}
+        <div
+            className='h-12 flex items-center justify-center  bg-primary-color'
+        >
+            <div
+                className='flex w-full px-4 justify-between items-center max-w-5xl mx-auto'
+            >
+                {/* right side here */}
+                <div>
+                    <Heading className='flex gap-x-2 text-sm items-center  text-white'>
+                        <Mail size={15} />
+                        example@gmail.com
+                    </Heading>
+                </div>
+                {/* left side here */}
+                <div>
+                    {/* <Heading className='flex gap-x-2 text-sm items-center  text-white'>
+                        <PhoneIcon size={15} />
+                        +23767222783
+                    </Heading> */}
+                    <Link to={"/contact-us?rd_from=hero"} className="block lg:hidden">
+                                    <Button
+                                        className=" rounded-full 
+                    hover:text-primary-color
+                    bg-gradient-to-r from-cyan-500 to-blue-500
+                    font-poppins font-normal text-xs py-2.5 md:py-2.5 hover:bg-white hover:border-primary-color border-[1px] h-auto bg-primary-color"
+                                    >
+                               Request A qoute
 
+                                    </Button>
+                                </Link>
+                </div>
             </div>
-            <Separator />
-        </>
+        </div>
     )
 }
 
-export default TopBar
+export default TopHeader

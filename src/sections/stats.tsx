@@ -1,10 +1,12 @@
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'lucide-react';
-import React from 'react';
-import { AnimatedNumber } from '../components/Animated/animated.tsx';
+import React, { useState } from 'react';
+import { AnimatedNumber, AnimatedSlideText } from '../components/Animated/animated';
 import { Button } from '../components/ui/button';
-import Heading, { VariantHeading } from '@/components/ui/heading.tsx';
-import { animateHeadingVariants } from '@/components/utils/framervariants.ts';
+import { animateHeadingVariants } from '../utils/framervariants';
+import Heading, { VariantHeading } from '@/components/ui/heading';
+import { Compare } from '@/components/ui/compare';
+import AnimatedHeadLessUi from '@/components/ui/AnimatedHeadlessUI';
 
 interface iStat {
     description: string,
@@ -18,7 +20,7 @@ const stats: iStat[] = [
         title: "Years of Experience",
         unit: "+",
         description:
-            "Six decades of championing the cause for Africa and its diaspora. We'll be celebrating our 60th anniversary in 2024.",
+            "A web app that allows users to practice for front-end and UI interviews.",
         value: 6
 
     },
@@ -26,7 +28,7 @@ const stats: iStat[] = [
         title: "Satifaction rate",
         unit: "%",
         description:
-            "The total amount of funding from our latest successful application to the Wolfson Foundation.",
+            "A web app that allows users to practice for front-end and UI interviews.",
         value: 98
     },
 
@@ -34,7 +36,7 @@ const stats: iStat[] = [
         title: "Divise Product",
         unit: "+",
         description:
-            "The number of people who attended our last free summer festival in Southwark, London in 2018.",
+            "A web app that allows users to practice for front-end and UI interviews.",
         value: 50
     },
     {
@@ -47,7 +49,7 @@ const stats: iStat[] = [
 
 ];
 
-function SingleStat({ title, value, unit, description }: iStat) {
+function SingleStat({ title, value, unit }: iStat) {
     const ref = React.useRef<any>(null)
     const isInView = useInView(ref, {})
     const timer = React.useRef<any>(null)
@@ -62,77 +64,108 @@ function SingleStat({ title, value, unit, description }: iStat) {
         variants={animateHeadingVariants}
         initial="initial"
         whileInView="animate"
-        className='flex flex-col gap-y-6 px-4 justify-center  items-center '>
+        className='flex flex-col gap-y-6 mx-auto px-4 justify-center  items-center '>
 
         <div className='space-y-2'>
             <VariantHeading className='text-6xl font-medium text-center'>
-                <AnimatedNumber className='font-black lg:text-8xl'
+                <AnimatedNumber className='font-black'
                     value={progress}
                 />
-                <span>{unit}</span>
+                <span className='text-primary-color'>{unit}</span>
                 {/* <sup className='text-blue-400'>+</sup> */}
             </VariantHeading>
-            <Heading className='font-pacifico text-center !text-primary-color  text-gray-600- text-lg font-black '>{title}</Heading>
+            <p className='font-Marcellus+SC text-blue-950 text-lg font-black '>{title}</p>
 
-            <p className='text-lg text-center sm:text-xl tracking-tighter '>
-                {description}
 
-            </p>
         </div>
 
     </motion.div>)
 }
 const Stats = () => {
+    const [hoveIndex, setHoverIndex] = useState<number | null>(null);
+
     return (
         <section
-
-            className='py-8 bg-no-repeat bg-cover'
-            style={{
-                backgroundImage: "url(/statsbg.svg)"
-                ,
-                // clipPath: "polygon(19% 0, 99% 0, 100% 68%, 89% 100%, 1% 99%, 0 20%)"
-            }}
+            className='py-24 '
+        // style={{ clipPath: "polygon(19% 0, 99% 0, 100% 68%, 89% 100%, 1% 99%, 0 20%)" }}
         >
             <div
-                className='max-w-6xl mx-auto p-4'
+                className='max-w-8xl w-full  mx-auto p-4'
             >
-                <VariantHeading className='text-center gap-x-3 uppercase mb-6 flex items-center text-primary-color [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto'>
+
+
+                <VariantHeading className='text-center gap-x-3 uppercase mb-6 flex items-center text-blue-950 [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto'>
 
                     <span
-                        className='w-10  h-[1px] bg-colorPrimary '
-                    />  <div className='flex items-center text-4xl'>OUR IMPACT<span className='md:hidden-'>s</span><span className='hidden md:block'></span></div>
+                        className='w-10  h-[1px] bg-primary-color '
+                    />  <div className='flex items-center'>OUR Stat<span className='md:hidden'>s</span><span className='hidden md:block'>istics</span></div>
                     <span
-                        className='w-10  h-[1px] bg-colorPrimary '
+                        className='w-10  h-[1px] bg-primary-color '
                     />
 
                 </VariantHeading>
-                {/* <AnimatedSlideText inView
+                <AnimatedSlideText inView
                     text="Your one Stop Printing solution - Explore our services"
                     className='text-center text-blue-950 font-black mb-6 text-xl lg:text-2xl max-w-3xl mx-auto '>
 
-                </AnimatedSlideText> */}
-                <div className="md:grid grid-cols-[auto,1fr] max-w-5xl mx-auto gap-x-6 mb-10">
+                </AnimatedSlideText>
+                <div className="md:grid grid-cols-[1fr,1fr] max-w-7xl mx-auto gap-x-6 mb-10">
+                    <div className='sticky sm:static top-[3.5rem] left-0 [perspective:800px] [transform-style:preserve-3d]'>
+
+                        <div
+                            style={{
+                                // transform: "rotateX(15deg) translateZ(80px)",
+                            }}
+                            className=" h-[min(400px,calc(100vh-3.5rem))] rounded-0 dark:bg-neutral-900  dark:border-neutral-800 mx-auto  "
+                        >
+                            <Compare
+                                firstImage="https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/04/project_03-400x400.jpg"
+                                secondImage="https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/04/Stainless-Steel-Cleaning.jpg"
+                                firstImageClassName="object-cover object-left-top w-full"
+                                secondImageClassname="object-cover object-left-top w-full"
+                                className="w-full h-full !rounded-none px-0 border-0"
+                                slideMode="hover"
+                                autoplay={true}
+                            />
+                        </div>
+                    </div>
+                    {/* right side div */}
                     <div>
                         <VariantHeading
-                            className='text-4xl !text-bg-colorPrimary text-center- md:text-start mb-6 capitalize'
+                            className='text-4xl font-semibold !text-bg-primary-color text-center- md:text-start mb-6 capitalize'
                         >
-                            Printing in numbers
+                            <span className='text-primary-color'>
+                                15 Years
+                            </span> Experience
                         </VariantHeading>
-
-                    </div>
-                    <div>
+                        <Heading className='mb-6'>As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullamcorper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci, sed ex altera dictas incorrupte. Idque option ius ut, id molestiae philosophia his. Qui euismod fabellas reformidans ea, inermis ration ibus necessitatibus eu eum.</Heading>
                         <p className='mb-6'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi voluptatibus eos quidem eligendi odio molestias. Aliquid, maiores! Recusandae tempore deleniti aspernatur nisi enim esse corporis?</p>
 
-                        <Button className='px-8 bg-primary-color m shadow-sm top-auto right-2'>Learn More <Link size={15} className='ml-2' /></Button>
+                        <Button className='px-8 bg-[#fb5711] m shadow-sm top-auto right-2'>Learn More <Link size={15} className='ml-2' /></Button>
 
                     </div>
                 </div>
                 {/* stats */}
-                <div className='mt-4 grid gap-y-6 grid-cols-1 gap-x-4 sm:grid-cols-2 lg:grid-cols-4 mx-auto max-w-6xl'>
-                    {stats.map((arr, idx) => <SingleStat key={idx}
-                        {...arr}
-                    />)}
+                <div className='mt-4 grid gap-y-6 grid-cols-[repeat(auto-fit,minmax(min(10rem,calc(100%-60px)),_1fr))] justify-center gap-x-4  mx-auto max-w-6xl'>
+                    {stats.map((arr, idx) => (
+                        <AnimatedHeadLessUi
+                            layoutId="thecoderandthecodearethesamehere"
+                            key={idx}
+                            index={idx}
+                            hoverIndex={hoveIndex}
+                            setHoverIndex={setHoverIndex}
+                            animatedClassName={"bg-secondary-color/10 bottom-0 h-2- top-auto"}
+                        >
+
+                            <SingleStat key={idx}
+                                {...arr}
+                            />
+
+                        </AnimatedHeadLessUi>
+                    )
+                    )}
                 </div>
+
             </div>
         </section>
     )

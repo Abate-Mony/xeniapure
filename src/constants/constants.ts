@@ -1,85 +1,55 @@
 import { iHeroBanner } from "@/types"
-export const heroBanner: iHeroBanner[] = [ {
+
+export const heroBanner: iHeroBanner[] = [
+  {
     heading: [
-        { text: "The", className: "" },
-        { text: "Kom", className: "text-primary-color sm:text-4xl lg:text-5xl" }, // 4xl on small screens, 5xl on large
-        { text: "people", className: "" },
-        { text: "celebrate", className: "" },
-        { text: "their", className: "" },
-        { text: "heritage", className: "" },
-        { text: "through", className: "" },
-        { text: "colorful", className: "" },
-        { text: "traditional", className: "" },
-        { text: "dances", className: "text-primary-color sm:text-4xl lg:text-5xl" }, // 4xl on small screens, 5xl on large
-        { text: "and", className: "" },
-        { text: "music.", className: "" },
-        { text: "These", className: "" },
-        { text: "cultural", className: "" },
-        { text: "expressions", className: "" },
-        { text: "are", className: "" },
-        { text: "a", className: "" },
-        { text: "way", className: "" },
-        { text: "to", className: "" },
-        { text: "honor", className: "" },
-        { text: "their", className: "" },
-        { text: "ancestors.", className: "" }
+      { text: "Clean", className: "text-primary-color sm:text-4xl lg:text-5xl" },
+      { text: "Spaces", className: "" },
+      { text: "Create", className: "text-primary-color" },
+      { text: "Fresh", className: "" },
+      { text: "Starts", className: "text-primary-color sm:text-4xl lg:text-5xl" },
     ],
-    description: "Through vibrant dances and music, the Kom people express their cultural identity and honor their ancestors, reinforcing community bonds.",
-    image: "/statue.jpg",
-},
-
-    {
-        heading: [
-            { text: "The", className: "" },
-            { text: "Kom", className: "text-primary-color rotate-12 sm:text-4xl lg:text-5xl" }, // 4xl on small screens, 5xl on large
-            { text: "people", className: "" },
-            { text: "from", className: "" },
-            { text: "Northwest", className: "text-primary-color rotate-12 sm:text-4xl lg:text-5xl" }, // 4xl on small screens, 5xl on large
-            { text: "Cameroon", className: "text-primary-color rotate-12 sm:text-4xl lg:text-5xl" }, // 4xl on small screens, 5xl on large
-            { text: "have", className: "" },
-            { text: "rich", className: "" },
-            { text: "traditions", className: "" },
-            { text: "centered", className: "" },
-            { text: "around", className: "" },
-            { text: "the", className: "" },
-            { text: "Fon", className: "text-primary-color rotate-12 sm:text-4xl lg:text-5xl" }, // 4xl on small screens, 5xl on large
-            { text: "and", className: "" },
-            { text: "Laikom", className: "text-primary-color rotate-12 sm:text-4xl lg:text-5xl" }, // 4xl on small screens, 5xl on large
-            { text: "palace.", className: "" }
-        ],
-        description: "Woinkom UK is a community of individuals from Kom and those connected to Kom, coming together to celebrate and share our heritage, values, and culture.",
-        image: "/group-image.jpg",
-    },
-
-    {
-        heading: [
-            { text: "In", className: "" },
-            { text: "Kom", className: "text-primary-color sm:text-4xl lg:text-5xl" }, // 4xl on small screens, 5xl on large
-            { text: "tradition,", className: "" },
-            { text: "the", className: "" },
-            { text: "Fon", className: "text-primary-color sm:text-4xl lg:text-5xl" }, // 4xl on small screens, 5xl on large
-            { text: "is", className: "" },
-            { text: "a", className: "" },
-            { text: "spiritual", className: "" },
-            { text: "and", className: "" },
-            { text: "political", className: "" },
-            { text: "leader.", className: "" },
-            { text: "Festivals", className: "text-primary-color sm:text-4xl lg:text-5xl" }, // 4xl on small screens, 5xl on large
-            { text: "and", className: "" },
-            { text: "ceremonies", className: "" },
-            { text: "play", className: "" },
-            { text: "an", className: "" },
-            { text: "important", className: "" },
-            { text: "role", className: "" },
-            { text: "in", className: "" },
-            { text: "preserving", className: "" },
-            { text: "their", className: "" },
-            { text: "identity.", className: "" }
-        ],
-        description: "The Kom tradition emphasizes the significance of the Fon and the royal palace, which serves as the cultural heart of the community, showcasing their unique dances and ceremonies.",
-        image: "/group-image-01.jpg",
-    },
-
-   
-
+    description: "Expert cleaning services to keep your home and workspace spotless and welcoming.",
+    image: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/revslider/Home/home_bg_01.jpg",
+  },
+  {
+    heading: [
+      { text: "Trust", className: "text-primary-color" },
+      { text: "Our", className: "" },
+      { text: "Team", className: "text-primary-color sm:text-4xl lg:text-5xl" },
+      { text: "for", className: "" },
+      { text: "Immaculate", className: "text-primary-color" },
+      { text: "Results", className: "" },
+    ],
+    description: "Our experienced cleaners ensure every corner shines, leaving you with peace of mind.",
+    image: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/revslider/Home/slider_img_02.jpg",
+  },
+  {
+    heading: [
+      { text: "Quality", className: "text-primary-color" },
+      { text: "Cleaning", className: "" },
+      { text: "Done", className: "" },
+      { text: "Right,", className: "text-primary-color" },
+      { text: "Every Time", className: "" },
+    ],
+    description: "Reliable and thorough cleaning services tailored to meet your unique needs.",
+    image: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/revslider/Home/slider_img_03.jpg",
+  }
 ]
+export const cleaning_categories: { key: string, value: string }[] = [
+  { key: 'residential', value: 'Residential Cleaning' },
+  { key: 'commercial', value: 'Commercial Cleaning' },
+  { key: 'specialized', value: 'Specialized Cleaning' },
+  { key: 'eco_friendly', value: 'Eco-Friendly Cleaning' },
+  { key: 'emergency', value: 'Emergency Cleaning Services' },
+  { key: 'real_estate', value: 'Real Estate & Property Management Cleaning' },
+  { key: 'post_construction', value: 'Post-Construction Cleaning' },
+  { key: 'window', value: 'Window Cleaning' },
+  { key: 'carpet_upholstery', value: 'Carpet & Upholstery Cleaning' },
+  { key: 'floor_maintenance', value: 'Floor Care & Maintenance' },
+  { key: 'move_in_out', value: 'Move-In/Move-Out Cleaning' },
+  { key: 'deep_cleaning', value: 'Deep Cleaning' },
+  { key: 'routine', value: 'Routine Cleaning' },
+  { key: 'allergy_safe', value: 'Allergy-Safe Cleaning' },
+  { key: 'pre_sale', value: 'Pre-Sale Cleaning' }
+];
