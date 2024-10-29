@@ -13,41 +13,46 @@ interface iStat {
     value: number,
     title: string,
     unit?: string
-
 }
+
 const stats: iStat[] = [
     {
-        title: "Years of Experience",
+        title: "Years of Service",
         unit: "+",
         description:
-            "A web app that allows users to practice for front-end and UI interviews.",
-        value: 6
-
-    },
-    {
-        title: "Satifaction rate",
-        unit: "%",
-        description:
-            "A web app that allows users to practice for front-end and UI interviews.",
-        value: 98
-    },
-
-    {
-        title: "Divise Product",
-        unit: "+",
-        description:
-            "A web app that allows users to practice for front-end and UI interviews.",
-        value: 50
-    },
-    {
-        title: "Printing Capacity",
-        unit: "K",
-        description:
-            "A web app that allows users to practice for front-end and UI interviews.",
+            "Years providing professional cleaning services to residential and commercial clients.",
         value: 10
     },
-
+    {
+        title: "Client Satisfaction Rate",
+        unit: "%",
+        description:
+            "Percentage of clients who rate our services as excellent in terms of quality and reliability.",
+        value: 95
+    },
+    {
+        title: "Properties Cleaned",
+        unit: "+",
+        description:
+            "Total number of properties we’ve professionally cleaned, including homes, offices, and commercial spaces.",
+        value: 150
+    },
+    {
+        title: "Waste Removal Capacity",
+        unit: "kg",
+        description:
+            "Total waste removal and disposal capacity per month, helping maintain eco-friendly environments.",
+        value: 500
+    },
+    {
+        title: "Team Members",
+        unit: "+",
+        description:
+            "Dedicated and trained cleaning professionals ready to serve your needs.",
+        value: 25
+    }
 ];
+
 
 function SingleStat({ title, value, unit }: iStat) {
     const ref = React.useRef<any>(null)
@@ -74,7 +79,15 @@ function SingleStat({ title, value, unit }: iStat) {
                 <span className='text-primary-color'>{unit}</span>
                 {/* <sup className='text-blue-400'>+</sup> */}
             </VariantHeading>
-            <p className='font-Marcellus+SC text-blue-950 text-lg font-black '>{title}</p>
+            <AnimatedSlideText
+                inView
+                once={false}
+                // words={words}
+                text={title}
+                className='font-Marcellus+SC text-blue-950 text-lg font-black  '>
+
+            </AnimatedSlideText>
+            {/* <p className='font-Marcellus+SC text-blue-950 text-lg font-black '>{title}</p> */}
 
 
         </div>
@@ -83,7 +96,32 @@ function SingleStat({ title, value, unit }: iStat) {
 }
 const Stats = () => {
     const [hoveIndex, setHoverIndex] = useState<number | null>(null);
-
+    const words: {
+        text: string,
+        className?: string
+    }[] = [
+            { "text": "We" },
+            { "text": "Are" },
+            { "text": "Your" },
+            { "text": "Reliable", className: "text-primary-color" },
+            { "text": "Professional", className: "text-primary-color" },
+            { "text": "Cleaning" },
+            { "text": "Experts" },
+            { "text": "Dedicated", className: "text-primary-color" },
+            { "text": "To" },
+            { "text": "Quality", className: "text-primary-color" },
+            { "text": "Service" },
+            { "text": "With" },
+            { "text": "Exceptional", className: "text-primary-color" },
+            { "text": "Attention" },
+            { "text": "To Detail" },
+            { "text": "In" },
+            { "text": "Every Job" },
+            { "text": "For", className: "text-primary-color" },
+            { "text": "Homes," },
+            { "text": "Offices," },
+            { "text": "And More!", className: "text-primary-color" }
+        ];
     return (
         <section
             className='py-24 '
@@ -104,11 +142,17 @@ const Stats = () => {
                     />
 
                 </VariantHeading>
-                <AnimatedSlideText inView
+
+                <AnimatedSlideText
+                    inView
+                    once={false}
+                    words={words}
                     text="Your one Stop Printing solution - Explore our services"
-                    className='text-center text-blue-950 font-black mb-6 text-xl lg:text-2xl max-w-3xl mx-auto '>
+                    className='text-center font-poppins lowercase text-blue-950 font-black mb-6 text-xl lg:text-2xl max-w-3xl mx-auto '>
 
                 </AnimatedSlideText>
+
+
                 <div className="md:grid grid-cols-[1fr,1fr] max-w-7xl mx-auto gap-x-6 mb-10">
                     <div className='sticky sm:static top-[3.5rem] left-0 [perspective:800px] [transform-style:preserve-3d]'>
 
@@ -154,7 +198,8 @@ const Stats = () => {
                             index={idx}
                             hoverIndex={hoveIndex}
                             setHoverIndex={setHoverIndex}
-                            animatedClassName={"bg-secondary-color/10 bottom-0 h-2- top-auto"}
+                            className='mx-auto'
+                            animatedClassName={"bg-secondary-color/10 bottom-0 h-2- top-auto "}
                         >
 
                             <SingleStat key={idx}

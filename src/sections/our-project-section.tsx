@@ -19,7 +19,7 @@ const OurProjectExample = () => {
     const cultural_images_object = [
 
         {
-            url: "/group-image-01.jpg",
+            url: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/04/project_img_03.jpg",
             description: "some descriptio"
         },
         {
@@ -31,23 +31,23 @@ const OurProjectExample = () => {
             description: "some descriptio"
         },
         {
-            url: "https://www.africacentre.org.uk/images/757cef11-eeb1-4a5c-98c5-bdac96e639d8/cropped?width=600&height=338",
+            url: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/04/project_img_01.jpg",
             description: "some descriptio"
         },
         {
-            url: "/doris-pearl-01.jpg",
+            url: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/04/woman-with-closes-1.jpg",
             description: "some descriptio"
         },
         {
-            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5H4rdHCBKMl3YV6gQ2g7KX1WkUT063DQ8iA&s",
+            url: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/04/project_img_02.jpg",
             description: "some descriptio"
         },
         {
-            url: "https://i0.wp.com/www.fepcig.org/wp-content/uploads/2017/07/Tourism-Kom-culture-and-tradition-36.jpeg?fit=1080%2C607&ssl=1",
+            url: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/04/project_img_4.jpg",
             description: "some descriptio"
         },
         {
-            url: "/group-image.jpg",
+            url: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/04/woman.jpg",
             description: "some descriptio"
         },
     ]

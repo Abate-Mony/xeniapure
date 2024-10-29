@@ -87,7 +87,7 @@ const NavBar = ({ isOpen, setIsOpen }: {
                                         className={"text-black text-sm   h-auto [font-size:1rem]"}
                                         secondTextClassName={"text-black font-medium"}
                                         {...link}                                >
-                                     {link.name}
+                                        {link.name}
                                     </AnimatedLinks>
 
 
@@ -113,17 +113,7 @@ const NavBar = ({ isOpen, setIsOpen }: {
 
                                     </Button>
                                 </Link>
-                                <Link to={"/login"}>
-                                    <Button
-                                        className="text-sm rounded-full hidden lg:block
-                    hover:text-primary-color
-                    bg-gradient-to-r 
-                    font-poppins font-normal py-2.5 md:py-2.5 hover:bg-white hover:border-primary-color border-[1px] h-auto bg-primary-color"
-                                    >
-                                        login
-
-                                    </Button>
-                                </Link></>
+                            </>
                         }
 
                         {

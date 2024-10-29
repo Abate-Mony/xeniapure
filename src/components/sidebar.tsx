@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import CustomNavLink from './CustomNavLink.js'
 import SpringModal from './modals/MainModal.js'
 import { Button } from './ui/button'
+import Heading from './ui/heading.js'
 
 
 const user = null
@@ -18,7 +19,7 @@ const SideBar = ({ isOpen = false, setIsOpen }: {
 
 
             <div
-                className=' space-y-2 flex flex-col gap-y-1 relative'>
+                className=' gap-y-2 flex flex-col  relative'>
                 {
                     NavItemsLinks.map((item, idx) => {
                         if (user == null && item.name.toLocaleLowerCase() == "dashboard") return
@@ -28,13 +29,12 @@ const SideBar = ({ isOpen = false, setIsOpen }: {
                             {...item}
                             to={item.link}
                             key={idx}
-                            className="flex items-center space-x-2"
+                            className="flex items-center "
                         >
 
-                            <span className='bg-white/20 size-10 mr-1 flex items-center justify-center rounded-full'>
-                                <item.icon />
-                            </span>                           {item.name}
-
+                            <Heading>
+                                {item.name}
+                            </Heading>
                         </CustomNavLink>)
                     }
                     )
@@ -43,29 +43,20 @@ const SideBar = ({ isOpen = false, setIsOpen }: {
 
             <div className='grid  my-4 space-y-2'>
                 {!user && <>
-                    <Button asChild className='bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500'
-                        onClick={() => setIsOpen(false)}
+                    <Link to={"/contact-us?rd_from=hero"}
+                            onClick={closeModal}
+                    
                     >
-
-
-                        <Link
-                            to='/home/auth/register'
-                            className='text-xs'
+                        <Button
+                            className="text-sm rounded-full 
+                    hover:text-primary-color
+                    bg-gradient-to-r from-cyan-500 to-secondary-color
+                    font-poppins font-normal py-2.5 md:py-2.5 hover:bg-white hover:border-primary-color border-[1px] h-auto bg-primary-color"
                         >
-                            Create Account
-                        </Link>
-                    </Button>
-                    <Button asChild className='relative'
-                        onClick={() => setIsOpen(false)}
+                            Request a qoute
 
-                    >
-                        <Link
-                            to='/home/auth'
-                            className='text-xs'
-                        >
-                            Login
-                        </Link>
-                    </Button>
+                        </Button>
+                    </Link>
                 </>}
             </div>
 

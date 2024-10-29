@@ -1,6 +1,10 @@
 import React from 'react'
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion"
 import { cn } from '../../lib/utils.js'
+type iWord = {
+    text: string;
+    className?: string;
+}[];
 const qoute = {
     initial: {
         opacity: 1
@@ -43,13 +47,17 @@ interface iAnimatedProps {
     className?: string,
     inView?: boolean;
     amount?: number;
-    text: string
+    text: string,
+    words?: iWord,
+    once?: boolean
+
 }
 export const AnimatedText = ({
     text,
     className = "",
     inView,
-    amount }: iAnimatedProps) => {
+    amount, once=true }: iAnimatedProps) => {
+
     return (
         <div
             className={cn(` w-full  mx-auto  py-2 flex items-center justify-center text-center 
@@ -60,11 +68,14 @@ export const AnimatedText = ({
                 initial="initial"
                 animate={inView ? false : "animate"}
                 whileInView={inView ? "animate" : ""}
-                viewport={{ once: true, amount: amount ? amount : 0.2 }}
+                viewport={{ once, amount: amount ? amount : 0.2 }}
                 className={cn(`break-words
                 inline-block w-full text-dark font-black  capitalize
                 text-6xl`, className)}>
+
                 <SplitText text={text} />
+
+
             </motion.h1>
 
 
@@ -120,7 +131,27 @@ const _singleword = {
         }
     }
 }
-const SplitSlideText = ({ text }: { text: string }) => {
+
+const SplitSlideText = ({ text
+    , words
+}: { text: string, words?: iWord }) => {
+    if (words?.length) {
+        console.log("words here", words)
+        return words.map((word) => word).map((singleword_) => {
+            console.log("single word", singleword_)
+            const _word = singleword_.text.split("").map((word, index) => (
+                <motion.span
+                    variants={_singleword}
+                    className={cn('inline-block break-normal',
+                        singleword_.className
+                    )}
+                    key={index + word}
+                >{word}</motion.span>))
+            return <div className='inline-block'>{_word} &nbsp;</div>
+
+        })
+
+    }
     return text?.split(" ").map((word) => word).map((singleword_) => {
         const _word = singleword_.split("").map((word, index) => (
             <motion.span
@@ -137,7 +168,8 @@ export const AnimatedSlideText = ({
     text,
     className = "",
     inView,
-    amount }: iAnimatedProps) => {
+    amount,
+    words ,once=true}: iAnimatedProps) => {
     return (
         <div
             className={cn(` w-full  mx-auto  py-2 flex items-center justify-center text-center 
@@ -148,11 +180,12 @@ export const AnimatedSlideText = ({
                 initial="initial"
                 animate={inView ? false : "animate"}
                 whileInView={inView ? "animate" : ""}
-                viewport={{ once: true, amount: amount ? amount : 0.2 }}
+                viewport={{ once, amount: amount ? amount : 0.2 }}
                 className={cn(`break-words
                 inline-block w-full text-dark font-black  capitalize [font-family:var(--second-font)]
                 text-6xl`, className)}>
-                <SplitSlideText text={text} />
+
+                <SplitSlideText text={text} words={words} />
             </motion.h1>
 
 

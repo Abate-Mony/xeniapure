@@ -23,7 +23,7 @@ import {
   QueryClient,
   QueryClientProvider
 } from '@tanstack/react-query';
-import DashBoardLayout,{loader as dashboardLoader} from './Layouts/DashBoardLayout';
+import DashBoardLayout, { loader as dashboardLoader } from './Layouts/DashBoardLayout';
 import Login, { action as loginAction } from './pages/Login';
 import OPTPage, { action as verifyOptAction } from './pages/VerifyOtp';
 import Users, { loader as usersLoader } from './pages/UsersPage';
@@ -33,6 +33,7 @@ import UserProfilePage from './pages/UserProfilePage';
 import UpdateUserProfile from './pages/UpdateUserProfilePage';
 import axios from 'axios';
 import SingleEventsPage from './pages/SingleEventsPage';
+import { useEffect } from 'react';
 axios.defaults.withCredentials = true;
 
 const queryClient = new QueryClient({
@@ -44,11 +45,19 @@ const queryClient = new QueryClient({
   }
 })
 function App() {
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'production' || true) {
+      const script = document.createElement('script');
+      script.src = "//code.tidio.co/4r4kenyweaduktfy4ddgbycile0ps5jk.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
   const router = createBrowserRouter([
 
     {
       path: "/",
-      errorElement: <ErrorElement/>,
+      errorElement: <ErrorElement />,
       element: <RootLayout />,
       children: [
         {
@@ -128,25 +137,25 @@ function App() {
     }, {
       path: "/dashboard",
       element: <DashBoardLayout />,
-      errorElement: <ErrorElement/>,
-      loader:dashboardLoader(queryClient),
-      
+      errorElement: <ErrorElement />,
+      loader: dashboardLoader(queryClient),
+
       children: [
         {
           index: true,
-          element:<DashboardHome/>
+          element: <DashboardHome />
         },
-         {
+        {
           path: "users",
           element: <Users />,
           loader: usersLoader(queryClient)
         },
-         {
+        {
           path: "events/:id",
           element: <SingleEventsPage />,
-         
+
         },
-         {
+        {
           path: "profile",
           element: <UserProfilePage />,
           children: [

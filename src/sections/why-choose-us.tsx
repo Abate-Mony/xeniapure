@@ -1,11 +1,11 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Button } from '../components/ui/button'
 // import { BusIcon, PlaneIcon, ShipIcon } from '../assets/images'
+import AnimatedHeadLessUi from '@/components/ui/AnimatedHeadlessUI'
 import Heading, { VariantHeading } from '@/components/ui/heading'
 import { animateHeadingVariants, pageAnimationVariantsTransiton } from '@/utils/framervariants'
 import { Award, Clock, EclipseIcon, PillBottle, ShieldCheck, Smile } from "lucide-react"
+import { cn } from '@/lib/utils'
 export const whyChooseUs = [
     {
         title: "Trusted & Insured",
@@ -51,75 +51,50 @@ const ServiceCard = ({
     idx, content
 }: iService) => {
     const { Icon, description, title } = content
-    return (<motion.div
-        onMouseEnter={() => setHoveredIndex(idx)}
-        onMouseLeave={() => setHoveredIndex(null)}
-        viewport={{ amount: 0.8 }}
+    return (
+        <AnimatedHeadLessUi
+            layoutId="thecoderandthecodearethesamedd"
+            key={idx}
+            index={idx}
+            hoverIndex={hoveredIndex}
+            setHoverIndex={setHoveredIndex}
+            animatedClassName="bg-primary-color/5"
+            className=
+            {cn("bg-white  gap-y-4 gap-x-3 px-4 py-4 relative my-4b group  shadow")}
 
-
-        className='flex flex-col space-y-6 px-4 py-4 relative my-4b group bg-white shadow'>
-        <AnimatePresence>
-            {hoveredIndex === idx && (
-                <motion.span
-                    className="absolute inset-0 h-full w-full  block bg-primary-color/10  rounded-none"
-                    // layoutId="hoverBackgroundhh" // required for the background to follow
-                    initial={{ opacity: 0 }}
-                    // layoutId
-                    layoutId="hoverBackground"
-                    // layout
-                    animate={{
-                        opacity: 1,
-                        transition: { duration: 0.15 },
-                    }}
-                    exit={{
-                        opacity: 0,
-                        transition: { duration: 0.15, delay: 0.2 },
-                    }}
-                />
-            )}
-        </AnimatePresence>
-        <div className=' relative'>
-
-            <motion.span
-                initial="initial"
-                whileInView="animate"
-                variants={animateHeadingVariants}
-                transition={{
-                    ...pageAnimationVariantsTransiton,
-                    delay: idx * 0.1
-
-                }}
-                className='  peer w-fit block lg:mx-0 mx-auto'
-
-            >
-                <Icon size={75} className='text-primary-color font-light' />
-
-            </motion.span>
-            {/* <span
-                className='bg-yellow-400/85 h-16 w-12 left-0 hover:left-5
-        peer-hover:left-5
-        transtion-all duration-300 
-        top-0 block z-30 absolute'
-            /> */}
-        </div>
-        <Heading className='font-Marcellus+SC font-light text-lg lg:text-xl text-center sm:text-start'>
-            {title}
-        </Heading>
-        <div >
-            <p className='tracking-tighter line-clamp-4 leading-relaxed text-lg text-muted-foreground '> {description}</p>
-        </div>
-        <Link to="#"
-            className='group-hover:translate-x-[2rem] transition-all duration-1000'
         >
-            <Button variant="link"
-                className='text-xl hidden  btn rounded-none relative z-30 font-bold hover:text-orange-500'
-            >
-                Read More
-            </Button>
 
-        </Link>
+            <div className='flex flex-col gap-y-3'>
 
-    </motion.div>)
+                <motion.span
+                    initial="initial"
+                    whileInView="animate"
+                    variants={animateHeadingVariants}
+                    transition={{
+                        ...pageAnimationVariantsTransiton,
+                        delay: idx * 0.1
+
+                    }}
+                    className='lg:group-hover:!translate-x-1/2 peer transition-all  w-fit block lg:mx-0 mx-auto'
+                
+                >
+                    <Icon size={75} className='text-primary-color font-light' />
+
+                </motion.span>
+                <Heading className='font-Marcellus+SC font-light text-lg lg:text-xl text-center sm:text-start'>
+                    {title}
+                </Heading>
+                <div >
+                    <p className='tracking-tighter line-clamp-4 leading-relaxed text-lg text-muted-foreground '> {description}</p>
+                </div>
+            </div>
+
+
+        </AnimatedHeadLessUi>
+
+
+
+    )
 }
 
 const WhyChooseUs = () => {
@@ -131,7 +106,7 @@ const WhyChooseUs = () => {
 
                     <span
                         className='w-10  h-[1px] bg-primary-color/70 '
-                    />  <span>         
+                    />  <span>
                         WHY <span className='text-primary-color'>CHOOSE</span> US
                     </span>
                     <span
