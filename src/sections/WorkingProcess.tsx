@@ -173,7 +173,7 @@ const WorkingProccess = () => {
                                 className="absolute text-white flex items-center justify-center size-4 rounded-full text-xs shadow-sm bg-orange-800 -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                                 {stepNumber}
                             </motion.span>
-                            <div className='space-y-0.5'>
+                            <div className='space-y-0.5 '>
 
                                 <Heading className='font-medium text-sm mb-0.5 uppercase'>{stepName}</Heading>
                                 <p className="mb-4 text-xs lg:text-sm font-normal text-gray-500 dark:text-gray-400">{description}</p>
