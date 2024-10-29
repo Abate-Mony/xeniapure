@@ -8,6 +8,7 @@ import RequestService from "@/sections/RequestToJoin";
 import Stats from "@/sections/stats";
 import Testimonial from "@/sections/Testimonials";
 import WhyChooseUs from "@/sections/why-choose-us";
+import WorkingProccess from "@/sections/WorkingProcess";
 // import Stats from "@/sections/stats";
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
             <ServiceSection/>
             <OurProjectExample/>
             <Testimonial />
+            <WorkingProccess/>
             <FrequentAskQuestion />
 
             {/* <div className="mb-4" /> */}

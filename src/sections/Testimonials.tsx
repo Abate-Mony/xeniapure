@@ -28,6 +28,7 @@ import {
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { Textarea } from "../components/ui/textarea";
+import AnimatedHeadLessUi from '@/components/ui/AnimatedHeadlessUI';
 interface Review {
     readonly name: string;
     readonly review: string;
@@ -35,36 +36,37 @@ interface Review {
 }
 const reviews = [
     {
-        name: "Ndoh Sarah",
-        review: "Woinkom UK has truly connected me to my roots. Through the events and gatherings, I've rekindled my love for our traditions, and it's been a joy sharing this with my children, helping them understand their cultural heritage.",
+        name: "Sarah Thompson",
+        review: "ShipSharp Cleaning transformed my office space! Their attention to detail and commitment to eco-friendly products left everything spotless. It’s refreshing to work with a team that’s so professional and reliable.",
         starCount: 5
     },
     {
-        name: "Achu David",
-        review: "Attending the meetings has not only brought me closer to the Kom community but also helped me rediscover the richness of our traditions. The sense of belonging is overwhelming, and I look forward to every event.",
+        name: "David Roberts",
+        review: "As a property manager, I’ve dealt with several cleaning companies, but ShipSharp Cleaning stands out. Their team is punctual, thorough, and the results are consistently impressive. Highly recommend them for both commercial and residential cleaning.",
         starCount: 4.5
     },
     {
-        name: "Ngwain Lisa",
-        review: "Being a part of Woinkom UK has been an enriching experience. The mentorship program has offered so much value to the younger generation, ensuring our heritage continues to thrive across borders.",
+        name: "Lisa Nguyen",
+        review: "ShipSharp Cleaning’s deep cleaning service exceeded my expectations. From the floors to the windows, every corner of my home sparkled. Plus, they were friendly and respectful of my space. I’ll definitely be using their services again!",
         starCount: 5
     },
     {
-        name: "Atu Michael",
-        review: "Woinkom UK is more than a network—it's a family. The cultural festivals and events have made me feel connected to my roots, even though I’m far from home. I’m grateful for the opportunity to be part of something so meaningful.",
+        name: "Michael Atu",
+        review: "ShipSharp Cleaning is more than just a cleaning service—it’s a game-changer for busy homeowners. The team was efficient, trustworthy, and left my house looking immaculate. I appreciate their dedication to quality.",
         starCount: 4
     },
     {
-        name: "Bih Emily",
-        review: "This community has been a lifeline for us as a diaspora. It’s been wonderful to introduce my children to our customs through the various activities, and I feel reassured knowing that they’re growing up with a strong sense of Kom identity.",
+        name: "Emily Brown",
+        review: "I was amazed by ShipSharp Cleaning’s attention to detail. They handled all the tough spots, and my kids’ play area has never been cleaner. It’s reassuring to know they use safe, non-toxic products too.",
         starCount: 5
     },
     {
-        name: "Ngong Charles",
-        review: "Woinkom UK has helped me rediscover our traditional values and the importance of community. Whether through dance performances, cultural discussions, or support initiatives, the network has been incredible in keeping our heritage alive.",
-        starCount: 3.5
+        name: "Charles Green",
+        review: "I’ve used ShipSharp Cleaning for several months, and they’ve consistently provided outstanding service. From routine cleans to special requests, the team is always accommodating. They really understand the importance of a clean, welcoming space.",
+        starCount: 4
     }
 ];
+
 
 const SingleTestimonial = ({ name, review, starCount }: Review) => {
     return (
@@ -101,6 +103,9 @@ const pagination = {
     }
 };
 const Testimonial = () => {
+    const [hoveIndex, setHoverIndex] = React.useState<number | null>(null);
+    const TIME_OUT = 1000
+    const SPEED = 5000
     const buttonRef = React.useRef<any>(null)
     const [open, setOpen] = React.useState(false)
     const isDesktop = useMediaQuery({ query: "(min-width: 768px)" })
@@ -158,11 +163,12 @@ const Testimonial = () => {
 
                 </VariantHeading>
                 <Swiper
+                    speed={SPEED}
                     pagination={pagination}
                     slidesPerView={1.2}
                     spaceBetween={10}
                     autoplay={{
-                        delay: 1500,
+                        delay: TIME_OUT,
                         pauseOnMouseEnter: true
                     }}
                     breakpoints={{
@@ -186,10 +192,75 @@ const Testimonial = () => {
                     className="!w-full pb-20"
                 >
                     {reviews.map((review, idx) => <SwiperSlide className=" w-full" key={idx}>
-                        <SingleTestimonial
-                            {...review}
+                        <AnimatedHeadLessUi
+                            layoutId="thecoderandthecodearethesameherethenab"
                             key={idx}
-                        />
+                            index={idx}
+                            hoverIndex={hoveIndex}
+                            setHoverIndex={setHoverIndex}
+                            className='mx-auto'
+                            animatedClassName={"bg-secondary-color/10 bottom-0 h-2- top-auto z-[1000]"}
+                        >
+
+                            <SingleTestimonial
+                                {...review}
+                                key={idx}
+                            />
+
+                        </AnimatedHeadLessUi>
+
+
+                    </SwiperSlide>)}
+                </Swiper>
+                <Swiper
+                    speed={SPEED}
+                    pagination={pagination}
+                    slidesPerView={1.2}
+                    spaceBetween={10}
+                    // direction='rtl'
+                    autoplay={{
+                        delay: TIME_OUT,
+                        pauseOnMouseEnter: true,
+                        reverseDirection: true, // Adds reverse direction for autoplay
+                    }}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 1.5,
+                            spaceBetween: 20,
+                        },
+                        768: {
+                            slidesPerView: 2.5,
+                            spaceBetween: 40,
+                        },
+                        1024: {
+                            slidesPerView: 3.1,
+                            spaceBetween: 50,
+                        },
+                    }}
+
+                    loop={true}
+                    translate="yes"
+                    modules={[Autoplay, Pagination, Navigation]}
+                    className="!w-full pb-20"
+                >
+                    {reviews.map((review, idx) => <SwiperSlide className=" w-full" key={idx}>
+                        <AnimatedHeadLessUi
+                            layoutId="thecoderandthecodearethesameherethenab"
+                            key={idx}
+                            index={idx}
+                            hoverIndex={hoveIndex}
+                            setHoverIndex={setHoverIndex}
+                            className='mx-auto'
+                            animatedClassName={"bg-secondary-color/10 bottom-0 h-2- top-auto z-[1000]"}
+                        >
+
+                            <SingleTestimonial
+                                {...review}
+                                key={idx}
+                            />
+
+                        </AnimatedHeadLessUi>
+
 
                     </SwiperSlide>)}
                 </Swiper>

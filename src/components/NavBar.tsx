@@ -65,7 +65,7 @@ const NavBar = ({ isOpen, setIsOpen }: {
                     <div className="flex items-center justify-center  space-x-2- ">
                         <Link to={"/"}>
                             <img
-                                className="size-16 w-24  hidden- md:block "
+                                className="size-14 w-24  hidden- md:block "
                                 src="/main-logo.png" alt="" />
 
                         </Link>

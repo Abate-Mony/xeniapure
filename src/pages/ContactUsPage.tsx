@@ -22,102 +22,112 @@ import { IconType } from "react-icons"
 import { BsFacebook, BsYoutube } from "react-icons/bs"
 import { MdOutlineCleanHands } from "react-icons/md"
 import { Link } from "react-router-dom"
+import { Calendar } from "@/components/ui/calendar"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { addDays, format } from "date-fns"
+import { Calendar as CalendarIcon } from "lucide-react"
 // Define type for contact information
 type ContactInfo = {
     name: string;
     href?: string; // href is optional
-  };
-  
-  // Define type for contact icon object
-  type ContactIcon = {
-    Icon: LucideIcon | IconType ; // Assuming LucideReact is a React component
-    name:string,
+};
+
+// Define type for contact icon object
+type ContactIcon = {
+    Icon: LucideIcon | IconType; // Assuming LucideReact is a React component
+    name: string,
     contactInfo: ContactInfo[]; // Array of ContactInfo objects
-  };
-  
-  // Array of ContactIcon objects
-  const contactIcons: ContactIcon[] = [
+};
+
+// Array of ContactIcon objects
+const contactIcons: ContactIcon[] = [
     {
-      name: "Office Line",
-      Icon: Mail,
-      contactInfo: [
-        { name: "info@shipsharpcleaning.com", href: "mailto:info@shipsharpcleaning.com" },
-        { name: "info@shipsharpcleaning.com", href: "mailto:info@shipsharpcleaning.com" },
-      ]
+        name: "Office Line",
+        Icon: Mail,
+        contactInfo: [
+            { name: "info@shipsharpcleaning.com", href: "mailto:info@shipsharpcleaning.com" },
+            { name: "info@shipsharpcleaning.com", href: "mailto:info@shipsharpcleaning.com" },
+        ]
     },
-   
+
     {
-      name: "Social",
-      Icon: BsFacebook,
-      contactInfo: [
-        { name: "Facebook", href: "https://www.facebook.com/shipsharpcleaning" },
-        { name: "Instagram", href: "https://www.instagram.com/shipsharpcleaning" }
-      ]
+        name: "Social",
+        Icon: BsFacebook,
+        contactInfo: [
+            { name: "Facebook", href: "https://www.facebook.com/shipsharpcleaning" },
+            { name: "Instagram", href: "https://www.instagram.com/shipsharpcleaning" }
+        ]
     },
     {
-      name: "Contacts",
-      Icon: BsYoutube,
-      contactInfo: [
-        { name: "YouTube", href: "https://www.youtube.com/c/shipsharpcleaning" },
-        { name: "Website", href: "https://www.shipsharpcleaning.com" }
-      ]
+        name: "Contacts",
+        Icon: BsYoutube,
+        contactInfo: [
+            { name: "YouTube", href: "https://www.youtube.com/c/shipsharpcleaning" },
+            { name: "Website", href: "https://www.shipsharpcleaning.com" }
+        ]
     }
-  ];
-  
-  const DisplayContactInfo = ({
+];
+
+const DisplayContactInfo = ({
     Icon, contactInfo
-  }: ContactIcon) => {
-  
+}: ContactIcon) => {
+
     return (<div className=' group shadow py-3.5 rounded-sm px-1.5  pb-1'>
-      <div className='flex gap-x-3 items-start'>
-        <span className='flex-none bg-orange-300 pl-1 rounded-sm 
+        <div className='flex gap-x-3 items-start'>
+            <span className='flex-none bg-orange-300 pl-1 rounded-sm 
         
         
         '>
-          <Icon size={45}
-            className='text-white
+                <Icon size={45}
+                    className='text-white
            
             '
-          />
-        </span>
-        <div className='flex-[calc(100%-250rem)]'>
-          <Heading className='font-medium mb-0 leading-0 break-words my-0 text-primary-color  text-[calc(1.0rem+0.3vw)]'>Office Line</Heading>
-          <ul className='-mt-0.5 flex gap-1 flex-wrap items-start '>{
-            contactInfo.map(({
-              name, href
-            }) => <>
-                <li
-                  className='pl-0.5 text-sm sm:text-sm relative z-10'
-                >
-                  {
-                    href ? <a
-                      className='link'
-                      href={href}
-                      target='_blank'
-                    >
-                      {name}
-  
-                    </a> : <p>
-  
-                      {name}
-                    </p>
-  
-                  }
-  
-                </li>
-              </>)
-          }
-  
-          </ul>
+                />
+            </span>
+            <div className='flex-[calc(100%-250rem)]'>
+                <Heading className='font-medium mb-0 leading-0 break-words my-0 text-primary-color  text-[calc(1.0rem+0.3vw)]'>Office Line</Heading>
+                <ul className='-mt-0.5 flex gap-1 flex-wrap items-start '>{
+                    contactInfo.map(({
+                        name, href
+                    }) => <>
+                            <li
+                                className='pl-0.5 text-sm sm:text-sm relative z-10'
+                            >
+                                {
+                                    href ? <a
+                                        className='link'
+                                        href={href}
+                                        target='_blank'
+                                    >
+                                        {name}
+
+                                    </a> : <p>
+
+                                        {name}
+                                    </p>
+
+                                }
+
+                            </li>
+                        </>)
+                }
+
+                </ul>
+            </div>
+
         </div>
-  
-      </div>
     </div>)
-  }
+}
 const ContactUsPage = () => {
     const targetRef = useRef<HTMLDivElement>(null);
     const [hoveIndex, setHoverIndex] = useState<number | null>(null);
-
+    const [date, setDate] = useState<Date>()
     const scrollToSection = () => {
         if (targetRef.current) {
             targetRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start', });
@@ -258,6 +268,54 @@ const ContactUsPage = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
                         >
+                            <Label htmlFor="email" className="block font-medium text-gray-700">Cleaning type</Label>
+                            <div className="relative mt-1 rounded-none shadow-sm">
+                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    {/* <MdOutlineCleanHands className="h-5 w-5 text-gray-400" /> */}
+                                    <CalendarIcon className="h-5 w-5 text-gray-400"/>
+
+                                </div>
+                                <Popover>
+                                    <PopoverTrigger asChild>
+                                        <Button
+                                            variant={"outline"}
+                                            className={cn(
+                                                "w-full pl-10 justify-start text-left font-normal",
+                                                !date && "text-muted-foreground"
+                                            )}
+                                        >
+                                            {date ? format(date, "PPP") : <span>Pick a date</span>}
+                                        </Button>
+                                    </PopoverTrigger>
+                                    <PopoverContent className="flex w-auto flex-col space-y-2 p-2">
+                                        <Select
+                                        
+                                            onValueChange={(value) =>
+                                                setDate(addDays(new Date(), parseInt(value)))
+                                            }
+                                        >
+                                            <SelectTrigger  className="w-full pl-10">
+                                                <SelectValue placeholder="Select" />
+                                            </SelectTrigger>
+                                            <SelectContent position="popper">
+                                                <SelectItem value="0">Today</SelectItem>
+                                                <SelectItem value="1">Tomorrow</SelectItem>
+                                                <SelectItem value="3">In 3 days</SelectItem>
+                                                <SelectItem value="7">In a week</SelectItem>
+                                            </SelectContent>
+                                        </Select>
+                                        <div className="rounded-md border">
+                                            <Calendar mode="single" selected={date} onSelect={setDate} />
+                                        </div>
+                                    </PopoverContent>
+                                </Popover>
+                            </div>
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                        >
                             <Label htmlFor="message" className="block font-medium text-gray-700">Your Message</Label>
                             <Textarea
                                 cols={100}
@@ -312,46 +370,46 @@ const ContactUsPage = () => {
                         Chat With Us
                     </VariantHeading>
                     <motion.div
-            initial={{
-              x: -100,
-              opacity: 0
-            }}
-            whileInView={{
-              x: 0,
-              opacity: 1
-            }}
-            viewport={{
-              amount: 0.5,
-              once: true
-            }}
-            transition={{
-              duration: 0.6
+                        initial={{
+                            x: -100,
+                            opacity: 0
+                        }}
+                        whileInView={{
+                            x: 0,
+                            opacity: 1
+                        }}
+                        viewport={{
+                            amount: 0.5,
+                            once: true
+                        }}
+                        transition={{
+                            duration: 0.6
 
-            }}
-            className='  px-4 grid gap-x-4 gap-y-6 justify-start  items-start
+                        }}
+                        className='  px-4 grid gap-x-4 gap-y-6 justify-start  items-start
                     grid-cols-[repeat(auto-fit,minmax(min(15rem,calc(100%-10px)),_1fr))]
                     '>
 
-            {contactIcons.map((contactInfo, idx) => (<AnimatedHeadLessUi
-            layoutId="thecoderandthecodearethesame"
-              key={idx}
-              index={idx}
-              hoverIndex={hoveIndex}
-              setHoverIndex={setHoverIndex}
-              animatedClassName="bg-primary-color/15"
-              className="bg-white"
-            >
-              <DisplayContactInfo
-                {
-                ...contactInfo
+                        {contactIcons.map((contactInfo, idx) => (<AnimatedHeadLessUi
+                            layoutId="thecoderandthecodearethesame"
+                            key={idx}
+                            index={idx}
+                            hoverIndex={hoveIndex}
+                            setHoverIndex={setHoverIndex}
+                            animatedClassName="bg-primary-color/15"
+                            className="bg-white"
+                        >
+                            <DisplayContactInfo
+                                {
+                                ...contactInfo
 
-                }
-              // key={idx}
-              />
+                                }
+                            // key={idx}
+                            />
 
-            </AnimatedHeadLessUi>))}
+                        </AnimatedHeadLessUi>))}
 
-          </motion.div>
+                    </motion.div>
                     <div>
                         <h3 className="text-xl font-semibold text-gray-900">Business Hours</h3>
                         <p>Monday - Friday: 9:00 AM - 6:00 PM</p>

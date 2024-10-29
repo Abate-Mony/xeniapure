@@ -11,7 +11,7 @@ import { cn } from "../lib/utils";
 
 
 // Define the interface for the structure of your objects
-interface KomTraditionFAQ {
+interface CleaningServiceFAQ {
     question: string;
     answer: string;
     category: string;
@@ -20,40 +20,46 @@ interface KomTraditionFAQ {
 }
 
 // Create an array of objects conforming to the KomTraditionFAQ interface
-const faqs: KomTraditionFAQ[] = [
+const faqs: CleaningServiceFAQ[] = [
     {
-        question: "What is the significance of the Fon in Kom tradition?",
-        answer: "The Fon serves as both the spiritual and political leader of the Kom people, guiding their cultural practices and preserving ancestral customs.",
-        category: "Kom Leadership",
-        contact: "fonsupport@komculture.com",
-        additionalInfo: "For more information about the Fon and his role, visit our Leadership section."
+        question: "What types of cleaning services do you offer?",
+        answer: "We offer a wide range of cleaning services including residential, commercial, deep cleaning, carpet cleaning, window cleaning, and post-construction cleanup.",
+        category: "Services Offered",
+        contact: "services@shipsharpcleaning.com",
+        additionalInfo: "Visit our Services page to see a full list of cleaning services available."
     },
     {
-        question: "How can I join the Kom traditional meetings?",
-        answer: "You can attend by registering through our website or by visiting the Kom Cultural Center. Ensure you follow the cultural etiquette during the meetings.",
-        category: "Kom Meetings",
-        contact: "meetings@komculture.com",
-        additionalInfo: "Meeting schedules are posted on the Events page. Check there for the next gathering."
+        question: "How can I schedule a cleaning appointment?",
+        answer: "You can schedule an appointment through our website, by calling us, or by sending an email to our support team.",
+        category: "Booking",
+        contact: "bookings@shipsharpcleaning.com",
+        additionalInfo: "For more information on how to book, please visit the Booking section of our website."
     },
     {
-        question: "What is Laikom and its role in Kom tradition?",
-        answer: "Laikom is the royal palace and the sacred center of Kom tradition, serving as the seat of the Fon and a place for key cultural ceremonies.",
-        category: "Kom Cultural Heritage",
-        contact: "heritage@komculture.com",
-        additionalInfo: "Learn more about the palace in our Cultural Heritage section."
+        question: "What products do you use for cleaning?",
+        answer: "We use eco-friendly and non-toxic cleaning products to ensure a safe and clean environment for you and your family.",
+        category: "Cleaning Products",
+        contact: "support@shipsharpcleaning.com",
+        additionalInfo: "For a list of the products we use and their safety certifications, visit our Products page."
     },
     {
-        question: "Are there any special cultural festivals I can attend?",
-        answer: "Yes, Kom hosts several cultural festivals throughout the year, celebrating our heritage through traditional dances, music, and rituals.",
-        category: "Kom Festivals",
-        additionalInfo: "Visit our Festivals section for event dates and details on how to participate."
+        question: "Do I need to be home during the cleaning service?",
+        answer: "No, it’s not required to be home, but you are welcome to be there. We can arrange secure access to your property if needed.",
+        category: "Service Policies",
+        additionalInfo: "Contact us for further details on how to arrange access to your home or office."
     },
     {
-        question: "How can I support the preservation of Kom culture?",
-        answer: "You can support us by donating to our preservation projects or volunteering at cultural events.",
-        category: "Support Kom Tradition",
-        contact: "support@komculture.com",
-        additionalInfo: "Visit the Support Us page to learn how you can contribute to our mission."
+        question: "How can I provide feedback or request a re-clean?",
+        answer: "We value your feedback and offer a satisfaction guarantee. If you’re not satisfied with a cleaning, please contact us within 24 hours, and we’ll arrange a re-clean.",
+        category: "Customer Support",
+        contact: "feedback@shipsharpcleaning.com",
+        additionalInfo: "Learn more about our satisfaction guarantee on the Customer Support page."
+    },
+    {
+        question: "What safety protocols are in place for COVID-19?",
+        answer: "Our team follows all recommended COVID-19 safety protocols, including mask-wearing, sanitizing, and social distancing.",
+        category: "Health & Safety",
+        additionalInfo: "Read more about our COVID-19 safety measures on our Health & Safety page."
     }
 ];
 
