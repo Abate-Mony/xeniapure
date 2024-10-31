@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 interface IWord {
     text: string;
     className?: string;
@@ -35,9 +35,9 @@ export const TypewriterEffect = ({
                 "span",
                 {
                     display: "inline-block",
-                    opacity: [0.4, 1],
+                    opacity: [0.5, 1],
                     rotate: [10, 0],
-                    y: [15, 0],
+                    y: [10, 0],
                     x: [5, 0],
                 },
                 {

@@ -12,7 +12,6 @@ import { TypewriterEffect } from './ui/typer-write-effect';
 
 const Hero = () => {
 
-    // const [swiper, setSwiper] = useState<any>(null)
     const TIME_OUT = 7000
     return (
         <div className='relative'>
@@ -29,23 +28,18 @@ const Hero = () => {
                 >
                     {
                         heroBanner.map((heroItem) => {
+
                             return (
 
-                                <SwiperSlide className="!size-full">
+                                <SwiperSlide className="!size-full"
+                                    key={heroItem.description}
+                                >
 
                                     <img
                                         className="size-full object-fill"
                                         src={heroItem.image}
                                     />
-                                    {/* <Compare
-                                firstImage={heroItem.image}
-                                secondImage="https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/04/Stainless-Steel-Cleaning.jpg"
-                                firstImageClassName="object-cover object-left-top w-full"
-                                secondImageClassname="object-cover object-left-top w-full"
-                                className="w-full pointer-events-none h-full size-full object-fit !==absolute inset-0 !rounded-none px-0 border-0"
-                                // slideMode="hover"
-                                autoplay={true}
-                            /> */}
+
 
                                 </SwiperSlide>
                             )
@@ -57,11 +51,9 @@ const Hero = () => {
                 </Swiper>
 
                 <Swiper
-                    // effect={'fade'}
                     loop
                     longSwipes
-
-                    // onSwiper={setSwiper}
+                    speed={3000}
                     direction='vertical'
                     autoplay={{ delay: TIME_OUT - 200, }}
                     modules={[Navigation, Pagination, Autoplay]}
@@ -70,7 +62,7 @@ const Hero = () => {
                     {
                         heroBanner.map(word => (
                             <SwiperSlide
-
+                                key={word.description}
                                 className='h-full '>
                                 <div className="bg-black/[0.5]  w-full flex items-center justify-center relative h-full z-[20]">
 
@@ -85,6 +77,10 @@ const Hero = () => {
                                                 className="font-pacifico  text-white"
                                                 wordClassName="text-6xl sm:text-7xl   lg:text-8xl xxl:text-8xl"
                                                 words={word.heading} />
+                                            {/* <TypewriterEffect
+                                                className="font-pacifico  text-white"
+                                                wordClassName="text-6xl sm:text-7xl   lg:text-8xl xxl:text-8xl"
+                                                words={word.heading} /> */}
                                         </div>
 
                                         <motion.p

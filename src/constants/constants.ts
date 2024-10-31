@@ -3,22 +3,22 @@ import { iHeroBanner } from "@/types"
 export const heroBanner: iHeroBanner[] = [
   {
     heading: [
-      { text: "Clean", className: "text-primary-color sm:text-4xl lg:text-5xl" },
+      { text: "Clean", className: "text-secondary-color sm:text-4xl lg:text-5xl" },
       { text: "Spaces", className: "" },
-      { text: "Create", className: "text-primary-color" },
+      { text: "Create", className: "text-secondary-color" },
       { text: "Fresh", className: "" },
-      { text: "Starts", className: "text-primary-color sm:text-4xl lg:text-5xl" },
+      { text: "Starts", className: "text-secondary-color sm:text-4xl lg:text-5xl" },
     ],
     description: "Expert cleaning services to keep your home and workspace spotless and welcoming.",
     image: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/revslider/Home/home_bg_01.jpg",
   },
   {
     heading: [
-      { text: "Trust", className: "text-primary-color" },
+      { text: "Trust", className: "text-secondary-color" },
       { text: "Our", className: "" },
-      { text: "Team", className: "text-primary-color sm:text-4xl lg:text-5xl" },
+      { text: "Team", className: "text-secondary-color sm:text-4xl lg:text-5xl" },
       { text: "for", className: "" },
-      { text: "Immaculate", className: "text-primary-color" },
+      { text: "Immaculate", className: "text-secondary-color" },
       { text: "Results", className: "" },
     ],
     description: "Our experienced cleaners ensure every corner shines, leaving you with peace of mind.",
@@ -26,10 +26,10 @@ export const heroBanner: iHeroBanner[] = [
   },
   {
     heading: [
-      { text: "Quality", className: "text-primary-color" },
+      { text: "Quality", className: "text-secondary-color" },
       { text: "Cleaning", className: "" },
       { text: "Done", className: "" },
-      { text: "Right,", className: "text-primary-color" },
+      { text: "Right,", className: "text-secondary-color" },
       { text: "Every Time", className: "" },
     ],
     description: "Reliable and thorough cleaning services tailored to meet your unique needs.",
