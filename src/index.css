@@ -66,8 +66,8 @@
     --scroll-to-height: 0.5rem;
     --primary-color: #2bcbba;
     --color-primary: 155 100% 31%;
-    
-     /* --color-primary: 267 25% 16%; */
+
+    /* --color-primary: 267 25% 16%; */
     /* --color-light:#F1F0E8; */
     --color-light: #fafafa;
     --top-offset: 60px;
@@ -114,9 +114,13 @@
 
   }
 }
-input, select, textarea {
+
+input,
+select,
+textarea {
   font-size: 16px;
 }
+
 @layer base {
   * {
     @apply border-border;
@@ -359,13 +363,13 @@ figure.snip1157 .author h5 span {
   cursor: not-allowed;
 }
 
-.custom-pagination-hero .swiper-pagination-bullet,.custom-pagination-testimonial .swiper-pagination-bullet {
+.custom-pagination-hero .swiper-pagination-bullet,
+.custom-pagination-testimonial .swiper-pagination-bullet {
   @apply bg-transparent border-primary-color cursor-pointer border-2 !size-4;
 }
 
 .custom-pagination-hero .swiper-pagination-bullet.swiper-pagination-bullet-active,
-.custom-pagination-testimonial .swiper-pagination-bullet.swiper-pagination-bullet-active
-{
+.custom-pagination-testimonial .swiper-pagination-bullet.swiper-pagination-bullet-active {
   @apply bg-primary-color
 }
 
@@ -480,3 +484,7 @@ section {
 .error {
   @apply text-rose-500 font-medium text-sm
 }
+
+/* .transform-3d {
+  @apply [transform:rotateX(15deg) translateZ(80px)];
+} */

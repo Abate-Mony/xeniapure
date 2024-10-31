@@ -5,15 +5,15 @@ import { MoveRight } from 'lucide-react';
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Button } from './ui/button';
-import { Compare } from './ui/compare';
+// import { Compare } from './ui/compare';
 import { AnimatedLinks } from './ui/links';
 import { Spotlight } from './ui/spot-light';
 import { TypewriterEffect } from './ui/typer-write-effect';
 
 const Hero = () => {
-  
+
     // const [swiper, setSwiper] = useState<any>(null)
-    const TIME_OUT=7000
+    const TIME_OUT = 7000
     return (
         <div className='relative'>
 
@@ -32,12 +32,12 @@ const Hero = () => {
                             return (
 
                                 <SwiperSlide className="!size-full">
-{/* 
+
                                     <img
                                         className="size-full object-fill"
                                         src={heroItem.image}
-                                    /> */}
-  <Compare
+                                    />
+                                    {/* <Compare
                                 firstImage={heroItem.image}
                                 secondImage="https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/04/Stainless-Steel-Cleaning.jpg"
                                 firstImageClassName="object-cover object-left-top w-full"
@@ -45,7 +45,7 @@ const Hero = () => {
                                 className="w-full pointer-events-none h-full size-full object-fit !==absolute inset-0 !rounded-none px-0 border-0"
                                 // slideMode="hover"
                                 autoplay={true}
-                            />
+                            /> */}
 
                                 </SwiperSlide>
                             )
@@ -63,7 +63,7 @@ const Hero = () => {
 
                     // onSwiper={setSwiper}
                     direction='vertical'
-                    autoplay={{ delay: TIME_OUT-200, }}
+                    autoplay={{ delay: TIME_OUT - 200, }}
                     modules={[Navigation, Pagination, Autoplay]}
                     className="h-full !w-full !pointer-events-none">
 

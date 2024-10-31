@@ -6,7 +6,6 @@ import { Phone } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { Link } from 'react-router-dom'
 import { Button } from '../components/ui/button'
-import { AnimatedSlideText } from '@/components/Animated/animated'
 
 const RequestService = () => {
     return (
@@ -20,11 +19,7 @@ const RequestService = () => {
                 <Heading className='text-black mb-6 text-center text-3xl sm:text-4xl lg:text-5xl font-poppins font-black capitalize px-2 tracking-tighter leading-tight'>
                     Order a <span className="text-primary-color">Free Call</span> from Our Innovative Team
                 </Heading>
-                <AnimatedSlideText inView
-                    text="Your one Stop Printing solution - Explore our services"
-                    className='text-center text-blue-950 font-black mb-6 text-xl lg:text-2xl max-w-3xl mx-auto '>
-
-                </AnimatedSlideText>
+        
                <div className='flex flex-wrap gap-x-2
                  gap-y-2 w-full justify-center '>
                     <div className='flex flex-col max-w-xl mx-auto w-full justify-center items-center gap-y-2'>

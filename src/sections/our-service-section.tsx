@@ -160,20 +160,12 @@ export default function ServiceSection() {
                     />
 
                 </VariantHeading>
-                <Heading className="text-center max-w-4xl mx-auto text-muted-foreground">
+                <Heading className="text-center max-w-4xl mx-auto text-muted-foreground mb-6">
                     Qui ea iisque consetetur scriptorem, ad dico posse postulant duo, in qui suas mucius omittam. Labore viderer pri no, an justo.
                     Qui ea iisque consetetur scriptorem, ad dico posse postulant duo, in qui suas mucius omittam. Labore viderer pri no, an justo.
                 </Heading>
                 <div className="relative    flex items-center !overflow-auto">
-                    {/* <div className="absolute disabled:bg-green-300  z-10 swiper-button-pre top-[7px] hover:bg-slate-200 w-[30px] h-[30px] shadow-2xl flex items-center justify-center  left-0 rounded-full">
-
-                        <ChevronLeftIcon size={30} />
-
-                    </div>
-                    <div className="absolute z-10 swiper-button-nxt  hover:bg-slate-200  top-[7px] w-[30px] h-[30px] shadow-2xl  right-0 rounded-full">
-                        <ChevronRightIcon size={30} />
-
-                    </div> */}
+                  
                     <Swiper
                         id="scrollbar"
                         onSwiper={setThumbsSwiper}
@@ -215,11 +207,6 @@ export default function ServiceSection() {
 
                 <Swiper
                     speed={TIME_OUT}
-                    // navigation
-                    // navigation={{
-                    //     prevEl: ".swiper-button-pre",
-                    //     nextEl: ".swiper-button-nxt",
-                    // }}
                     autoplay={{
                         delay: TIME_OUT,
                         pauseOnMouseEnter: true,
@@ -250,7 +237,7 @@ export default function ServiceSection() {
                                     y: 0,
                                 }}
                                 transition={{
-                                    delay: TIME_OUT/8000
+                                    delay: TIME_OUT/80000
                                 }}
 
                                 className={

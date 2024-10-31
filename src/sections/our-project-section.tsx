@@ -142,8 +142,8 @@ const OurProjectExample = () => {
                     }
                 </Swiper>
                 <div className="custom-pagination-hero mt-4 flex justify-center"></div>
-                <div className="custom-button-prev custom-button  lg:absolute -bottom-12 lg:bottom-auto lg:top-1/2 left-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg cursor-pointer ml-auto inline-flex items-center justify-center space-x-2 select-none"> <ArrowLeft size={20} /><span className='-hidden sm:block -sr-only'>Prev</span> </div>
-                <div className="custom-button-next custom-button lg:absolute -bottom-12 lg:bottom-auto lg:top-1/2 right-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg cursor-pointer ml-auto inline-flex items-center justify-center space-x-2 select-none ">Next <ArrowRight size={20} /></div>
+                <div className="custom-button-prev custom-button  lg:absolute -bottom-12 lg:bottom-auto lg:top-1/2 left-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg cursor-pointer ml-auto inline-flex- items-center justify-center space-x-2 select-none hidden"> <ArrowLeft size={20} /><span className='-hidden sm:block -sr-only'>Prev</span> </div>
+                <div className="custom-button-next custom-button lg:absolute -bottom-12 lg:bottom-auto lg:top-1/2 right-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg cursor-pointer ml-auto inline-flex- items-center justify-center space-x-2 select-none hidden ">Next <ArrowRight size={20} /></div>
 
 
             </div>

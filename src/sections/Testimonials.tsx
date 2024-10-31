@@ -247,7 +247,7 @@ const Testimonial = () => {
                         <AnimatedHeadLessUi
                             layoutId="thecoderandthecodearethesameherethenab"
                             key={idx}
-                            index={idx}
+                            index={idx+reviews.length}
                             hoverIndex={hoveIndex}
                             setHoverIndex={setHoverIndex}
                             className='mx-auto'

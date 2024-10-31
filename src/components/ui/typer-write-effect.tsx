@@ -35,10 +35,10 @@ export const TypewriterEffect = ({
                 "span",
                 {
                     display: "inline-block",
-                    opacity: [0.1, 1],
-                    rotate: [15, 0],
-                    y: [20, 0],
-                    x: [10, 0],
+                    opacity: [0.4, 1],
+                    rotate: [10, 0],
+                    y: [15, 0],
+                    x: [5, 0],
                 },
                 {
                     duration: 0.3,

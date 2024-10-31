@@ -1,12 +1,12 @@
 import { motion, useInView } from 'framer-motion';
-import { Link } from 'lucide-react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AnimatedNumber, AnimatedSlideText } from '../components/Animated/animated';
 import { Button } from '../components/ui/button';
 import { animateHeadingVariants } from '../utils/framervariants';
 import Heading, { VariantHeading } from '@/components/ui/heading';
 import { Compare } from '@/components/ui/compare';
 import AnimatedHeadLessUi from '@/components/ui/AnimatedHeadlessUI';
+import { Link } from 'react-router-dom';
 
 interface iStat {
     description: string,
@@ -72,19 +72,17 @@ function SingleStat({ title, value, unit }: iStat) {
         className='flex flex-col gap-y-6 mx-auto px-4 justify-center  items-center '>
 
         <div className='space-y-2'>
-            <VariantHeading className='text-6xl font-medium text-center'>
+            <VariantHeading className='text-2xl lg:text-6xl font-medium text-center'>
                 <AnimatedNumber className='font-black'
                     value={progress}
                 />
-                <span className='text-primary-color'>{unit}</span>
-                {/* <sup className='text-blue-400'>+</sup> */}
+                <span className='text-primary-color '>{unit}</span>
             </VariantHeading>
             <AnimatedSlideText
                 inView
-                once={false}
                 // words={words}
                 text={title}
-                className='font-Marcellus+SC text-blue-950 text-lg font-black  '>
+                className='font-Marcellus+SC text-blue-950 text-xs lg:text-lg font-black  '>
 
             </AnimatedSlideText>
             {/* <p className='font-Marcellus+SC text-blue-950 text-lg font-black '>{title}</p> */}
@@ -95,33 +93,20 @@ function SingleStat({ title, value, unit }: iStat) {
     </motion.div>)
 }
 const Stats = () => {
-    const [hoveIndex, setHoverIndex] = useState<number | null>(null);
-    const words: {
-        text: string,
-        className?: string
-    }[] = [
-            { "text": "We" },
-            { "text": "Are" },
-            { "text": "Your" },
-            { "text": "Reliable", className: "text-primary-color" },
-            { "text": "Professional", className: "text-primary-color" },
-            { "text": "Cleaning" },
-            { "text": "Experts" },
-            { "text": "Dedicated", className: "text-primary-color" },
-            { "text": "To" },
-            { "text": "Quality", className: "text-primary-color" },
-            { "text": "Service" },
-            { "text": "With" },
-            { "text": "Exceptional", className: "text-primary-color" },
-            { "text": "Attention" },
-            { "text": "To Detail" },
-            { "text": "In" },
-            { "text": "Every Job" },
-            { "text": "For", className: "text-primary-color" },
-            { "text": "Homes," },
-            { "text": "Offices," },
-            { "text": "And More!", className: "text-primary-color" }
-        ];
+    const [hoveIndex, setHoverIndex] = useState<number>(0);
+    const TIME_OUT_DURATION = 4000
+    const SLIDES = 4
+    const check = () => hoveIndex && hoveIndex >= SLIDES ? true : false
+    const validate = () => hoveIndex == null || check() ? setHoverIndex(0) : setHoverIndex(hoveIndex + 1);
+    const timer = React.useRef<any>(null)
+    useEffect(() => {
+        timer.current = setInterval(() => {
+            validate()
+        }, TIME_OUT_DURATION)
+        return () => {
+            clearInterval(timer.current)
+        }
+    }, [hoveIndex,timer])
     return (
         <section
             className='py-24 '
@@ -143,14 +128,7 @@ const Stats = () => {
 
                 </VariantHeading>
 
-                <AnimatedSlideText
-                    inView
-                    once={false}
-                    words={words}
-                    text="Your one Stop Printing solution - Explore our services"
-                    className='text-center font-poppins lowercase text-blue-950 font-black mb-6 text-xl lg:text-2xl max-w-3xl mx-auto '>
 
-                </AnimatedSlideText>
 
 
                 <div className="md:grid grid-cols-[1fr,1fr] max-w-7xl mx-auto gap-x-6 mb-10">
@@ -165,8 +143,8 @@ const Stats = () => {
                             <Compare
                                 firstImage="https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/04/project_03-400x400.jpg"
                                 secondImage="https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/04/Stainless-Steel-Cleaning.jpg"
-                                firstImageClassName="object-cover object-left-top w-full"
-                                secondImageClassname="object-cover object-left-top w-full"
+                                firstImageClassName="object-cover object-left-top w-full  rounded-none"
+                                secondImageClassname="object-cover object-left-top w-full  rounded-none"
                                 className="w-full h-full !rounded-none px-0 border-0"
                                 slideMode="hover"
                                 autoplay={true}
@@ -185,12 +163,15 @@ const Stats = () => {
                         <Heading className='mb-6'>As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullamcorper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci, sed ex altera dictas incorrupte. Idque option ius ut, id molestiae philosophia his. Qui euismod fabellas reformidans ea, inermis ration ibus necessitatibus eu eum.</Heading>
                         <p className='mb-6'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi voluptatibus eos quidem eligendi odio molestias. Aliquid, maiores! Recusandae tempore deleniti aspernatur nisi enim esse corporis?</p>
 
-                        <Button className='px-8 bg-[#fb5711] m shadow-sm top-auto right-2'>Learn More <Link size={15} className='ml-2' /></Button>
 
+                        <Link to={"/about-us"}>
+                            <Button className='px-8  shadow-sm top-auto bg-secondary-color right-2'>Learn More </Button>
+
+                        </Link>
                     </div>
                 </div>
                 {/* stats */}
-                <div className='mt-4 grid gap-y-6 grid-cols-[repeat(auto-fit,minmax(min(10rem,calc(100%-60px)),_1fr))] justify-center gap-x-4  mx-auto max-w-6xl'>
+                <div className='mt-4 grid gap-y-6 [perspective:800px] [transform-style:preserve-3d]  grid-cols-[repeat(auto-fit,minmax(min(10rem,calc(100%-60px)),_1fr))] justify-center gap-x-4  mx-auto max-w-6xl'>
                     {stats.map((arr, idx) => (
                         <AnimatedHeadLessUi
                             layoutId="thecoderandthecodearethesamehere"
@@ -198,8 +179,8 @@ const Stats = () => {
                             index={idx}
                             hoverIndex={hoveIndex}
                             setHoverIndex={setHoverIndex}
-                            className='mx-auto'
-                            animatedClassName={"bg-secondary-color/10 bottom-0 h-2- top-auto "}
+                            className='mx-auto py-4 [transform:rotateX(20deg)_translateZ(20px)_translateY(0px)] bg-red-50-'
+                            animatedClassName={"bg-secondary-color/10   top-auto   transform-3d"}
                         >
 
                             <SingleStat key={idx}

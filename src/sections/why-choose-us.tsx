@@ -72,10 +72,10 @@ const ServiceCard = ({
                     variants={animateHeadingVariants}
                     transition={{
                         ...pageAnimationVariantsTransiton,
-                        delay: idx * 0.1
+                        delay: idx * 0.01
 
                     }}
-                    className='lg:group-hover:!translate-x-1/2 peer transition-all  w-fit block lg:mx-0 mx-auto'
+                    className='lg:group-hover:!translate-x-1/2 peer  w-fit block g:mx-0 mx-auto'
                 
                 >
                     <Icon size={75} className='text-primary-color font-light' />
