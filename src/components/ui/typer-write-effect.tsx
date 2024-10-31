@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 interface IWord {
     text: string;
     className?: string;
