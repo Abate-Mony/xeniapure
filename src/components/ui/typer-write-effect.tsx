@@ -35,15 +35,14 @@ export const TypewriterEffect = ({
                 "span",
                 {
                     display: "inline-block",
-                    opacity: [0.5, 1],
+                    opacity: [0.1, 1],
                     rotate: [10, 0],
                     y: [10, 0],
-                    x: [5, 0],
                 },
                 {
                     duration: 0.3,
-                    delay: stagger(0.1),
-                    ease: "easeInOut",
+                    delay: stagger(0.09),
+                    // ease: "easeInOut",
                 }
             );
         }
@@ -53,16 +52,15 @@ export const TypewriterEffect = ({
         return (
             <motion.div
 
-                ref={scope} className="inline">
+                ref={scope} className="inline w-full ">
                 {wordsArray.map((word, idx) => {
                     return (
                         <div key={`word-${idx}`} className="inline-block">
                             {word.text.map((char, index) => (
                                 <motion.span
-                                    initial={{}}
-                                    key={`char-${index}`}
+                                    key={`char-${index}-${char}`}
                                     className={cn(
-                                        ` opacity-0 hidden text-3xl lg:text-4xl`,
+                                        `  text-3xl lg:text-4xl`,
                                         word.className,
                                         className
                                     )}

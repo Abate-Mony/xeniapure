@@ -54,7 +54,8 @@ const Hero = () => {
                     loop
                     longSwipes
                     speed={3000}
-                    direction='vertical'
+                    // slidesPerView={1.2}
+                    // direction='vertical'
                     autoplay={{ delay: TIME_OUT - 200, }}
                     modules={[Navigation, Pagination, Autoplay]}
                     className="h-full !w-full !pointer-events-none">
@@ -71,16 +72,13 @@ const Hero = () => {
                                         className="-top-40 left-0 md:left-60 md:-top-20"
                                         fill="white"
                                     />
-                                    <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
+                                    <div className=" p-2 max-w-8xl text-center   mx-auto relative z-10  w-full pt-20 md:pt-0">
                                         <div className='mb-4'>
                                             <TypewriterEffect
                                                 className="font-pacifico  text-white"
                                                 wordClassName="text-6xl sm:text-7xl   lg:text-8xl xxl:text-8xl"
                                                 words={word.heading} />
-                                            {/* <TypewriterEffect
-                                                className="font-pacifico  text-white"
-                                                wordClassName="text-6xl sm:text-7xl   lg:text-8xl xxl:text-8xl"
-                                                words={word.heading} /> */}
+
                                         </div>
 
                                         <motion.p
