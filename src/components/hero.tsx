@@ -19,20 +19,19 @@ const Hero = () => {
             <div className="h-[min(calc(100vh-4rem),40rem)]  flex-col w-full rounded-none flex md:items-center md:justify-center  bg-black/[0.2] antialiased bg-grid-white/[0.02] relative overflow-hidden">
 
                 <Swiper
-                    spaceBetween={30}
-                    effect={'fade'}
-
+                    slidesPerView={1.5}
+                     effect={'fade'}
                     autoplay={{ delay: TIME_OUT, }}
                     modules={[EffectFade, Navigation, Pagination, Autoplay]}
                     className="!size-full !absolute "
                 >
                     {
-                        heroBanner.map((heroItem) => {
+                        heroBanner.map((heroItem, idx) => {
 
                             return (
 
                                 <SwiperSlide className="!size-full"
-                                    key={heroItem.description}
+                                    key={heroItem.description + idx}
                                 >
 
                                     <img
@@ -55,7 +54,7 @@ const Hero = () => {
                     longSwipes
                     speed={3000}
                     // slidesPerView={1.2}
-                    // direction='vertical'
+                    direction='vertical'
                     autoplay={{ delay: TIME_OUT - 200, }}
                     modules={[Navigation, Pagination, Autoplay]}
                     className="h-full !w-full !pointer-events-none">

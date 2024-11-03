@@ -1,5 +1,6 @@
 import Hero from "@/components/hero";
 import MiniService from "@/components/mini-service";
+import SliceThrough from "@/components/ui/slice-through";
 import { FrequentAskQuestion } from "@/sections/FAQs";
 import OurProjectExample from "@/sections/our-project-section";
 import ServiceSection from "@/sections/our-service-section";
@@ -19,6 +20,7 @@ const Home = () => {
 
                  <Hero />
             <MiniService />
+            <SliceThrough/>
             <WhyChooseUs/>  
             <RequestService/>
             <Stats/>
