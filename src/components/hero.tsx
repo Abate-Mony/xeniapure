@@ -52,10 +52,10 @@ const Hero = () => {
                 <Swiper
                     loop
                     longSwipes
-                    speed={3000}
+                    speed={300}
                     // slidesPerView={1.2}
                     direction='vertical'
-                    autoplay={{ delay: TIME_OUT - 200, }}
+                    autoplay={{ delay: TIME_OUT, }}
                     modules={[Navigation, Pagination, Autoplay]}
                     className="h-full !w-full !pointer-events-none">
 
