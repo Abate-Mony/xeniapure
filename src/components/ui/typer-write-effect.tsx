@@ -20,7 +20,6 @@ export const TypewriterEffect = ({
     cursorClassName?: string;
     wordClassName?: string;
 }) => {
-    // Split text inside of words into array of characters
     const wordsArray = words.map((word) => ({
         ...word,
         text: word.text.split(""),
@@ -32,31 +31,25 @@ export const TypewriterEffect = ({
 
     useEffect(() => {
         if (isInView) {
+            animate(
+                "span",
+                {
+                    display: "inline-block",
+                    opacity: [0.4, 1],
+                    y: [15, 0],
+                    rotate: [10, 0],
+                },
+                {
+                    duration: 0.4,
+                    delay: initialRender ? 0 : stagger(0.1), // Adjusted stagger for smoother flow
+                    ease: "easeOut",
+                }
+            );
             if (initialRender) {
-                setInitialRender(false);
-                // Different animation logic for first render
-                animate(
-                    "span",
-                    { opacity: [0, 1], scale: [0.9, 1] },
-                    { duration: 1.2, ease: "easeOut" }
-                );
-            } else {
-                animate(
-                    "span",
-                    {
-                        display: "inline-block",
-                        opacity: [0, 1],
-                        y: [15, 0],
-                    },
-                    {
-                        duration: 0.4,
-                        delay: stagger(0.12),
-                        ease: "easeOut",
-                    }
-                );
+                setInitialRender(false); // Set initialRender after animation starts
             }
         }
-    }, [isInView, initialRender]);
+    }, [isInView, initialRender, animate]);
 
     const renderWords = (className: string = "") => (
         <motion.div ref={scope} className="inline w-full">
@@ -66,7 +59,10 @@ export const TypewriterEffect = ({
                     className="inline-block"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: idx * 0.3 }}
+                    transition={{
+                        duration: 0.6,
+                        delay: idx * 0.3, // Adjust delay for smoother appearance
+                    }}
                 >
                     {word.text.map((char, index) => (
                         <motion.span

@@ -1,11 +1,11 @@
-import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import React, { useEffect, useRef, useState } from 'react'
 // import { BusIcon, PlaneIcon, ShipIcon } from '../assets/images'
 import AnimatedHeadLessUi from '@/components/ui/AnimatedHeadlessUI'
 import Heading, { VariantHeading } from '@/components/ui/heading'
+import { cn } from '@/lib/utils'
 import { animateHeadingVariants, pageAnimationVariantsTransiton } from '@/utils/framervariants'
 import { Award, Clock, EclipseIcon, PillBottle, ShieldCheck, Smile } from "lucide-react"
-import { cn } from '@/lib/utils'
 export const whyChooseUs = [
     {
         title: "Trusted & Insured",
@@ -76,7 +76,7 @@ const ServiceCard = ({
 
                     }}
                     className='lg:group-hover:!translate-x-1/2 peer  w-fit block g:mx-0 mx-auto'
-                
+
                 >
                     <Icon size={75} className='text-primary-color font-light' />
 
@@ -98,10 +98,70 @@ const ServiceCard = ({
 }
 
 const WhyChooseUs = () => {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const containerRef = useRef<HTMLElement>(null);
+    const [height, setHeight] = useState(0);
+    const [width, setWidth] = useState(0);
+    useEffect(() => {
+        if (containerRef.current) {
+            const rect = containerRef.current.getBoundingClientRect();
+            setHeight(rect.height);
+            setWidth(rect.width);
+        }
+    }, [containerRef]);
+
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start 90%", "end 50%"],
+    });
+
+    // const heightTransform = useTransform(scrollYProgress, [0, 100], [0, height]);
+    const _heightTransform = useTransform(scrollYProgress, [0, 1], [0, width]);
+    // const scaleTransform = useTransform(scrollYProgress, [0, 1], [1, 1.7]);
+    // const opacity_Transform = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
     return (
-        <section className=' py-32 px-2'>
-            <div className="max-w-6xl mx-auto">
+        <section
+            ref={containerRef}
+            className=' py-32 px-2 bg-no-repeat bg-cover relative overflow-hidden'
+        // style={{
+        //     backgroundImage: `url(/image-02.jpg)`,
+        // }}
+        >
+            <div className="absolute inset-0 z-10 bg-white/75 size-full"
+            ></div>
+            {/* <motion.div className="absolute inset-0 left-0 bg-red-500"
+               style={{
+                x: useTransform(_heightTransform, (value) => (value))
+            }}
+            >
+          
+            </motion.div> */}
+
+            {/* <motion.img
+                style={{
+                    left: heightTransform
+                }}
+                src="https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/revslider/Home/slider_img_02.jpg" alt=""
+                className="absolute inset-0 size-full "
+            /> */}
+            <motion.img
+                style={{
+                    left: useTransform(_heightTransform, (value) => -(value)+width),
+                    // scale: useTransform(scaleTransform, (value) => (value)),
+                    // scale:scaleTransform
+                }}
+                src="https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/revslider/Home/slider_img_02.jpg" alt=""
+                className="absolute inset-0 -left-full- size-full "
+            />
+            <motion.img
+                style={{
+                    left: useTransform(_heightTransform, (value) => -(value)),
+                    // scale:scaleTransform
+                }}
+                src="https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/revslider/Home/slider_img_03.jpg" alt=""
+                className="absolute inset-0 -left-full- size-full "
+            />
+            <div className="max-w-6xl mx-auto relative z-10">
                 <VariantHeading className='text-center text-blue-950 py-6 gap-x-3 uppercase mb-6 flex items-center text-colorPrimary [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto '>
 
                     <span

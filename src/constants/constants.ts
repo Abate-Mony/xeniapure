@@ -10,7 +10,8 @@ export const heroBanner: iHeroBanner[] = [
       { text: "Starts", className: "text-secondary-color sm:text-4xl lg:text-5xl" },
     ],
     description: "Expert cleaning services to keep your home and workspace spotless and welcoming.",
-    image: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/revslider/Home/home_bg_01.jpg",
+    // image: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/revslider/Home/home_bg_01.jpg",
+    image: "/image-01.jpg",
   },
   {
     heading: [

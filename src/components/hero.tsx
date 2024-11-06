@@ -64,7 +64,7 @@ const Hero = () => {
                             <SwiperSlide
                                 key={word.description}
                                 className='h-full '>
-                                <div className="bg-black/[0.5]  w-full flex items-center justify-center relative h-full z-[20]">
+                                <div className="bg-black/[0.4]  w-full flex items-center justify-center relative h-full z-[20]">
 
 
                                     <Spotlight
@@ -106,7 +106,7 @@ const Hero = () => {
 
                                                     className="w-full font-medium text-lg "
                                                 >
-                                                    get started <MoveRight className='inline-block ml-0.5 animate-spin' />
+                                                    GET IN TOUCH <MoveRight className='inline-block ml-0.5 animate-spin' />
                                                 </AnimatedLinks>
 
                                             </Button>
