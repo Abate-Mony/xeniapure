@@ -100,12 +100,12 @@ const ServiceCard = ({
 const WhyChooseUs = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const containerRef = useRef<HTMLElement>(null);
-    const [height, setHeight] = useState(0);
+    // const [height, setHeight] = useState(0);
     const [width, setWidth] = useState(0);
     useEffect(() => {
         if (containerRef.current) {
             const rect = containerRef.current.getBoundingClientRect();
-            setHeight(rect.height);
+            // setHeight(rect.height);
             setWidth(rect.width);
         }
     }, [containerRef]);
