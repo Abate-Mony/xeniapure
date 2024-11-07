@@ -1,5 +1,5 @@
 import { heroBanner } from '@/constants/constants';
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { MoveRight } from 'lucide-react';
 // import { useState } from 'react';
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
@@ -9,7 +9,36 @@ import { Button } from './ui/button';
 import { AnimatedLinks } from './ui/links';
 import { Spotlight } from './ui/spot-light';
 import { TypewriterEffect } from './ui/typer-write-effect';
+import { useRef } from 'react';
 
+type iSingleHero = typeof heroBanner[number]
+const RenderSlides = ({ heroItem }: {
+    heroItem: iSingleHero
+}) => {
+    const containerRef = useRef<HTMLImageElement>(null);
+
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start 10%", "end 0%"],
+    });
+
+    const scaleTransform = useTransform(scrollYProgress, [0, 1], [1, 2.0]);
+    return (
+
+
+        <motion.img
+            ref={containerRef}
+            style={{
+                scale: scaleTransform
+            }}
+            className="size-full object-fill"
+            src={heroItem.image}
+        />
+
+
+    )
+
+}
 const Hero = () => {
 
     const TIME_OUT = 7000
@@ -20,7 +49,7 @@ const Hero = () => {
 
                 <Swiper
                     slidesPerView={1.5}
-                     effect={'fade'}
+                    effect={'fade'}
                     autoplay={{ delay: TIME_OUT, }}
                     modules={[EffectFade, Navigation, Pagination, Autoplay]}
                     className="!size-full !absolute "
@@ -29,18 +58,13 @@ const Hero = () => {
                         heroBanner.map((heroItem, idx) => {
 
                             return (
-
                                 <SwiperSlide className="!size-full"
-                                    key={heroItem.description + idx}
+                                    key={heroItem.description}
+
                                 >
-
-                                    <img
-                                        className="size-full object-fill"
-                                        src={heroItem.image}
-                                    />
-
-
+                                    <RenderSlides heroItem={heroItem} key={idx} />
                                 </SwiperSlide>
+
                             )
                         })
                     }
@@ -64,7 +88,7 @@ const Hero = () => {
                             <SwiperSlide
                                 key={word.description}
                                 className='h-full '>
-                                <div className="bg-black/[0.4]  w-full flex items-center justify-center relative h-full z-[20]">
+                                <div className="bg-black/[0.6]  w-full flex items-center justify-center relative h-full z-[20]">
 
 
                                     <Spotlight

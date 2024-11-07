@@ -54,3 +54,50 @@ export const cleaning_categories: { key: string, value: string }[] = [
   { key: 'allergy_safe', value: 'Allergy-Safe Cleaning' },
   { key: 'pre_sale', value: 'Pre-Sale Cleaning' }
 ];
+type Card = {
+  id: number;
+  content: JSX.Element | React.ReactNode | string;
+  className: string;
+  thumbnail: string;
+  url?: string; // Add a URL property for website preview
+  name?: string
+};
+export const employees: Card[] = [
+  {
+    id: 1,
+    content: "",
+    className: "md:col-span-2",
+    thumbnail: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/03/Anna_Green-740x757.jpg",
+    url: "https://modernbankwebsite.vercel.app/",
+    name: "Ai Website"
+  },
+  {
+    id: 2,
+    content: "<SkeletonTwo />",
+    className: "col-span-1",
+    thumbnail: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/03/Tonny-_Shark-740x757.jpg",
+    url: "https://www.ontracklogix.com/",
+    name: "Tracking Website"
+
+  },
+  {
+    id: 3,
+    content: "",
+    className: "col-span-1",
+    thumbnail: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/03/Lusi-Snow-740x757.jpg",
+    url: "https://evergreenshop.vercel.app/",
+    name: "Drugs Website"
+
+  },
+  {
+    id: 4,
+    content: "",
+    className: "md:col-span-2",
+    thumbnail: "https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/03/Ron_James-740x757.jpg",
+    url: "https://secret-message-kappa-taupe.vercel.app/index.html#"
+    ,
+    name: "Secret Message Website"
+
+  },
+ 
+];

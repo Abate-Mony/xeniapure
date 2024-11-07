@@ -37,6 +37,11 @@ export const NavItemsLinks: INavItemsLinks[] = [
         icon: LogInIcon,
     },
     {
+        name: "Our Team",
+        link: "/our-team",
+        icon: LogInIcon,
+    },
+    {
         name: "FAQs",
         link: "/faqs",
         icon: LogInIcon,

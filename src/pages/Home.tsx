@@ -1,7 +1,7 @@
 import Hero from "@/components/hero";
 import MiniService from "@/components/mini-service";
 // import SliceThrough from "@/components/ui/slice-through";
-import { FrequentAskQuestion } from "@/sections/FAQs";
+// import { FrequentAskQuestion } from "@/sections/FAQs";
 import OurProjectExample from "@/sections/our-project-section";
 import ServiceSection from "@/sections/our-service-section";
 // import { FrequentAskQuestion } from "@/sections/FAQs";
@@ -28,7 +28,7 @@ const Home = () => {
             <OurProjectExample/>
             <Testimonial />
             <WorkingProccess/>
-            <FrequentAskQuestion />
+            {/* <FrequentAskQuestion /> */}
 
             {/* <div className="mb-4" /> */}
 

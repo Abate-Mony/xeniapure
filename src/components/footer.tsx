@@ -45,10 +45,10 @@ const footerSections: FooterSection[] = [
     {
         section: "Quick Links",
         links: [
-            { text: "Request a Quote", url: "/quote" },
+            { text: "Request a Quote", url: "/contact-us" },
             { text: "FAQs", url: "/faqs" },
             { text: "Customer Reviews", url: "/reviews" },
-            { text: "Promotions", url: "/promotions" }
+            { text: "Our Team", url: "/our-team" }
         ]
     },
     {

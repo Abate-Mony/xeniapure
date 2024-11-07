@@ -34,6 +34,7 @@ import UpdateUserProfile from './pages/UpdateUserProfilePage';
 import axios from 'axios';
 import SingleEventsPage from './pages/SingleEventsPage';
 import { useEffect } from 'react';
+import OurTeamPage from './pages/OurTeamPage';
 axios.defaults.withCredentials = true;
 
 const queryClient = new QueryClient({
@@ -91,6 +92,10 @@ function App() {
         {
           path: "faqs",
           element: <FAQsPage />
+        },
+        {
+          path: "our-team",
+          element: <OurTeamPage />
         },
         {
           path: "login",
