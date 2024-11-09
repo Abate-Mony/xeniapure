@@ -36,17 +36,7 @@ const AboutUsPage = () => {
       <div className="max-w-5xl mx-auto border-green-500 py-10 px-4">
 
 
-        {/* end here */}
-        {/* <VariantHeading className='text-center py-6 gap-x-3 uppercase mb-6 flex items-center text-colorPrimary [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto'>
-
-          <span
-            className='w-10  h-[1px] bg-primary-color/70 '
-          />  <span>About Us</span>
-          <span
-            className='w-10  h-[1px] bg-primary-color '
-          />
-
-        </VariantHeading> */}
+      
         <div className="sm:flex items-start gap-x-3  ">
           <div
 

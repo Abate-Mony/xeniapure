@@ -28,21 +28,7 @@ const Home = () => {
             <OurProjectExample/>
             <Testimonial />
             <WorkingProccess/>
-            {/* <FrequentAskQuestion /> */}
-
-            {/* <div className="mb-4" /> */}
-
-            {/* <ShiftingCountdown />
-            <AboutUsComponent />
-
-            <EventSection />
-
-            <OurVision />
-            <RequestService />
-            <OurCulturalExample /> */}
-
-            {/* <Stats /> */}
-            {/* <DisplayCulturalImage /> */}
+         
         </div>
     )
 }

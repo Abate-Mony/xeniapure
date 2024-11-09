@@ -22,7 +22,7 @@ const RenderSlides = ({ heroItem }: {
         offset: ["start 10%", "end 0%"],
     });
 
-    const scaleTransform = useTransform(scrollYProgress, [0, 1], [1, 2.0]);
+    const scaleTransform = useTransform(scrollYProgress, [0, 1], [1, 4.0]);
     return (
 
 
@@ -128,9 +128,9 @@ const Hero = () => {
                                                 {/* redirect the user to dashboard if user is logged in */}
                                                 <AnimatedLinks to={"/contact-us?rd_from=hero"}
 
-                                                    className="w-full font-medium text-lg "
+                                                    className="w-full font-medium text-lg overflow-hidden"
                                                 >
-                                                    GET IN TOUCH <MoveRight className='inline-block ml-0.5 animate-spin' />
+                                                    GET IN TOUCH <MoveRight className='inline-block ml-0.5 animate-move' />
                                                 </AnimatedLinks>
 
                                             </Button>

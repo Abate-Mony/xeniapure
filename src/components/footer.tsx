@@ -73,7 +73,7 @@ const footerSections: FooterSection[] = [
 const Footer = ({ className }: { className?: string }) => {
     return (
 
-        <div className={cn(' py-10 bg-black/70  z-[30] relative text-white px-3 bg-no-repeat bg-cover', className)}
+        <div className={cn('overflow-hidden py-10 bg-black/70  z-[30] relative text-white px-3 bg-no-repeat bg-cover', className)}
         style={{
             backgroundImage:"url(https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/06/home_bg_03.png)",
 

@@ -49,28 +49,28 @@ const MiniService = () => {
 
         >
 
-<div className=" px-8 py-4 flex  flex-col gap-y-2.5  bg-primary-color- bg-center bg-cover bg-no-repeat"
-                    style={{
-                        background: "url(https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/06/home_bg_03.png)"
-                    }}
-                >
-                    <Heading className='font-black text-xl font-Marcellus+SC'>
-                        Hotline
-                    </Heading>
-                    <Heading className='font-black text-3xl font-pacifico text-muted-foreground'>
-                        Get Information:
-                    </Heading>
-                    <Heading className='font-black text-3xl text-white'>
-                        <div className="flex items-center">
-<span className='size-14 flex items-center justify-center bg-white/20 mr-2 rounded-full'>
-<Phone />
-</span>
-                            <span>
-                                8 800 563 2240
-                            </span>
-                        </div>
-                    </Heading>
-                </div>
+            <div className=" px-8 py-4 flex  flex-col gap-y-2.5  bg-primary-color- bg-center bg-cover bg-no-repeat"
+                style={{
+                    background: "url(https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/2019/06/home_bg_03.png)"
+                }}
+            >
+                <Heading className='font-black text-xl font-Marcellus+SC'>
+                    Hotline
+                </Heading>
+                <Heading className='font-black text-3xl font-pacifico text-muted-foreground'>
+                    Get Information:
+                </Heading>
+                <Heading className='font-black text-3xl text-white'>
+                    <a href='tel:7738398379' className="flex items-center">
+                        <span className='size-14 flex items-center justify-center bg-white/20 mr-2 rounded-full'>
+                            <Phone />
+                        </span>
+                        <span>
+                            8 800 563 2240
+                        </span>
+                    </a >
+                </Heading>
+            </div>
         </motion.div>
     )
 }

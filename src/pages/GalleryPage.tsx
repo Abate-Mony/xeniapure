@@ -1,8 +1,9 @@
+import ComingSoon from "@/components/coming-soon"
 
 const GalleryPage = () => {
   return (
     <div>
-      coming soon
+      <ComingSoon />
     </div>
   )
 }

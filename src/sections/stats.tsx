@@ -1,12 +1,12 @@
+import AnimatedHeadLessUi from '@/components/ui/AnimatedHeadlessUI';
+import { Compare } from '@/components/ui/compare';
+import Heading, { VariantHeading } from '@/components/ui/heading';
 import { motion, useInView } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AnimatedNumber, AnimatedSlideText } from '../components/Animated/animated';
 import { Button } from '../components/ui/button';
 import { animateHeadingVariants } from '../utils/framervariants';
-import Heading, { VariantHeading } from '@/components/ui/heading';
-import { Compare } from '@/components/ui/compare';
-import AnimatedHeadLessUi from '@/components/ui/AnimatedHeadlessUI';
-import { Link } from 'react-router-dom';
 
 interface iStat {
     description: string,
@@ -94,7 +94,7 @@ function SingleStat({ title, value, unit }: iStat) {
 }
 const Stats = () => {
     const [hoveIndex, setHoverIndex] = useState<number>(0);
-    const TIME_OUT_DURATION = 4000
+    const TIME_OUT_DURATION = 1000
     const SLIDES = 4
     const check = () => hoveIndex && hoveIndex >= SLIDES ? true : false
     const validate = () => hoveIndex == null || check() ? setHoverIndex(0) : setHoverIndex(hoveIndex + 1);
@@ -106,11 +106,10 @@ const Stats = () => {
         return () => {
             clearInterval(timer.current)
         }
-    }, [hoveIndex,timer])
+    }, [hoveIndex, timer])
     return (
         <section
-            className='py-24 '
-        // style={{ clipPath: "polygon(19% 0, 99% 0, 100% 68%, 89% 100%, 1% 99%, 0 20%)" }}
+            className='py-24  '
         >
             <div
                 className='max-w-8xl w-full  mx-auto p-4'
@@ -132,12 +131,10 @@ const Stats = () => {
 
 
                 <div className="md:grid grid-cols-[1fr,1fr] max-w-7xl mx-auto gap-x-6 mb-10">
-                    <div className='sticky sm:static top-[3.5rem] left-0 [perspective:800px] [transform-style:preserve-3d]'>
+                    <div className=' left-0 [perspective:800px] [transform-style:preserve-3d]'>
 
                         <div
-                            style={{
-                                // transform: "rotateX(15deg) translateZ(80px)",
-                            }}
+
                             className=" h-[min(400px,calc(100vh-3.5rem))] rounded-0 dark:bg-neutral-900  dark:border-neutral-800 mx-auto  "
                         >
                             <Compare
@@ -163,9 +160,22 @@ const Stats = () => {
                         <Heading className='mb-6'>As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullamcorper usu, eos et voluptaria rationibus. Usu cu eligendi ad ipisci, sed ex altera dictas incorrupte. Idque option ius ut, id molestiae philosophia his. Qui euismod fabellas reformidans ea, inermis ration ibus necessitatibus eu eum.</Heading>
                         <p className='mb-6'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi voluptatibus eos quidem eligendi odio molestias. Aliquid, maiores! Recusandae tempore deleniti aspernatur nisi enim esse corporis?</p>
 
+                       <Link to={"/contact-us?rd_from=hero"}>
+                       <Button
 
-                        <Link to={"/about-us"}>
+className="block-  sticky z-[100]  
+w-[min(420px,calc(100%-1rem))] px-0
+mx-auto font-bold text-sm h-14 lg:ml-auto lg:mr-4
+bottom-0 rounded-none   left-0 uppercase  text-center bg-secondary-color ">
+
+contact us
+</Button>
+                       </Link>
+                        {/* <Link to={"/about-us"}>
                             <Button className='px-8  shadow-sm top-auto bg-secondary-color right-2'>Learn More </Button>
+
+                        </Link> */}
+                        <Link to={"/contact-us?rd_from=hero"}>
 
                         </Link>
                     </div>
@@ -193,6 +203,7 @@ const Stats = () => {
                 </div>
 
             </div>
+
         </section>
     )
 }

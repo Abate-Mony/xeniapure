@@ -212,7 +212,7 @@ const ContactUsPage = () => {
                                     type="text"
                                     id="name"
                                     placeholder="Enter your full name"
-                                    className="block w-full pl-10 py-2 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500"
+                                    className="block w-full pl-10 py-2 border-black  rounded-none focus:ring-indigo-500 focus:border-indigo-500"
                                 />
                             </div>
                         </motion.div>
@@ -230,7 +230,7 @@ const ContactUsPage = () => {
                                     type="email"
                                     id="email"
                                     placeholder="Enter your email"
-                                    className="block w-full pl-10 py-2 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500"
+                                    className="block w-full pl-10 py-2 border-black  rounded-none focus:ring-indigo-500 focus:border-indigo-500"
                                 />
                             </div>
                         </motion.div>
@@ -246,7 +246,7 @@ const ContactUsPage = () => {
                                 </div>
                                 <Select>
                                     <SelectTrigger className="w-full pl-10">
-                                        <SelectValue placeholder="Select a fruit" />
+                                        <SelectValue placeholder="cleaning type" />
                                     </SelectTrigger>
                                     <SelectContent>
                                         <SelectGroup>{
@@ -321,7 +321,7 @@ const ContactUsPage = () => {
                                 cols={100}
                                 id="message"
                                 placeholder="(optional) Type your message here"
-                                className="block w-full py-2 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500"
+                                className="block w-full py-2 border-black  rounded-none focus:ring-indigo-500 focus:border-indigo-500"
                             />
                         </motion.div>
                         <motion.button

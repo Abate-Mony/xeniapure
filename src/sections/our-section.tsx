@@ -64,7 +64,7 @@ const Skill = ({ title, percentage }: iSkill) => {
 }
 const OurSkills = () => {
     return (
-        <section className='min-h-44 py-24 '>
+        <section className='min-h-44 py-24  '>
             <div className=' grid grid-cols-1  md:grid-cols-2   justify-center items-center'>
                 <div className='sticky top-[4rem] lg:order-last'>
                     <motion.img

@@ -1,4 +1,5 @@
 import { AnimatedSlideText } from "@/components/Animated/animated";
+import { Button } from "@/components/ui/button";
 import Heading, { VariantHeading } from "@/components/ui/heading";
 import {
     motion,
@@ -6,7 +7,9 @@ import {
     useScroll,
     useTransform
 } from "framer-motion";
+import { MoveRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 type CleaningStep = {
@@ -225,7 +228,15 @@ const WorkingProccess = () => {
                     </div>
                 </div>
             </div>
-
+            <Link to={"/contact-us?rd_from=hero"}>
+                <Button
+                    className="block !sticky bottom-0 bg-colorPrimary overflow-hidden
+               w-[min(220px,calc(100%-1rem))] px-0
+               mx-auto font-bold text-sm z-50 h-14 lg:ml-auto lg:mr-4
+               rounded-full uppercase text-center bg-secondary-color">
+                    GET IN TOUCH <MoveRight className='inline-block ml-0.5 animate-move' />
+                </Button>
+            </Link>
         </div>
     )
 }
