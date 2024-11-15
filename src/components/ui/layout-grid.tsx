@@ -41,7 +41,6 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
     const handleOutsideClick = () => {
         setLastSelected(selected);
         setSelected(null);
-        // alert("cli")
     };
 
     useOnClickOutside(ref, handleOutsideClick)
