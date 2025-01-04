@@ -139,12 +139,12 @@ export default function ServiceSection() {
    
     const TIME_OUT = 5000
     const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
-    const pagination = {
-        clickable: true,
-        renderBullet: function (_index: any, className: string) {
-            return '<span class="' + className + ' active' + '">' + '</span>';
-        },
-    };
+    // const pagination = {
+    //     clickable: true,
+    //     renderBullet: function (_index: any, className: string) {
+    //         return '<span class="' + className + ' active' + '">' + '</span>';
+    //     },
+    // };
     return (
         <div className=" py-24 ">
             <div className="max-w-6xl mx-auto px-4 mb-6">
