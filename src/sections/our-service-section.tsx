@@ -173,7 +173,7 @@ export default function ServiceSection() {
                         slidesPerView={1.3}
                         freeMode={true}
                         watchSlidesProgress={true}
-                        scrollbar={{ draggable: true, dragSize: 100 }}
+                        // scrollbar={{ draggable: true, dragSize: 100 }}
 
                         modules={[Navigation, FreeMode, Navigation, Thumbs, Scrollbar]}
                         className="!w-full "
@@ -215,7 +215,7 @@ export default function ServiceSection() {
 
                     }}
 
-                    pagination={pagination}
+                    // pagination={pagination}
                     modules={
                         [Pagination, A11y, Autoplay, FreeMode, Thumbs]
                     }

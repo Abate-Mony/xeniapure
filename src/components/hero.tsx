@@ -88,7 +88,7 @@ const Hero = () => {
                             <SwiperSlide
                                 key={word.description}
                                 className='h-full '>
-                                <div className="bg-black/[0.6]  w-full flex items-center justify-center relative h-full z-[20]">
+                                <div className="bg-black/[0.6]  w-full flex items-center justify-center relative h-full z-[200]">
 
 
                                     <Spotlight
@@ -99,7 +99,7 @@ const Hero = () => {
                                         <div className='mb-4'>
                                             <TypewriterEffect
                                                 className="font-pacifico  text-white"
-                                                wordClassName="text-6xl sm:text-7xl   lg:text-8xl xxl:text-8xl"
+                                                wordClassName="text-4xl sm:text-7xl   lg:text-8xl xxl:text-8xl"
                                                 words={word.heading} />
 
                                         </div>

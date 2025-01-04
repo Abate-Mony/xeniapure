@@ -6,6 +6,7 @@ import Heading, { VariantHeading } from '@/components/ui/heading'
 import { cn } from '@/lib/utils'
 import { animateHeadingVariants, pageAnimationVariantsTransiton } from '@/utils/framervariants'
 import { Award, Clock, EclipseIcon, PillBottle, ShieldCheck, Smile } from "lucide-react"
+import MiniService from '@/components/mini-service'
 export const whyChooseUs = [
     {
         title: "Trusted & Insured",
@@ -122,33 +123,19 @@ const WhyChooseUs = () => {
     return (
         <section
             ref={containerRef}
-            className=' py-32 px-2 bg-no-repeat bg-cover relative overflow-hidden'
-        // style={{
-        //     backgroundImage: `url(/image-02.jpg)`,
-        // }}
-        >
-            <div className="absolute inset-0 z-10 bg-white/75 size-full"
-            ></div>
-            {/* <motion.div className="absolute inset-0 left-0 bg-red-500"
-               style={{
-                x: useTransform(_heightTransform, (value) => (value))
-            }}
-            >
-          
-            </motion.div> */}
+            className=' py-32  relative  -mt-28 px-2 bg-no-repeat bg-cover  overflow-hidden '
 
-            {/* <motion.img
-                style={{
-                    left: heightTransform
-                }}
-                src="https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/revslider/Home/slider_img_02.jpg" alt=""
-                className="absolute inset-0 size-full "
-            /> */}
+        >
+            {/* <div className="relative bg-orange-400 h-36 will-change-scroll "></div> */}
+            {/* <MiniService /> */}
+
+            <div className="absolute inset-0 z-10 - bg-white/75 size-full"
+            ></div>
+           
             <motion.img
                 style={{
                     left: useTransform(_heightTransform, (value) => -(value)+width),
-                    // scale: useTransform(scaleTransform, (value) => (value)),
-                    // scale:scaleTransform
+  
                 }}
                 src="https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/revslider/Home/slider_img_02.jpg" alt=""
                 className="absolute inset-0 -left-full- size-full "
@@ -156,7 +143,6 @@ const WhyChooseUs = () => {
             <motion.img
                 style={{
                     left: useTransform(_heightTransform, (value) => -(value)),
-                    // scale:scaleTransform
                 }}
                 src="https://livewp.site/wp/md/clengo/wp-content/uploads/sites/61/revslider/Home/slider_img_03.jpg" alt=""
                 className="absolute inset-0 -left-full- size-full "

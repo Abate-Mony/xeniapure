@@ -20,7 +20,6 @@ const Home = () => {
 
                  <Hero />
             <MiniService />
-            {/* <SliceThrough/> */}
             <WhyChooseUs/>  
             <RequestService/>
             <Stats/>
