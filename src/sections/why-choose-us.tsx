@@ -6,7 +6,6 @@ import Heading, { VariantHeading } from '@/components/ui/heading'
 import { cn } from '@/lib/utils'
 import { animateHeadingVariants, pageAnimationVariantsTransiton } from '@/utils/framervariants'
 import { Award, Clock, EclipseIcon, PillBottle, ShieldCheck, Smile } from "lucide-react"
-import MiniService from '@/components/mini-service'
 export const whyChooseUs = [
     {
         title: "Trusted & Insured",
