@@ -2,8 +2,10 @@ import React from 'react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import Heading, { VariantHeading } from '../components/Heading';
-import Heading, { VariantHeading } from '@/components/ui/heading';
+import AnimatedHeadLessUi from '@/components/ui/AnimatedHeadlessUI';
+import { VariantHeading } from '@/components/ui/heading';
 import { cn } from "@/lib/utils";
+import { textVariantsAnimation } from '@/utils/framervariants';
 import { useMediaQuery } from 'react-responsive';
 import ReactStars from 'react-stars';
 import { Button } from '../components/ui/button';
@@ -28,7 +30,7 @@ import {
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { Textarea } from "../components/ui/textarea";
-import AnimatedHeadLessUi from '@/components/ui/AnimatedHeadlessUI';
+import { ScrollSection } from '@/components/Animated/animated';
 interface Review {
     readonly name: string;
     readonly review: string;
@@ -36,63 +38,81 @@ interface Review {
 }
 const reviews = [
     {
-        name: "Sarah Thompson",
-        review: "ShipSharp Cleaning transformed my office space! Their attention to detail and commitment to eco-friendly products left everything spotless. It’s refreshing to work with a team that’s so professional and reliable.",
+        name: "Alice Johnson",
+        review: "BS Consulting provided incredible support during my university application process. Their guidance and expertise ensured I was fully prepared, and I successfully got into my dream school. Highly recommended!",
         starCount: 5
     },
     {
-        name: "David Roberts",
-        review: "As a property manager, I’ve dealt with several cleaning companies, but ShipSharp Cleaning stands out. Their team is punctual, thorough, and the results are consistently impressive. Highly recommend them for both commercial and residential cleaning.",
+        name: "James O'Connor",
+        review: "As an international student, I was overwhelmed by the application and visa processes. BS Consulting made everything so much easier with their step-by-step support. Their team is knowledgeable and genuinely cares about their clients' success.",
         starCount: 4.5
     },
     {
-        name: "Lisa Nguyen",
-        review: "ShipSharp Cleaning’s deep cleaning service exceeded my expectations. From the floors to the windows, every corner of my home sparkled. Plus, they were friendly and respectful of my space. I’ll definitely be using their services again!",
+        name: "Sophia Lee",
+        review: "The mentorship I received from BS Consulting was invaluable. Their team helped me improve my CV, prepare for interviews, and even guided me in applying for scholarships. They go above and beyond!",
         starCount: 5
     },
     {
-        name: "Michael Atu",
-        review: "ShipSharp Cleaning is more than just a cleaning service—it’s a game-changer for busy homeowners. The team was efficient, trustworthy, and left my house looking immaculate. I appreciate their dedication to quality.",
+        name: "Michael Brown",
+        review: "BS Consulting's CPD training sessions were fantastic. The skills I gained have significantly boosted my career prospects. Their trainers are experts in their fields, and the workshops are interactive and insightful.",
         starCount: 4
     },
     {
-        name: "Emily Brown",
-        review: "I was amazed by ShipSharp Cleaning’s attention to detail. They handled all the tough spots, and my kids’ play area has never been cleaner. It’s reassuring to know they use safe, non-toxic products too.",
+        name: "Emily White",
+        review: "Thanks to BS Consulting, I was able to achieve my QTLS status with confidence. Their resources and mentoring were top-notch, and I highly recommend them to anyone looking to advance in their teaching career.",
         starCount: 5
     },
     {
-        name: "Charles Green",
-        review: "I’ve used ShipSharp Cleaning for several months, and they’ve consistently provided outstanding service. From routine cleans to special requests, the team is always accommodating. They really understand the importance of a clean, welcoming space.",
-        starCount: 4
+        name: "David Green",
+        review: "I attended a personal development workshop organized by BS Consulting, and it was a game-changer for me. The practical advice and networking opportunities they provided have been incredibly beneficial.",
+        starCount: 4.5
     }
 ];
 
 
 const SingleTestimonial = ({ name, review, starCount }: Review) => {
     return (
-        <figure className="snip1157 ">
-            <blockquote
-                className='!line-clamp-8 pb-2'
-            >{review}
-                <div className="arrow"></div>
-            </blockquote>
-            <div className='size-16 rounded-full relative -z-[1] overflow-hidden !px-0'>
-                {/* <img src="https://www.africacentre.org.uk/images/757cef11-eeb1-4a5c-98c5-bdac96e639d8/cropped?width=600&height=338" alt="" className='size-full object-cover' /> */}
-
-            </div>
-            <div className="author">
-                <h5>{name}<span>
+        <figure className="p-2 bg-white rounded-xl shadow-xl">
+            <div className="">
+                <h5><span>
                     <ReactStars
                         count={5}
                         value={starCount}
                         edit={false}
-
+                        color1='orange'
                         size={24}
                         half={true}
-                        // color="orange"
-                        color2={'#fed900'} />
+                        color2={'#fdd905'} />
                 </span></h5>
             </div>
+            <blockquote
+                className='!line-clamp-8 pb-2 pl-2 text-sm italic text-muted-foreground'
+            >{review}
+                <div className="arrow"></div>
+            </blockquote>
+            <div className='flex items-center gap-x-1.5'>
+                <div className='size-12 border-2 border-primary-color rounded-full overflow-hidden'>
+                    <img src="https://tf.insomniacafe.org/insoand/assets/img/testimonial/author-1.png" alt="" />
+                </div>
+                <div>
+                    <VariantHeading
+                        className='!text-shadow-lg ![--color-shadow:hsl(var(--color-primary,blue))]'
+                        variants={{
+                            ...textVariantsAnimation,
+                            initial: {
+                                ...textVariantsAnimation.initial,
+                                x: -50
+                            }
+                        }}
+                    >
+                        {name}
+                    </VariantHeading>
+                    <p className='text-xs text-muted-foreground'>
+                        content creator
+                    </p>
+                </div>
+            </div>
+
         </figure>)
 }
 const pagination = {
@@ -109,6 +129,7 @@ const Testimonial = () => {
     const buttonRef = React.useRef<any>(null)
     const [open, setOpen] = React.useState(false)
     const isDesktop = useMediaQuery({ query: "(min-width: 768px)" })
+
     function ProfileForm({ className }: React.ComponentProps<"form">) {
         return (
             <form className={cn("grid items-start gap-4", className)}>
@@ -145,23 +166,73 @@ const Testimonial = () => {
     }
     return (
 
-        <div className='bg-white overflow-hidden-- py-10'>
-            <div className='max-w-6xl mx-auto'>
-                <Heading className='text-center text-blue-800 font-black text-3xl max-w-fit mx-auto'>
-                    Testimonials
+        <div className='bg-white- overflow-hidden-- '>
+            <div
+                className="relative w-full"
+            >
+                <h1 className="text-6xl text-center my-10 italic
+                                              absolute- -z-1
+                                              w-full 
+                                              font-black text-gray-300/55 lg:text-9xl
+                                              bg-white/10-- uppercase  ">
+                    REVIEWS
+                </h1>
 
-                </Heading>
-                <VariantHeading className='text-center text-blue-950 py-6 gap-x-3 uppercase mb-6 flex items-center text-colorPrimary [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto '>
+
+                <VariantHeading className='text-center  !absolute !top-1/2 w-fit  !left-1/2  !-translate-x-1/2 !m-0 !-translate-y-1/2 !text-secondary-color py-6 gap-x-3 uppercase mb-6 flex items-center text-colorPrimary [font-family:var(--second-font)] font-black text-3xl lg:text-5xl max-w-fit mx-auto '>
 
                     <span
                         className='w-10  h-[1px] bg-primary-color/70 '
-                    />  <span>          COMMINUTIES STORIES
+                    />  <span>
+                        TESTI<span className='text-primary-color'>MONIALS</span>
                     </span>
                     <span
                         className='w-10  h-[1px] bg-primary-color '
                     />
 
                 </VariantHeading>
+            </div>
+            {/* <ScrollSection className='py-24'>
+                <Heading className='whitespace-nowrap !text-shadow-lg px-4 italic text-5xl lg:text-7xl font-black font-Marcellus+SC- ![--color-shadow:hsl(var(--color-secondary,white))] text-primary-color'>
+                    What satisfied client are saying about us .
+                </Heading>
+            </ScrollSection> */}
+            <ScrollSection>
+                <VariantHeading viewport={{ once: true }} className='whitespace-nowrap !text-shadow-xl hidden- px-4 italic text-5xl lg:text-8xl font-black font-Marcellus+SC text-secondary-color py-6'>
+                    What satisfied client are saying about us .
+
+                </VariantHeading>
+
+            </ScrollSection>
+
+            <div className='max-w-6xl mx-auto py-10'>
+
+
+                <ScrollSection transition={{ delay: 10 }} direction="right" className='mb-5'>
+                    {reviews.map((review, idx) =>
+                        <AnimatedHeadLessUi
+                            layoutId="thecoderandthecodearethesameherethendsdfsfab"
+                            key={idx}
+                            index={idx + reviews.length}
+                            hoverIndex={hoveIndex}
+                            setHoverIndex={setHoverIndex}
+                            className='mx-auto max-w-sm'
+                            animatedClassName={"bg-secondary-color/5 !rounded-2xl bottom-0 h-2- top-auto z-[1000]"}
+                        >
+
+                            <SingleTestimonial
+                                {...review}
+                                key={idx}
+                            />
+
+                        </AnimatedHeadLessUi>
+
+
+                    )}
+
+                </ScrollSection>
+                {/* dd */}
+
                 <Swiper
                     speed={SPEED}
                     pagination={pagination}
@@ -189,7 +260,7 @@ const Testimonial = () => {
                     loop={true}
                     translate="yes"
                     modules={[Autoplay, Pagination, Navigation]}
-                    className="!w-full pb-20"
+                    className="!w-full pb-20 bg-transparent"
                 >
                     {reviews.map((review, idx) => <SwiperSlide className=" w-full" key={idx}>
                         <AnimatedHeadLessUi
@@ -199,7 +270,7 @@ const Testimonial = () => {
                             hoverIndex={hoveIndex}
                             setHoverIndex={setHoverIndex}
                             className='mx-auto'
-                            animatedClassName={"bg-secondary-color/10 bottom-0 h-2- top-auto z-[1000]"}
+                            animatedClassName={"bg-secondary-color/5 !rounded-2xl bottom-0 h-2- top-auto z-[1000]"}
                         >
 
                             <SingleTestimonial
@@ -241,17 +312,17 @@ const Testimonial = () => {
                     loop={true}
                     translate="yes"
                     modules={[Autoplay, Pagination, Navigation]}
-                    className="!w-full pb-20"
+                    className="!w-full pb-20 bg-transparent"
                 >
                     {reviews.map((review, idx) => <SwiperSlide className=" w-full" key={idx}>
                         <AnimatedHeadLessUi
                             layoutId="thecoderandthecodearethesameherethenab"
                             key={idx}
-                            index={idx+reviews.length}
+                            index={idx + reviews.length}
                             hoverIndex={hoveIndex}
                             setHoverIndex={setHoverIndex}
                             className='mx-auto'
-                            animatedClassName={"bg-secondary-color/10 bottom-0 h-2- top-auto z-[1000]"}
+                            animatedClassName={"bg-secondary-color/5 !rounded-2xl bottom-0 h-2- top-auto z-[1000]"}
                         >
 
                             <SingleTestimonial
@@ -315,7 +386,7 @@ const Testimonial = () => {
                     onClick={() => {
                         buttonRef.current?.click()
                     }}
-                    className="block sticky btn- bg-colorPrimary
+                    className="block- sticky hidden
             w-[min(420px,calc(100%-1rem))] px-0
             mx-auto font-bold text-sm z-50 h-14 lg:ml-auto lg:mr-4
             bottom-0 rounded-none   left-0 uppercase  text-center bg-primary-color ">

@@ -1,5 +1,5 @@
 {
-  "name": "waincom",
+  "name": "xeniapure-cleaning-service",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -61,6 +61,7 @@
     "usehooks-ts": "^3.1.0",
     "vaul": "^1.0.0",
     "waincom": "file:",
+    "xeniapure-cleaning-service": "file:",
     "zod": "^3.23.8"
   },
   "devDependencies": {

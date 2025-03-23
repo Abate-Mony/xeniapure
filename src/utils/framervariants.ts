@@ -23,5 +23,14 @@ export const pageAnimationVariants = {
       y: 0,
     },
   };
-  
+  export const textVariantsAnimation = {
+    initial: {
+      x: +100,
+      opacity: 0.7
+    },
+    animate: {
+      x: 0,
+      opacity: 1
+    }
+  }
   

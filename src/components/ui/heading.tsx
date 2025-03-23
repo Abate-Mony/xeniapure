@@ -1,6 +1,6 @@
 import React from 'react'
 import { animateHeadingVariants, pageAnimationVariantsTransiton } from '../utils/framervariants.ts'
-import { motion } from "framer-motion"
+import { motion, MotionProps } from "framer-motion"
 import { cn } from '@/lib/utils'
 
 
@@ -17,7 +17,7 @@ const Heading = ({ children, className, ...props }: IHeadingProps) => {
     )
 }
 
-export const VariantHeading = ({ children, className, ...props }: IHeadingProps) => {
+export const VariantHeading = ({ children, className, ...props }: IHeadingProps & MotionProps) => {
     return (
         <motion.h1
             variants={animateHeadingVariants}
@@ -25,7 +25,6 @@ export const VariantHeading = ({ children, className, ...props }: IHeadingProps)
             whileInView="animate"
             transition={pageAnimationVariantsTransiton}
             {...props}
-            viewport={{ once: false, amount: 0.8, margin: "10px" }}
             className={cn("text-lg font-medium font-Marcellus+SC", className)}
         >{children}</motion.h1>
     )

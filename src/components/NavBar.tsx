@@ -66,7 +66,7 @@ const NavBar = ({ isOpen, setIsOpen }: {
                         <Link to={"/"}>
                             <img
                                 className="size-14 w-24  hidden- md:block "
-                                src="/main-logo.png" alt="" />
+                                src="https://xeniapure.com/wp-content/uploads/2024/05/XeniaPure-Logo-e1716032082282-1024x345.png" alt="" />
 
                         </Link>
 

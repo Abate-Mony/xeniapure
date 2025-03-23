@@ -1,5 +1,5 @@
-import React from 'react'
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion"
+import React, { useState, useEffect, useRef } from 'react'
+import { motion, useInView, useMotionValue, useSpring, MotionProps, useScroll, useTransform } from "framer-motion"
 import { cn } from '../../lib/utils.js'
 type iWord = {
     text: string;
@@ -56,7 +56,7 @@ export const AnimatedText = ({
     text,
     className = "",
     inView,
-    amount, once=true }: iAnimatedProps) => {
+    amount, once = true }: iAnimatedProps) => {
 
     return (
         <div
@@ -169,7 +169,7 @@ export const AnimatedSlideText = ({
     className = "",
     inView,
     amount,
-    words ,once=true}: iAnimatedProps) => {
+    words, once = true }: iAnimatedProps) => {
     return (
         <div
             className={cn(` w-full  mx-auto  py-2 flex items-center justify-center text-center 
@@ -283,3 +283,66 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
     );
 };
 // export default AnimatedText
+//animated scroll inview 
+
+export interface props extends React.HTMLAttributes<HTMLHeadingElement> {
+    direction?: "left" | "right",
+}
+export const ScrollSection = ({
+    className, direction = "right", ...props
+
+}: & props & MotionProps) => {
+    const target = useRef<HTMLDivElement>(null); // Ref for scroll area
+    const [contentWidth, setContentWidth] = useState(0); // To hold dynamic content width
+
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (target.current) {
+                // Total scroll width (content width including hidden part)
+                setContentWidth(target.current.scrollWidth - target.current.getBoundingClientRect().width);
+            }
+        };
+
+        // Run on initial load and whenever resized
+        handleResize();
+
+        // Observe changes in content size and update the width
+        const resizeObserver = new ResizeObserver(handleResize);
+        if (target.current) resizeObserver.observe(target.current);
+
+        return () => resizeObserver.disconnect(); // Clean up observer on component unmount
+    }, []);
+
+    // ScrollY progress from framer-motion hook
+    const { scrollYProgress } = useScroll({
+        target: target,
+        offset: ["start 60%", "end 50%"], // Adjust as needed
+    });
+
+    // Transform scroll progress (0 to 1) to translateX values (horizontal scroll)
+    const _dir = direction == "left" ? [-contentWidth, 0] : [0, -contentWidth];
+    const translateX = useTransform(scrollYProgress, [0, 1], _dir);
+    // Get the total width including scrollable content
+
+    return (
+        <section
+            id="scroll-section"
+            className={cn("w-full flex- items-center py-10-  overflow-hidden relative")} // Hide overflow to ensure horizontal scroll is contained
+        >
+            <motion.div
+                ref={target} // Attach ref to the scroll area
+                style={{ x: translateX }} // Apply the calculated horizontal scroll based on scrollY progress
+                className={
+                    cn("flex font-manrope- uppercase  gap-8 items-center  ",
+                        className
+                    )
+                } // Adjust container for horizontal scrolling
+                {...props}
+
+            >
+            </motion.div>
+        </section>
+    );
+};
+

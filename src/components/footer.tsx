@@ -91,7 +91,7 @@ const Footer = ({ className }: { className?: string }) => {
                 <div className='lg:grid grid-cols-12 lg:flex-row '>
                     <div className='flex-none relative  text-3xl font-black mb-6  col-span-3'>
                         {/* <RegistrationJoinUs/> */}
-                        <img src={"/main-logo.png"} className='h-16 relative z-10' />
+                        <img src={"https://xeniapure.com/wp-content/uploads/2024/05/XeniaPure-Logo-e1716032082282-1024x345.png"} className='h-16 relative z-10' />
                     </div>
                     <div className='flex-1 grid col-span-9 gap-y-6
                     grid-cols-[repeat(auto-fit,minmax(min(10rem,calc(100%-60px)),_1fr))]'>
