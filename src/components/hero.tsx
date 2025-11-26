@@ -98,7 +98,7 @@ const Hero = () => {
                                     <div className=" p-2 max-w-8xl text-center   mx-auto relative z-10  w-full pt-20 md:pt-0">
                                         <div className='mb-4'>
                                             <TypewriterEffect
-                                                className="font-pacifico  text-white"
+                                                className="font-pacifico-  text-white"
                                                 wordClassName="text-4xl sm:text-7xl   lg:text-8xl xxl:text-8xl"
                                                 words={word.heading} />
 

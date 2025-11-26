@@ -317,7 +317,7 @@ export const ScrollSection = ({
     // ScrollY progress from framer-motion hook
     const { scrollYProgress } = useScroll({
         target: target,
-        offset: ["start 60%", "end 50%"], // Adjust as needed
+        offset: ["start 60%", "end 60%"], // Adjust as needed
     });
 
     // Transform scroll progress (0 to 1) to translateX values (horizontal scroll)

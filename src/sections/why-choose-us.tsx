@@ -6,6 +6,7 @@ import Heading, { VariantHeading } from '@/components/ui/heading'
 import { cn } from '@/lib/utils'
 import { animateHeadingVariants, pageAnimationVariantsTransiton } from '@/utils/framervariants'
 import { Award, Clock, EclipseIcon, PillBottle, ShieldCheck, Smile } from "lucide-react"
+import { FlipWords } from '@/components/flip-words'
 export const whyChooseUs = [
     {
         title: "Trusted & Insured",
@@ -60,7 +61,7 @@ const ServiceCard = ({
             setHoverIndex={setHoveredIndex}
             animatedClassName="bg-primary-color/5"
             className=
-            {cn("bg-white  gap-y-4 gap-x-3 px-4 py-4 relative my-4b group  shadow")}
+            {cn("bg-white/40 backdrop-brightness-[96%]-  rounded-sm backdrop-blur-sm  gap-y-4 gap-x-3 px-4 py-4 relative my-4b group  shadow")}
 
         >
 
@@ -101,6 +102,7 @@ const WhyChooseUs = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const containerRef = useRef<HTMLElement>(null);
     // const [height, setHeight] = useState(0);
+    const words = ["Cleaning", "Building", "Facilities"];
     const [width, setWidth] = useState(0);
     useEffect(() => {
         if (containerRef.current) {
@@ -122,7 +124,7 @@ const WhyChooseUs = () => {
     return (
         <section
             ref={containerRef}
-            className=' py-32  relative  -mt-28 px-2 bg-no-repeat bg-cover  overflow-hidden '
+            className=' py-32  relative   px-2 bg-no-repeat bg-cover  overflow-hidden '
 
         >
             {/* <div className="relative bg-orange-400 h-36 will-change-scroll "></div> */}
@@ -130,7 +132,7 @@ const WhyChooseUs = () => {
 
             <div className="absolute inset-0 z-10 - bg-white/75 size-full"
             ></div>
-           
+          
             <motion.img
                 style={{
                     left: useTransform(_heightTransform, (value) => -(value)+width),
@@ -147,6 +149,13 @@ const WhyChooseUs = () => {
                 className="absolute inset-0 -left-full- size-full "
             />
             <div className="max-w-6xl mx-auto relative z-10">
+                 
+                <VariantHeading
+                        className='text-xl font-poppins  sm:text-3xl lg:text-5xl mb-4 font-black uppercase text-center '>
+                        
+                        Professional 
+                            <FlipWords words={words} className='text-primary-color'/>
+                         Management Company</VariantHeading>
                 <VariantHeading className='text-center text-blue-950 py-6 gap-x-3 uppercase mb-6 flex items-center text-colorPrimary [font-family:var(--second-font)] font-black text-3xl lg:text-4xl max-w-fit mx-auto '>
 
                     <span

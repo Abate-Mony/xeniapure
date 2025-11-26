@@ -1,16 +1,16 @@
 
 
 import { cn } from '@/lib/utils';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, MotionProps } from 'framer-motion';
 import React from 'react';
-interface Props {
+interface Props extends MotionProps {
     className?: string;
     hoverIndex: number | null;
     setHoverIndex: any;
     index: number,
     children: React.ReactNode,
     animatedClassName?: string
-    layoutId?:string 
+    layoutId?: string
 
 }
 function AnimatedHeadLessUi({
@@ -20,7 +20,8 @@ function AnimatedHeadLessUi({
     index,
     children,
     animatedClassName,
-    layoutId
+    layoutId,
+    ...props
 
 }: Props) {
     const isActive = hoverIndex == index
@@ -36,7 +37,8 @@ function AnimatedHeadLessUi({
             <AnimatePresence>
                 {
                     isActive && <motion.span
-                        layoutId={layoutId||"hoverBackgroundeedjfasdfodh;osh"}
+                        {...props}
+                        layoutId={layoutId || "hoverBackgroundeedjfasdfodh;osh"}
                         // layout
                         animate={{
                             opacity: 1,
@@ -59,11 +61,9 @@ function AnimatedHeadLessUi({
 
             </AnimatePresence>
 
-               <div>
-               {
+                {
                     children
                 }
-               </div>
 
         </div>
     )
